@@ -17,6 +17,7 @@
     </main>
 
     {{ if not (eq .Type "posts") }}
+    {{ partial "generator-notice.html" . }}
     {{ partial "ambient-bar.html" . }}
     {{ end }}
 

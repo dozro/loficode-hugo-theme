@@ -1,0 +1,53 @@
+<div class="generator-notice">
+    <p>
+        Built with <i class="devicon-hugo-plain colored"></i> Hugo and the <a href="https://github.com/raisingpixels/loficode-hugo-theme/compare/main...dozro:devel">forked</a> LofiCode theme by <a href="https://itsrye.dev">Rye</a>. Original theme by <a href="https://raisingpixels.dev/">Raising Pixels</a>. Design augmented with <a href="https://devicon.dev/">Devicon</a> & <a href="https://fontawesome.com/">FontAwesome</a>.        
+    </p>
+</div>
+
+<style>
+/* Dark lofi with semi-transparent background and gradient links */
+.generator-notice {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    background-color: rgba(30, 30, 30, 0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    color: #e0e0e0;
+    line-height: 1.5;
+    backdrop-filter: blur(4px);
+}
+
+.generator-notice a {
+    background: linear-gradient(90deg, #ff6aff, #00ffc2); /* neon gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.generator-notice a:hover {
+    animation: gradientShift 2s linear infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.generator-notice i {
+    vertical-align: middle;
+    margin: 0 0.2em;
+    filter: drop-shadow(0 0 2px rgba(0,255,255,0.3)); /* subtle glow */
+}
+
+.generator-notice p {
+    margin: 0;
+    opacity: 0.95; /* slightly faded for lofi effect */
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
