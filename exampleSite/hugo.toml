@@ -41,12 +41,15 @@ enableEmoji = true
   [params.social]
     github = "https://github.com/example"
     twitter = "https://twitter.com/example"
-    # linkedin = "https://linkedin.com/in/example"
-    # email = "contact@example.com"
-    # mastodon = "https://mastodon.social/@example"
-    # youtube = "https://youtube.com/@example"
-    # instagram = "https://instagram.com/example"
-    # facebook = "https://facebook.com/example"
+    linkedin = "https://linkedin.com/in/example"
+    email = "contact@example.com"
+    mastodon = "https://mastodon.social/@example"
+    youtube = "https://youtube.com/@example"
+    instagram = "https://instagram.com/example"
+    facebook = "https://facebook.com/example"
+    xing = "https://xing.com/example"
+    git = "https://gitea.com"
+    gitea = "https://gitea.com"
 
 # Main navigation menu
 [[menu.main]]

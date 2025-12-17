@@ -1,5 +1,7 @@
 {{ define "main" }}
 <!-- Full-screen post layout to match SPA overlay -->
+<!-- Keyboard Navigation by Rye -->
+<script src="/js/keyboard-navigation-posts.js" defer></script>
 <div class="post-overlay active">
     <div class="post-overlay-backdrop"></div>
     <div class="post-overlay-content" style="position: relative; min-height: 100vh; padding: 0; transform: translateY(0);">
@@ -7,7 +9,12 @@
             <div class="post-overlay-title">
                 <a href="/" class="overlay-site-title">{{ .Site.Title }}</a>
             </div>
-            <button class="post-overlay-close" aria-label="Close post" onclick="window.location.href='/'">
+            <button 
+                class="post-overlay-close" 
+                id="ry_close_post"
+                aria-label="Close post"
+                onclick="window.location.href='/'"
+            >
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -76,8 +83,19 @@
             <nav class="post-navigation">
                 {{ with .PrevInSection }}
                 <div class="nav-previous">
-                    <span class="nav-label">← Previous</span>
-                    <a href="{{ .Permalink }}" class="nav-title">{{ .Title }}</a>
+                    <span 
+                        class="nav-label"
+                    >
+                        ← Previous [<code>P</code>]
+                    </span>
+                    <a 
+                        href="{{ .Permalink }}" 
+                        class="nav-title" 
+                        id="ry_nav_previous_a"
+                        aria-keyshortcuts="P"
+                    >
+                    {{ .Title }}
+                    </a>
                 </div>
                 {{ else }}
                 <div></div>
@@ -85,8 +103,19 @@
 
                 {{ with .NextInSection }}
                 <div class="nav-next">
-                    <span class="nav-label">Next →</span>
-                    <a href="{{ .Permalink }}" class="nav-title">{{ .Title }}</a>
+                    <span 
+                        class="nav-label"
+                    >
+                        [<code>N</code>] Next → 
+                    </span>
+                    <a 
+                        href="{{ .Permalink }}" 
+                        class="nav-title"
+                        id="ry_nav_next_a"
+                        aria-keyshortcuts="N"
+                    >
+                    {{ .Title }}
+                    </a>
                 </div>
                 {{ else }}
                 <div></div>

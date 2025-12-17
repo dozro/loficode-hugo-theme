@@ -43,9 +43,18 @@
 
 <a href="{{ $href }}" target="_blank" rel="me" class="social-link" title="{{ $data.title }}">
     {{ if ne $data.img "" }}
-    <img src="{{ $data.img }}" alt="{{ $data.title }}" class="social-icon-img" />
+    <img 
+        src="{{ $data.img }}" 
+        alt="{{ $data.title }}" 
+        aria-label="{{ $data.title }}"
+        class="social-icon-img" 
+    />
     {{ else }}
-    <i class="{{ $data.icon }} social-icon"></i>
+    <i 
+        class="{{ $data.icon }} social-icon"
+        aria-label="{{ $data.title }}"
+    >
+    </i>
     {{ end }}
 </a>
 {{ end }}
