@@ -29,3 +29,7 @@ However there might be bit of tweaking and adding options.
 <!-- seperator to the footnotes, for those viewing this in a unsupported renderer -->
 
 [^PermaLicense]: Permalink to license: <https://github.com/raisingpixels/loficode-hugo-theme/blob/e2422ab990d0a914adee8e0d6c7492ffc985f653/LICENSE> (added in commit e2422ab990d0a914adee8e0d6c7492ffc985f653)
+
+## Differences to upstream
+
+- keyboard navigation in posts

@@ -3,16 +3,23 @@
 
 // Keyboard navigation for next and previous links
 function handleShortcut(event) {
-  if (event.key === "n") {
-    event.preventDefault();
-    document.getElementById("ry_nav_next_a").click();
-  } else if (event.key === "p") {
-    event.preventDefault();
-    document.getElementById("ry_nav_previous_a").click();
-  } else if (event.key === "Escape") {
-    event.preventDefault();
-    document.getElementById("ry_close_post").click();
-  }
+    switch (event.key) {
+        case "ArrowRight":
+        case "n":
+            event.preventDefault();
+            document.getElementById("ry_nav_next_a").click();
+            break;
+        case "ArrowLeft":
+        case "p":
+            event.preventDefault();
+            document.getElementById("ry_nav_previous_a").click();
+            break;
+        case "Escape":
+        case "x":
+            event.preventDefault();
+            document.getElementById("ry_close_post").click();
+            break;
+    }
 }
 
 console.log("Keyboard navigation script for posts by Rye (https://rye.dev) loaded.");
