@@ -28,6 +28,8 @@ However there might be bit of tweaking and adding options.
 
 ## Differences to upstream
 
+Code changes see: https://github.com/raisingpixels/loficode-hugo-theme/compare/main...dozro:loficode-hugo-theme:main
+
 - keyboard navigation in posts
 - Support for a few more social networking links
 
