@@ -1,10 +1,19 @@
 # LofiCode Hugo Theme
 
-This theme is a fork of https://github.com/raisingpixels/loficode-hugo-theme
-
 A cozy, lo-fi inspired Hugo theme perfect for developers and creatives who want to create a warm, inviting blog with a retro aesthetic and modern functionality.
 
 ![LofiCode Theme Screenshot](https://raw.githubusercontent.com/dozro/loficode-hugo-theme/master/images/screenshot.png)
+
+## Fork information
+
+This theme is a fork of https://github.com/raisingpixels/loficode-hugo-theme
+
+### Notable Differences
+
+mostly see: [README.fork.md](./README.fork.md)
+
+- keyboard navigation in posts
+- added support for a few extra social networking links
 
 ## ✨ Features
 
