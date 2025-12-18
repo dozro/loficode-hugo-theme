@@ -1,8 +1,10 @@
 # LofiCode Hugo Theme
 
+This theme is a fork of https://github.com/raisingpixels/loficode-hugo-theme
+
 A cozy, lo-fi inspired Hugo theme perfect for developers and creatives who want to create a warm, inviting blog with a retro aesthetic and modern functionality.
 
-![LofiCode Theme Screenshot](https://raw.githubusercontent.com/raisingpixels/loficode-hugo-theme/master/images/screenshot.png)
+![LofiCode Theme Screenshot](https://raw.githubusercontent.com/dozro/loficode-hugo-theme/master/images/screenshot.png)
 
 ## ✨ Features
 
@@ -33,10 +35,10 @@ LofiCode embraces the cozy, nostalgic feeling of lo-fi aesthetics while maintain
 
 ```bash
 # Clone into your Hugo site's themes directory
-git clone https://github.com/raisingpixels/loficode-hugo-theme.git themes/loficode
+git clone https://github.com/dozro/loficode-hugo-theme.git themes/loficode
 
 # Or add as a Git submodule
-git submodule add https://github.com/raisingpixels/loficode-hugo-theme.git themes/loficode
+git submodule add https://github.com/dozro/loficode-hugo-theme.git themes/loficode
 ```
 
 ### 2. Configure Your Site
