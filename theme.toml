@@ -3,7 +3,10 @@ license = "MIT, Apache-2.0"
 licenselink = "https://github.com/dozro/loficode-hugo-theme/blob/devel/LICENSE.fork"
 description = "A cozy, lo-fi inspired Hugo theme. Features ambient sounds, dark/light themes, and a retro aesthetic with modern functionality."
 
-original = "https://github.com/raisingpixels/loficode-hugo-theme"
+[original]
+    author = "raisingpixels"
+    homepage = "https://github.com/raisingpixels/loficode-hugo-theme"
+    repo = "https://github.com/raisingpixels/loficode-hugo-theme"
 
 # The home page of the theme, where the source can be found.
 homepage = "https://github.com/dozro/loficode-hugo-theme"
@@ -14,10 +17,8 @@ demosite = "https://loficode-hugo-theme.pages.dev"
 tags = ["blog", "personal", "portfolio", "developer", "creative", "dark", "light", "responsive", "retro", "lo-fi"]
 features = ["ambient-sounds", "dark-mode", "light-mode", "responsive", "search", "toc", "syntax-highlighting", "coffee-theme", "retro-aesthetic", "spa-navigation"]
 
-# Theme author
-[author]
-    name = "raisingpixels"
-    homepage = "https://github.com/raisingpixels"
-[author]
-    name = "Rye"
-    homepage = "https://itsrye.dev"
+authors = [
+  {name = "raisingpixels", homepage = "https://github.com/raisingpixels"},
+  {name = "Rye", homepage = "https://itsrye.dev"}
+]
+
