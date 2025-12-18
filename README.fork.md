@@ -26,10 +26,11 @@ If the upstream project becomes active again, maintainers are welcome to merge a
 Therefore the config of the upstream repo shall still work with this fork and the other way around.
 However there might be bit of tweaking and adding options.
 
-<!-- seperator to the footnotes, for those viewing this in a unsupported renderer -->
-
-[^PermaLicense]: Permalink to license: <https://github.com/raisingpixels/loficode-hugo-theme/blob/e2422ab990d0a914adee8e0d6c7492ffc985f653/LICENSE> (added in commit e2422ab990d0a914adee8e0d6c7492ffc985f653)
-
 ## Differences to upstream
 
 - keyboard navigation in posts
+- Support for a few more social networking links
+
+<!-- seperator to the footnotes, for those viewing this in a unsupported renderer -->
+
+[^PermaLicense]: Permalink to license: <https://github.com/raisingpixels/loficode-hugo-theme/blob/e2422ab990d0a914adee8e0d6c7492ffc985f653/LICENSE> (added in commit e2422ab990d0a914adee8e0d6c7492ffc985f653)
