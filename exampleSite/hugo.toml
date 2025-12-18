@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "https://loficode-hugo-theme.pages.dev/"
 languageCode = "en-us"
 title = "LofiCode Hugo Theme"
 theme = "loficode-hugo-theme"
