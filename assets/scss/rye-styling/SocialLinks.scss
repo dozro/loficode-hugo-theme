@@ -1,0 +1,152 @@
+// Styling for social links in Rye's lofi theme customizations
+// Copyright 2025 Rye (itsrye.dev)
+@import 'mixins/PrettyLinks';
+@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
+
+.social-link {
+
+    .social-icon{
+        &:hover{
+            filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 40px #0ff);
+        }
+    }
+
+    .social-icon-img{
+        &:hover{
+            filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 40px #0ff);
+        }
+    }
+
+    &[title="Twitter"],
+    &[title="X"] {
+        .social-icon {
+            color: #1DA1F2;
+        }
+    }
+
+    &[title="Xing"] {
+        .social-icon {
+            color: #006567;
+        }
+    }
+
+    &[title="Reddit"] {
+        .social-icon {
+            color: #FF4500;
+        }
+    }
+
+    &[title="Twitch"] {
+        .social-icon {
+            color: #9146FF;
+        }
+    }
+
+    &[title="Discord"] {
+        .social-icon {
+            color: #5865F2;
+        }
+    }
+
+    &[title="Patreon"] {
+        .social-icon {
+            color: #F96854;
+        }
+    }
+
+    &[title="Buy Me a Coffee"] {
+        .social-icon {
+            color: #FF813F;
+        }
+    }
+
+    &[title="PayPal"] {
+        .social-icon {
+            color: #003087;
+        }
+    }
+
+    &[title="Spotify"] {
+        .social-icon {
+            color: #1ed760;
+        }
+    }
+
+    &[title="TikTok"] {
+        .social-icon {
+            color: #69c9d0;
+        }
+    }
+
+    &[title="RSS"] {
+        .social-icon {
+            color: #FF66006C;
+        }
+    }
+
+    &[title="GitLab"] {
+        .social-icon {
+            color: #FC6D26;
+        }
+    }
+
+    &[title="Bitbucket"] {
+        .social-icon {
+            color: #205081;
+        }
+    }
+
+    &[title="CodePen"] {
+        .social-icon {
+            color: #000000;
+        }
+    }
+
+    &[title="Stack Overflow"] {
+        .social-icon {
+            color: #F48023;
+        }
+    }
+
+    &[title="Medium"] {
+        .social-icon {
+            color: #00AB6c;
+        }
+    }
+
+    &[title="Dev.to"] {
+        .social-icon {
+            color: #0A0A0A;
+        }
+    }
+
+    &[title="Goodreads"] {
+        .social-icon {
+            color: #382110;
+        }
+    }
+
+    &[title="Telegram"] {
+        .social-icon {
+            color: #0088cc;
+        }
+    }
+
+    &[title="WhatsApp"] {
+        .social-icon {
+            color: #25d366;
+        }
+    }
+
+    &[title="Gitpod"] {
+        .social-icon {
+            color: #33C3FF;
+        }
+    }
+
+    &[title="Git"] {
+        .social-icon {
+            color: #F34F29;
+        }
+    }
+}
