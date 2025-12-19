@@ -1,0 +1,21 @@
+// colored Social Icon mixin
+// Copyright 2025 Rye (itsrye.dev)
+
+@import './coloredHighlight';
+
+@mixin coloredSocialIcon($color) {
+    .social-icon {
+        color: $color;
+    }
+    @include coloredBackgroundOnHover($color);
+}
+
+@mixin coloredSocialIconWithGradient($gradient, $highlightColor) {
+    .social-icon {
+        background: $gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    @include coloredBackgroundOnHover($highlightColor);
+}
