@@ -608,77 +608,7 @@ nav {
     max-width: 400px;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: none;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: visible;
-}
-
-.social-link:hover {
-    transform: translateY(-2px) scale(1.1);
-}
-
-.social-icon {
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-    text-shadow: 0 0 5px currentColor;
-    opacity: 0.9;
-}
-
-/* GitHub - Purple/Dark */
-.social-link[title="GitHub"] .social-icon {
-    color: #6f42c1;
-}
-
-/* Twitter/X - Blue */
-.social-link[title="X (formerly Twitter)"] .social-icon {
-    color: #1da1f2;
-}
-
-/* LinkedIn - Professional Blue */
-.social-link[title="LinkedIn"] .social-icon {
-    color: #0077b5;
-}
-
-/* Email - Orange/Red */
-.social-link[title="Email"] .social-icon {
-    color: #ea4335;
-}
-
-/* Mastodon - Purple */
-.social-link[title="Mastodon"] .social-icon {
-    color: #6364ff;
-}
-
-/* YouTube - Red */
-.social-link[title="YouTube"] .social-icon {
-    color: #ff0000;
-}
-
-/* Instagram - Gradient Pink/Orange */
-.social-link[title="Instagram"] .social-icon {
-    color: #e4405f;
-}
-
-/* Facebook - Blue */
-.social-link[title="Facebook"] .social-icon {
-    color: #1877f2;
-}
+/* migrated Content to SocialLinks.scss by Rye (itsrye.dev) */
 
 .x-icon {
     font-family: 'Inter', sans-serif;
@@ -686,12 +616,7 @@ nav {
     font-style: normal;
 }
 
-.social-link:hover .social-icon {
-    transform: scale(1.1);
-    text-shadow: 0 0 8px currentColor;
-    opacity: 1;
-    filter: brightness(1.2);
-}
+/* migrated Content to SocialLinks.scss by Rye (itsrye.dev) */
 
 @keyframes social-pulse {
     0% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }

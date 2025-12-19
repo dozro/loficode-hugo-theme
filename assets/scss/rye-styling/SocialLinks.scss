@@ -1,0 +1,201 @@
+// Styling for social links in Rye's lofi theme customizations
+// parts migrated from the original stylesheet
+// Copyright 2025 Rye (itsrye.dev)
+@import 'mixins/PrettyLinks';
+@import 'mixins/coloredSocialIcon';
+@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: visible;
+
+        .social-icon {
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px currentColor;
+            opacity: 0.9;
+        }
+
+        .social-icon-img {
+            &:hover {
+                filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 40px #0ff);
+            }
+        }
+
+        &:hover {
+            transform: translateY(-2px) scale(1.1);
+        }
+
+        // from: https://github.com/raisingpixels/loficode-hugo-theme/blob/dc4117fdcf84755ae002d00cccb791a9e3ede183/static/css/style.css
+        &[title="Twitter"],
+        &[title="X"],
+        &[title="X (formerly Twitter)"] {
+            $col: #1DA1F2;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Xing"] {
+            $col: #006567;
+            @include coloredSocialIcon($col);
+        }
+
+        // from: https://github.com/raisingpixels/loficode-hugo-theme/blob/dc4117fdcf84755ae002d00cccb791a9e3ede183/static/css/style.css
+        &[title="LinkedIn"] {
+            $col: #0077B5;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Email"] {
+            $col: #D44638;
+            @include coloredSocialIcon($col);
+        }
+
+        // Mastodon - Purple
+        // from: https://github.com/raisingpixels/loficode-hugo-theme/blob/dc4117fdcf84755ae002d00cccb791a9e3ede183/static/css/style.css
+        &[title="Mastodon"] {
+            $col: #6364FF;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Reddit"] {
+            $col: #FF4500;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Twitch"] {
+            $col: #9146FF;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Discord"] {
+            $col: #5865F2;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Patreon"] {
+            $col: #F96854;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Buy Me a Coffee"] {
+            $col: #FF813F;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="PayPal"] {
+            $col: #003087;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Spotify"] {
+            $col: #1ed760;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="TikTok"] {
+            $col: #69c9d0;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="RSS"] {
+            $col: #FF6600;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="GitLab"] {
+            $col: #FC6D26;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Bitbucket"] {
+            $col: #205081;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="CodePen"] {
+            $col: #000000;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Stack Overflow"] {
+            $col: #F48023;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Medium"] {
+            $col: #00AB6C;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Dev.to"] {
+            $col: #0A0A0A;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Goodreads"] {
+            $col: #382110;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Telegram"] {
+            $col: #0088cc;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="WhatsApp"] {
+            $col: #25d366;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Gitpod"] {
+            $col: #33C3FF;
+            @include coloredSocialIcon($col);
+        }
+
+        &[title="Git"] {
+            $col: #F34F29;
+            @include coloredSocialIcon($col);
+        }
+
+        // from: https://github.com/raisingpixels/loficode-hugo-theme/blob/dc4117fdcf84755ae002d00cccb791a9e3ede183/static/css/style.css
+        &[title="GitHub"] {
+            $col: #6F42C1;
+            @include coloredSocialIcon($col);  
+        }
+
+        // YouTube - Red
+        // from: https://github.com/raisingpixels/loficode-hugo-theme/blob/dc4117fdcf84755ae002d00cccb791a9e3ede183/static/css/style.css
+        &[title="YouTube"] {
+            $col: #FF0000;
+            @include coloredSocialIcon($col);
+        }
+
+        // Instagram - Gradient Pink/Orange
+        &[title="Instagram"] {
+            $grad: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            @include coloredSocialIconWithGradient($grad, #fdf497);
+        }
+
+        // Facebook - Blue
+        // from: https://github.com/raisingpixels/loficode-hugo-theme/blob/dc4117fdcf84755ae002d00cccb791a9e3ede183/static/css/style.css
+        &[title="Facebook"] {
+            $col: #1877f2;
+            @include coloredSocialIcon($col);
+        }
+    }
+}

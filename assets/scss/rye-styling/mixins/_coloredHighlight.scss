@@ -1,0 +1,12 @@
+// colored highlight on hover mixin
+// Copyright 2025 Rye (itsrye.dev)
+
+@mixin coloredBackgroundOnHover($colorStart) {
+    &:hover {
+        filter: drop-shadow(0 0 5px darken($colorStart, 60%)) drop-shadow(0 0 7px lighten($colorStart, 30%)) drop-shadow(0 0 8px lighten($colorStart, 40%));
+        animation: gradientShift 2s linear infinite, pulse 1.5s ease-in-out infinite;
+        transform: scale(1.1);
+        text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+        opacity: 0.75;
+    }
+}

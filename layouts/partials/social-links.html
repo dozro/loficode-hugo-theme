@@ -60,103 +60,22 @@
 {{ end }}
 {{ end }}
 
-<style>
-    /* some additional styling for social links */
-    /* added by Rye (itsrye.dev) */
-    @import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
-
-    .social-link[title="Twitter"] .social-icon {
-        color: #1da1f2;
-    }
-
-    .social-link[title="Xing"] .social-icon {
-        color: #006567;
-    }
-
-    .social-link[title="Reddit"] .social-icon {
-        color: #ff4500;
-    }
-
-    .social-link[title="Twitch"] .social-icon {
-        color: #9146ff;
-    }
-
-    .social-link[title="Discord"] .social-icon {
-        color: #5865f2;
-    }
-
-    .social-link[title="Patreon"] .social-icon {
-        color: #f96854;
-    }
-
-    .social-link[title="Buy Me a Coffee"] .social-icon {
-        color: #ff813f;
-    }
-
-    .social-link[title="PayPal"] .social-icon {
-        color: #003087;
-    }
-
-    .social-link[title="Spotify"] .social-icon {
-        color: #1ed760;
-    }
-
-    .social-link[title="TikTok"] .social-icon {
-        color: #69c9d0;
-    }
-
-    .social-link[title="RSS"] .social-icon {
-        color: #ff66006c;
-    }
-
-    .social-link[title="GitLab"] .social-icon {
-        color: #fc6d26;
-    }
-
-    .social-link[title="Bitbucket"] .social-icon {
-        color: #205081;
-    }
-
-    .social-link[title="CodePen"] .social-icon {
-        color: #000000;
-    }
-
-    .social-link[title="Stack Overflow"] .social-icon {
-        color: #f48024;
-    }
-
-    .social-link[title="Medium"] .social-icon {
-        color: #00ab6c;
-    }
-
-    .social-link[title="Dev.to"] .social-icon {
-        color: #0a0a0a;
-    }
-
-    .social-link[title="Goodreads"] .social-icon {
-        color: #382110;
-    }
-
-    .social-link[title="Telegram"] .social-icon {
-        color: #0088cc;
-    }
-
-    .social-link[title="WhatsApp"] .social-icon {
-        color: #25d366;
-    }
-
-    .social-link[title="Gitpod"] .social-icon {
-        color: #33c3ff;
-    }
-
-    .social-link[title="Git"] .social-icon {
-        color: #f34f29;
-    }
-    .social-link .social-icon:hover {
-        filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 40px #0ff);
-    }
-    .social-icon-img:hover {
-        filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #0ff) drop-shadow(0 0 40px #0ff);
-    }
-
-</style>
+{{ with resources.Get "scss/rye-styling/SocialLinks.scss" }}
+  {{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "css/SocialLinks.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+  {{ with . | toCSS $opts }}
+    {{ if hugo.IsDevelopment }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ else }}
+      {{ with . | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
