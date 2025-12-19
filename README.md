@@ -8,9 +8,9 @@ A cozy, lo-fi inspired Hugo theme perfect for developers and creatives who want 
 
 This theme is a fork of https://github.com/raisingpixels/loficode-hugo-theme
 
-### Notable Differences
-
 mostly see: [README.fork.md](./README.fork.md)
+
+### Notable Differences
 
 - keyboard navigation in posts
 - added support for a few extra social networking links
