@@ -32,6 +32,12 @@ enableEmoji = true
   description = "A cozy example site showcasing the LofiCode Hugo theme"
   tagline = "Coding with coffee and lo-fi beats ☕🎵"
 
+  # legal information, may be required in some localities
+  [params.legal]
+    copyrightHolder = "Alice"
+    imprint = "https://example.org/imprint"
+    privacyPolicy = "https://example.org/privacy"
+
   # Profile section
   [params.author]
     name = "LofiCode Dev"

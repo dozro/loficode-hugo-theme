@@ -1,0 +1,35 @@
+<footer>
+    {{ with resources.Get "scss/rye-styling/Footer.scss" }}
+    {{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "css/Footer.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+    {{ with . | toCSS $opts }}
+    {{ if hugo.IsDevelopment }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ else }}
+    {{ with . | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    <div class="footer-content">
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.legal.copyrightHolder }}. All rights reserved.</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="{{ "/" | relURL }}">{{ T "homepage" }}</a></li>
+                {{ with .Site.Params.legal.imprint }}
+                <li><a href="{{ . }}">{{ T "imprint" }}</a></li>
+                {{ end }}
+                {{ with .Site.Params.legal.privacyPolicy }}
+                <li><a href="{{ . }}">{{ T "privacyPolicy" }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</footer>

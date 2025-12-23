@@ -1,0 +1,39 @@
+/* Dark lofi with semi-transparent background and gradient links */
+// Copyright 2025 Rye (itsrye.dev)
+@import 'mixins/PrettyLinks';
+@import 'gradientShift';
+
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    background-color: rgba(30, 30, 30, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    line-height: 1.5;
+    backdrop-filter: blur(4px);
+
+    a {
+        @include PrettyLink;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    i {
+        vertical-align: middle;
+        margin: 0 0.2em;
+        /* subtle glow */
+        filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.3));
+    }
+
+    p {
+        margin: 0;
+        /* slightly faded for lofi effect */
+        opacity: 0.95;
+    }
+}
