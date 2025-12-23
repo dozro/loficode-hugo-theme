@@ -28,10 +28,25 @@ However there might be bit of tweaking and adding options.
 
 ## Differences to upstream
 
-Code changes see: https://github.com/raisingpixels/loficode-hugo-theme/compare/main...dozro:loficode-hugo-theme:main
+Code changes see: <https://github.com/raisingpixels/loficode-hugo-theme/compare/main...dozro:loficode-hugo-theme:main>
 
 - keyboard navigation in posts
 - Support for a few more social networking links
+- Generator notice on homepage
+- option to link privacy policy and imprint (displayed on the homepage)
+
+### Added configuration options
+
+#### legal information
+
+to add `Alice` as copyright holder and imprint located at `https://example.org/imprint` and privacy policy at `https://example.org/privacy`
+
+```toml
+[params.legal]
+    copyrightHolder = "Alice"
+    imprint = "https://example.org/imprint"
+    privacyPolicy = "https://example.org/privacy"
+```
 
 <!-- seperator to the footnotes, for those viewing this in a unsupported renderer -->
 
