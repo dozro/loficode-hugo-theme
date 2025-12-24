@@ -1,0 +1,50 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@keyframes coffee-glitch {
+
+    0%,
+    90%,
+    100% {
+        transform: scale(1) rotate(0deg);
+        filter: hue-rotate(0deg);
+        text-shadow: 0 0 20px var(--accent-tertiary);
+    }
+
+    5% {
+        transform: scale(1.1) rotate(2deg);
+        filter: hue-rotate(90deg);
+        text-shadow:
+            -2px 0 var(--accent-primary),
+            2px 0 var(--accent-secondary),
+            0 0 30px var(--accent-tertiary);
+    }
+
+    10% {
+        transform: scale(0.9) rotate(-1deg);
+        filter: hue-rotate(180deg);
+        text-shadow:
+            -4px 0 var(--accent-primary),
+            4px 0 var(--accent-secondary),
+            0 0 40px var(--accent-tertiary);
+    }
+
+    15% {
+        transform: scale(1.05) rotate(1deg);
+        filter: hue-rotate(270deg);
+        text-shadow: 0 0 25px var(--accent-tertiary);
+    }
+}
+
+@mixin CoffeeGlitch {
+    .coffee-glitch {
+        font-size: 8rem;
+        margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+        animation: coffee-glitch 3s ease-in-out infinite;
+        @media (max-width: 768px) {
+            font-size: 6rem;
+        }
+    }
+}

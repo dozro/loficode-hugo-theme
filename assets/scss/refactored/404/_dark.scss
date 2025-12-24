@@ -1,0 +1,20 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@mixin dark-theme {
+    /* Dark vaporwave theme */
+    --bg-primary: linear-gradient(135deg, #1A0B2E 0%, #16213E 25%, #0F3460 75%, #533A7B 100%);
+    --bg-secondary: rgba(26, 11, 46, 0.95);
+    --bg-card: rgba(42, 25, 75, 0.9);
+    --accent-primary: #FF0080;
+    --accent-secondary: #00FFFF;
+    --accent-tertiary: #FF6B35;
+    --text-primary: #E0E0FF;
+    --text-secondary: #B8B3D4;
+    --text-muted: #8A7CA8;
+    --border-color: rgba(255, 0, 128, 0.3);
+    --shadow-color: rgba(255, 107, 53, 0.2);
+    --glow-color: rgba(0, 255, 255, 0.4);
+    --error-color: #FF4444;
+    --success-color: #44FF88;
+}

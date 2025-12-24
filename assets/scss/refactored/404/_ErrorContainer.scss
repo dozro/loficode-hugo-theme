@@ -1,0 +1,97 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@import 'keyframes/GlowPulse';
+
+@import 'GitLog';
+
+@keyframes message-rotate {
+
+    0%,
+    20% {
+        opacity: 1;
+    }
+
+    25%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@mixin error-container {
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .error-title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    .error-message {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        max-height: 30pt;
+        text-align: center;
+        position: relative;
+        font-style: italic;
+
+        .rotating-message {
+            opacity: 0;
+            animation: message-rotate 8s ease-in-out infinite;
+            @media (prefers-reduced-motion: reduce) {
+                animation: none !important;
+                opacity: 1;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 2s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 4s;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 6s;
+            }
+        }
+    }
+
+    .error-code {
+        font-family: 'Orbitron', monospace;
+        font-size: 4rem;
+        font-weight: 700;
+        background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 30px var(--glow-color);
+        animation: glow-pulse 2s ease-in-out infinite alternate;
+        @media (max-width: 768px) {
+            font-size: 3rem;
+        }
+    }
+
+    .git-log-section {
+        @include git-log;
+    }
+}
+
+.error-container {
+    @include error-container;
+}
