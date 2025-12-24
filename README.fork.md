@@ -48,6 +48,54 @@ to add `Alice` as copyright holder and imprint located at `https://example.org/i
     privacyPolicy = "https://example.org/privacy"
 ```
 
+### Fediverse and Twitter Creator Attribution
+
+#### New Configuration option
+
+##### Options for hugo config
+
+```toml
+# In your params.author
+[params.author]
+    # your other parameters for params.author
+    fediverseIdentifier = "@example@mastodon.social"
+    twitterIdentifier = "@example"
+```
+
+#### Options per file (in frontmatter)
+
+```yml
+fediverseIdentifier: "@example2@mastodon.social"
+twitterIdentifier: "@example2"
+```
+
+### Twitter Head Attributes
+
+Difference to the upstream version:
+
+- refactored to [layouts/partials/head/meta/fediverse.html](./layouts/partials/head/meta/fediverse.html)
+
+### Unified Social Media Preview Configuration
+
+#### In the hugo config
+
+```toml
+  # Data for social media previews
+  [partial.socialPreview]
+    defaultFeaturedImage = ""
+```
+
+##### Explanation of config options
+
+- `defaultFeaturedImage`: Path to the default image, should be in `static` or `assets`
+
+#### per Post (in frontmatter)
+
+```yml
+featuredImage: "example.png"
+```
+
+
 <!-- seperator to the footnotes, for those viewing this in a unsupported renderer -->
 
 [^PermaLicense]: Permalink to license: <https://github.com/raisingpixels/loficode-hugo-theme/blob/e2422ab990d0a914adee8e0d6c7492ffc985f653/LICENSE> (added in commit e2422ab990d0a914adee8e0d6c7492ffc985f653)

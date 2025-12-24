@@ -1,0 +1,8 @@
+<!-- Header to include for fediverse creator -->
+<!-- Copyright 2025 Rye (itsrye.dev). Licensed under Apache 2.0 -->
+
+{{- if .Params.fediverseIdentifier  -}}
+    <meta name="fediverse:creator" content="{{ .Params.fediverseIdentifier }}" />
+{{- else if .Site.Params.fediverseIdentifier -}}
+    <meta name="fediverse:creator" content="{{ .Site.Params.fediverseIdentifier }}" />
+{{ end }}

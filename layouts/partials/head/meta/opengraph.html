@@ -1,0 +1,33 @@
+<!-- OpenGraph Meta Tags -->
+<!-- Copyright 2025 Rye (itsrye.dev). Licensed under Apache 2.0 -->
+<meta
+  property="og:title"
+  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
+  />
+<meta
+  property="og:description"
+  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
+  />
+<meta
+  property="og:type"
+  content="{{ if .IsPage }}article{{ else }}website{{ end }}"
+  />
+<meta 
+  property="og:url" 
+  content="{{ .Permalink }}" 
+  />
+<meta 
+  property="og:site_name" 
+  content="{{ .Site.Title }}" 
+  />
+{{ with .Params.featuredImage }}
+<meta
+  property="og:image"
+  content="{{ . | absURL }}"
+/>
+{{ else with resources.GetMatch .Site.Params.socialPreview.defaultFeaturedImage }}
+<meta
+  property="og:image"
+  content="{{ .Site.Params.socialPreview.defaultFeaturedImage | absURL }}"
+/>
+{{ end }}

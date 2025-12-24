@@ -14,32 +14,17 @@
 <meta name="description" content="{{ .Summary | truncate 160 }}" />
 {{ end }}
 
+<!-- Fediverse Creator -->
+{{ partial "head/meta/fediverse.html" . }}
+
 <!-- Open Graph -->
-<meta
-  property="og:title"
-  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
-/>
-<meta
-  property="og:description"
-  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
-/>
-<meta
-  property="og:type"
-  content="{{ if .IsPage }}article{{ else }}website{{ end }}"
-/>
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:site_name" content="{{ .Site.Title }}" />
+{{ partial "head/meta/opengraph.html" . }}
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta
-  name="twitter:title"
-  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
-/>
-<meta
-  name="twitter:description"
-  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
-/>
+{{ partial "head/meta/twitter.html" . }}
+
+<!-- Schema -->
+{{ partial "head/meta/schema.html" . }}
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
