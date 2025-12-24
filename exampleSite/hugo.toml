@@ -8,9 +8,10 @@ enableEmoji = true
 
 # Output formats for SPA functionality
 [outputs]
-  home = ["HTML", "JSON", "pages"]
-  page = ["HTML"]
-  section = ["HTML"]
+  home = ['html', 'json', 'pages', 'rss']
+  page = ['html', 'rss']
+  rss = ['rss']
+  section = ['html', 'rss']
 
 # Custom output formats
 [outputFormats]
@@ -41,7 +42,22 @@ enableEmoji = true
   # Profile section
   [params.author]
     name = "LofiCode Dev"
+    pronouns = "they/them"
+    gender = "Female"
     image = "images/profile.png"
+    fediverseIdentifier = "@example@mastodon.social"
+    twitterIdentifier = "@example"
+    [[params.author.sameAs]]
+      url = "https://github.com/example"
+    [[params.author.sameAs]]
+      url = "https://example.org"
+    
+
+  # Data for social media previews
+  [partial.socialPreview]
+    # Path to the default image, should be in static or assets
+    defaultFeaturedImage = ""
+
 
   # Social links - Supported platforms: github, twitter, linkedin, email, mastodon, youtube, instagram, facebook
   [params.social]

@@ -1,0 +1,33 @@
+<!-- Twitter Card Meta Tags -->
+<!-- Copyright 2025 Rye (itsrye.dev). Licensed under Apache 2.0 -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
+/>
+<meta
+  name="twitter:description"
+  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
+/>
+{{ with .Params.featuredImage }}
+<meta
+  name="twitter:image"
+  content="{{ . | absURL }}"
+/>
+{{ else with resources.GetMatch .Site.Params.socialPreview.defaultFeaturedImage }}
+<meta
+  name="twitter:image"
+  content="{{ .Site.Params.socialPreview.defaultFeaturedImage | absURL }}"
+/>
+{{ end }}
+
+{{- if .Params.twitterIdentifier  -}}
+    <meta name="twitter:creator" content="{{ .Params.twitterIdentifier }}" />
+{{- else if .Site.Params.twitterIdentifier -}}
+    <meta name="twitter:creator" content="{{ .Site.Params.twitterIdentifier }}" />
+{{ end }}
+
+{{- if .Site.Params.twitterIdentifier -}}
+    <meta name="twitter:site" content="{{ .Site.Params.twitterIdentifier }}" />
+{{ end }}

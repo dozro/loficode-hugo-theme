@@ -4,6 +4,7 @@ subtitle: "Mindful practices for cleaner commits and happier collaborations"
 date: 2024-01-20T16:45:00Z
 tags: ["git", "workflow", "collaboration", "best-practices"]
 mood: "Contemplative"
+fediverseIdentifier: "@example2@mastodon.social"
 ---
 
 Version control doesn't have to be stressful. Like a well-organized workspace or a perfectly brewed cup of coffee, a thoughtful Git workflow can bring calm and clarity to your development process. Let's explore how to find zen in your version control practices.
