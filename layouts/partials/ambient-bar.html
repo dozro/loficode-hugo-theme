@@ -1,26 +1,65 @@
 <div class="ambient-bar">
     <div class="ambient-controls">
-        <button class="mute-toggle muted" title="Toggle ambient sounds">
+        <button 
+            class="mute-toggle muted" 
+            title="Toggle ambient sounds"
+            role="button"
+            aria-label="toggle ambient sounds mute/unmute"
+            >
             <i class="fas fa-volume-mute"></i>
         </button>
-        <button class="ambient-icon" data-sound="coffee" title="Coffee Shop Ambience">
+        <button 
+            class="ambient-icon" 
+            data-sound="coffee" 
+            title="Coffee Shop Ambience"
+            role="button"
+            aria-label="switch sound effect to coffee shop ambience"
+            >
             <i class="fas fa-coffee"></i>
         </button>
-        <button class="ambient-icon" data-sound="rain" title="Gentle Rain">
+        <button 
+            class="ambient-icon" 
+            data-sound="rain" 
+            title="Gentle Rain"
+            role="button"
+            aria-label="switch sound effect to gentle rain"
+            >
             <i class="fas fa-cloud-rain"></i>
         </button>
-        <button class="ambient-icon" data-sound="fireplace" title="Crackling Fireplace">
+        <button 
+            class="ambient-icon" 
+            data-sound="fireplace" 
+            title="Crackling Fireplace"
+            role="button"
+            aria-label="switch sound effect to crackling fireplace"
+            >
             <i class="fas fa-fire"></i>
         </button>
     </div>
 
-    <div class="ambient-label">Click to start ambient sounds</div>
+    <div class="ambient-label" lang="en">Click to start ambient sounds</div>
 
     <div class="volume-container">
-        <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="{{ .Site.Params.ambient_sounds.default_volume }}">
+        <input 
+            type="range" 
+            class="volume-slider" 
+            min="0" 
+            max="1" 
+            step="0.1" 
+            role="slider"
+            aria-label="Volume Slider"
+            aria-valuemin="0.0"
+            aria-valuemax="1.0"
+            aria-orientation="horizontal"
+            value="{{ .Site.Params.ambient_sounds.default_volume }}"
+        >
         <div class="equalizer muted">
             {{ range (seq 8) }}
-            <div class="equalizer-bar"></div>
+            <div 
+                class="equalizer-bar"
+                aria-hidden="true"
+                aria-label="stylized equalizer bar"
+            />
             {{ end }}
         </div>
     </div>

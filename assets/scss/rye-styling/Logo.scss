@@ -1,0 +1,38 @@
+// Logo Styling
+// Copyright 2025 Rye (itsrye.dev)
+
+.rye-logo {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: inline-block;
+        @media (max-width: 768px) {
+            width: 20px;
+            height: 20px;
+        }
+        @media (prefers-contrast: more) {
+            filter: contrast(200%);
+        }
+        @media (monochrome) {
+            filter: grayscale(100%);
+        }
+        @media (prefers-reduced-transparency) {
+            filter: none;
+        }
+        @media(prefers-color-scheme: dark) {
+            filter: brightness(80%) contrast(150%) grayscale(75%);
+        }
+    }
+}
