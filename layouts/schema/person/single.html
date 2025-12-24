@@ -1,0 +1,75 @@
+<!-- person -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <table itemscope itemtype="http://schema.org/Person">
+            <tr>
+                <td>
+                    name
+                </td>
+                <td itemprop="name">
+                    {{ .Site.Params.author.name }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    identifier
+                </td>
+                <td itemprop="identifier" itemtype="https://schema.org/PropertyValue">
+                    {{ absURL "/person/index.html" }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    image
+                </td>
+                <td itemprop="image" itemtype="https://schema.org/gender">
+                    {{ with .Site.Params.author.image }}
+                    <img src="{{ . | absURL }}" alt="{{ $.Site.Params.author.name }}" />
+                    {{ end }}
+                </td>
+            </tr>
+            {{- if .Site.Params.author.pronouns -}}
+            <tr>
+                <td>
+                    pronouns
+                </td>
+                <td itemprop="pronouns">
+                    {{ .Site.Params.author.pronouns }}
+                </td>
+            </tr>
+            {{- end -}}
+            {{- if .Site.Params.author.Gender -}}
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td itemprop="gender">
+                    {{ .Site.Params.author.gender }}
+                </td>
+            </tr>
+            {{- end -}}
+            {{- if .Site.Params.author.sameAs -}}
+            <tr>
+                <td>
+                    sameAs
+                </td>
+                <td>
+                    <ul>
+                    {{ range .Site.Params.author.sameAs }}
+                        <li itemprop="sameAs" itemtype="https://schema.org/sameAs">
+                            <a 
+                                href="{{ .url }}"
+                            >
+                                {{ .url }}
+                            </a>
+                        </li>
+                    {{ end }}
+                    </ul>
+                </td>
+            </tr>
+            {{- end -}}
+        </table>
+    </body>
+
+</html>

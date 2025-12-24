@@ -9,3 +9,4 @@
 {{ else with resources.GetMatch .Site.Params.socialPreview.defaultFeaturedImage }}
 <meta itemprop="image" content="{{ .Site.Params.socialPreview.defaultFeaturedImage | absURL}}">
 {{ end }}
+<meta itemprop="creator" content="{{ absURL "/person/index.html" }}">

@@ -42,9 +42,16 @@ enableEmoji = true
   # Profile section
   [params.author]
     name = "LofiCode Dev"
+    pronouns = "they/them"
+    gender = "Female"
     image = "images/profile.png"
     fediverseIdentifier = "@example@mastodon.social"
     twitterIdentifier = "@example"
+    [[params.author.sameAs]]
+      url = "https://github.com/example"
+    [[params.author.sameAs]]
+      url = "https://example.org"
+    
 
   # Data for social media previews
   [partial.socialPreview]

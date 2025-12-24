@@ -75,6 +75,25 @@ Difference to the upstream version:
 
 - refactored to [layouts/partials/head/meta/fediverse.html](./layouts/partials/head/meta/fediverse.html)
 
+### Schema.org
+
+#### Person
+
+It will automatically create <person/index.html> for a person definition.
+
+#### added hugo config
+
+```toml
+[params.author]
+    # other author params
+    pronouns = "they/them"
+    gender = "Female"    
+    [[params.author.sameAs]]
+      url = "https://example.org/1"
+    [[params.author.sameAs]]
+      url = "https://example.org"
+```
+
 ### Unified Social Media Preview Configuration
 
 #### In the hugo config
