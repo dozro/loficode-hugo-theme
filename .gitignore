@@ -86,3 +86,6 @@ exampleSite/resources/
 # Backup files
 *.bak
 *.backup
+
+# the following line was added with the "git ignore" tool by itsrye.dev, version 0.1.0
+.lh/
