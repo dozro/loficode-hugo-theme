@@ -50,8 +50,15 @@
 </head>
 <body>
     <!-- Theme Toggle -->
-    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-        🌙
+    <button 
+        class="theme-toggle" 
+        id="themeToggle" 
+        title="Toggle theme"
+        role="button"
+        aria-label="Toggle between light and dark theme"
+        tabindex="-1"
+    >
+      🌙
     </button>
 
     <!-- Matrix Rain Background -->
@@ -67,50 +74,100 @@
             <div class="error-code">404</div>
 
             <!-- Error Title -->
-            <h1 class="error-title">Coffee Break Gone Wrong</h1>
+            <h1 class="error-title" lang="en">Coffee Break Gone Wrong</h1>
 
             <!-- Rotating Error Messages -->
-            <div class="error-message">
-                <div class="rotating-message">This page is debugging itself in another dimension...</div>
-                <div class="rotating-message">404: Page went for coffee and never came back ☕</div>
-                <div class="rotating-message">Error: Page.exe has stopped working (probably needs more caffeine)</div>
-                <div class="rotating-message">Lost in the code matrix... Send help (and coffee)!</div>
+            <div class="error-message" aria-live="polite">
+                <div class="rotating-message" lang="en">This page is debugging itself in another dimension...</div>
+                <div class="rotating-message" lang="en">404: Page went for coffee and never came back ☕</div>
+                <div class="rotating-message" lang="en">Error: Page.exe has stopped working (probably needs more caffeine)</div>
+                <div class="rotating-message" lang="en">Lost in the code matrix... Send help (and coffee)!</div>
             </div>
-
             <!-- Search Container -->
             <div class="search-container">
                 <div class="search-wrapper">
-                    <input type="text" class="search-input" id="searchInput" placeholder="$ search the codebase...">
-                    <button class="search-btn" id="searchBtn">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="searchInput" 
+                        placeholder="$ search the codebase..."
+                        aria-label="Search the site for posts and content"
+                        tabindex="0"
+                    >
+                    <button 
+                        class="search-btn" 
+                        id="searchBtn"
+                        title="Search"
+                        aria-label="perform search"
+                        tabindex="0"
+                        interestFor="searchInput"
+                        >
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <div class="search-results" id="searchResults"></div>
+                <div 
+                    class="search-results" 
+                    id="searchResults"
+                    aria-live="polite"
+                    aria-atomic="true"
+                ></div>
             </div>
 
             <!-- Action Buttons -->
-            <div class="action-buttons">
-                <a href="/" class="btn btn-primary">
+            <div 
+                class="action-buttons" 
+                role="navigation" 
+                aria-label="error page actions"
+                >
+                <a 
+                    href="/" 
+                    role="link"
+                    class="btn btn-primary"
+                    aria-label="return to home page"
+                    tabindex="0"
+                    autofocus
+                    command="home"
+                    type="button"
+                    >
                     <i class="fas fa-home"></i>
-                    Return to Base
+                    {{ T "returnToBase"}}
+                    <span aria-atomic="true" aria-label="this item has autofocus">⏎</span>
                 </a>
-                <button class="btn btn-secondary" id="randomPostBtn">
+                <button 
+                    class="btn btn-secondary" 
+                    id="randomPostBtn"
+                    role="link"
+                    aria-label="go to a random post"
+                    tabindex="0"
+                    lang="en"
+                    type="button"
+                    >
                     <i class="fas fa-random"></i>
                     Random Post
                 </button>
             </div>
 
             <!-- Git Log Section -->
-            <div class="git-log-section">
+            <div class="git-log-section" role="main" aria-label="recent posts log">
                 <div class="git-log-header">
                     <i class="fab fa-git-alt"></i>
                     git log --oneline --recent
                 </div>
                 <div class="git-log-content" id="gitLogContent">
                     <div class="git-commit">
-                        <span class="commit-hash">a1b2c3d</span>
+                        <span 
+                            class="commit-hash"
+                            aria-hidden="true"
+                            >
+                            a1b2c3d
+                        </span>
                         <div class="commit-message">Loading recent commits...</div>
-                        <span class="commit-date">just now</span>
+                        <span 
+                            class="commit-date"
+                            aria-hidden="true"
+                            >
+                            just now
+                        </span>
                     </div>
                 </div>
             </div>
