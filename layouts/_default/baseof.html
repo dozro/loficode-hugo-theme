@@ -18,10 +18,10 @@
 
     {{ if not (eq .Type "posts") }}
     {{ partial "generator-notice.html" . }}
+    {{ partial "footer.html" . }}
     {{ partial "ambient-bar.html" . }}
     {{ end }}
 
     <script src="{{ "js/main.js" | absLangURL }}"></script>
-    {{ partial "footer.html" . }}
 </body>
 </html>
