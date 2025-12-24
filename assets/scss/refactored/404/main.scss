@@ -1,0 +1,47 @@
+// refactored styling for 404 page
+// copyright remains with Raising Pixels (original author) and under original license
+
+@import 'keyframes/float';
+
+@import 'light';
+@import 'dark';
+@import 'body';
+@import '../SearchContainer';
+@import '../Button';
+@import 'GitLog';
+
+/* Auto-detect light mode */
+@media (prefers-color-scheme: light) {
+    :root {
+        // light theme
+
+        @include light-theme;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        // dark theme
+
+        @include dark-theme;
+    }
+}
+
+:root {
+    // dark theme as default
+    @include dark-theme;
+}
+
+[data-theme="light"] {
+    @include light-theme;
+}
+
+[data-theme="dark"] {
+    @include dark-theme;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

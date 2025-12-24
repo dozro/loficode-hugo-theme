@@ -1,0 +1,11 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+@keyframes glow-pulse {
+    from {
+        filter: drop-shadow(0 0 10px var(--glow-color));
+    }
+
+    to {
+        filter: drop-shadow(0 0 20px var(--glow-color));
+    }
+}

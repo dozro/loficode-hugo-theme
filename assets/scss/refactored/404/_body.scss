@@ -1,0 +1,23 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@import 'matrix';
+@import 'crt';
+@import '../theme-toggle';
+@import 'ErrorContainer';
+@import '../CoffeeGlitch';
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-primary);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    @include matrix;
+    @include crt;
+    @include error-container;
+    @include CoffeeGlitch;
+}

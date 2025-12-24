@@ -1,0 +1,8 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@keyframes matrix-fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
