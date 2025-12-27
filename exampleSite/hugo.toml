@@ -97,3 +97,13 @@ enableEmoji = true
 [taxonomies]
   tag = "tags"
   category = "categories"
+
+[languages]
+  [languages.en]
+    contentDir = 'content/'
+    languageName = 'English'
+    weight = 10
+  [languages.de]
+    contentDir = 'content/'
+    languageName = 'Deutsch'
+    weight = 20

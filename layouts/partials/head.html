@@ -41,12 +41,17 @@
 />
 
 <!-- Styles -->
-<link rel="stylesheet" href="{{ "css/style.css" | absLangURL }}">
+
+{{ with resources.Get "css/style.css" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/css/style.css" . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
 
 <!-- Keyboard Navigation -->
-<script 
-  src="/js/keyboard-navigation.js"
-  defer></script>
+{{ partial "keyboard-navigation-include.html" . }}
 
 <!-- Rye's Styling -->
 {{ partial "rye-styling.html" . }}

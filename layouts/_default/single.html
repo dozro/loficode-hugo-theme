@@ -1,7 +1,7 @@
 {{ define "main" }}
 <!-- Full-screen post layout to match SPA overlay -->
 <!-- Keyboard Navigation by Rye -->
-<script src="/js/keyboard-navigation-posts.js" defer></script>
+{{ partial "keyboard-navigation-include-posts.html" . }}
 <div class="post-overlay active">
     <div class="post-overlay-backdrop"></div>
     <div class="post-overlay-content" style="position: relative; min-height: 100vh; padding: 0; transform: translateY(0);">

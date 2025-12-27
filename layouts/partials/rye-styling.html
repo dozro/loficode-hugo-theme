@@ -22,7 +22,7 @@
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
     "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-    "targetPath" "css/rye-logo.css"
+    "targetPath" "/rye/css/rye-logo.css"
     "transpiler" "libsass"
     "vars" site.Params.styles
     "includePaths" (slice "assets/scss")
