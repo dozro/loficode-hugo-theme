@@ -50,6 +50,14 @@
 {{ end }}
 {{ end }}
 
+{{ with resources.Get "css/betterLinkStyle.css" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "/rye/css/betterLinkStyle.css" . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+
 <!-- Keyboard Navigation -->
 {{ partial "keyboard-navigation-include.html" . }}
 

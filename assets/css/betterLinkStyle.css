@@ -1,0 +1,54 @@
+/* 
+  Style by Rye
+*/
+
+/* Base link style */
+a:not([class]) {
+  background: var(--btn-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #DCA1A1;               
+  text-decoration: none;
+  transition: color 0.2s ease, 
+              text-decoration-color 0.2s ease;
+  text-decoration-thickness: 2px; 
+  text-underline-offset: 3px;
+}
+
+/* Hover and focus states */
+a:not([class]):hover,
+a:not([class]):focus-visible {
+  color: #3D1D1D;                 /* Darker on hover */
+  text-decoration: underline;     /* Underline only on hover/focus */
+  text-decoration-color: currentColor;
+}
+
+/* Active state (clicking) */
+a:not([class]):active {
+  color: #002f66;
+}
+
+a:not([class]):visited {
+  color: #5e3ba5;                 /* Muted purple */
+}
+
+a:not([class]).button {
+  display: inline-block;
+  padding: 0.45em 0.9em;
+  background: #0077cc;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+a.button:hover,
+a.button:focus-visible {
+  background: #3D1D1D;
+}
+
+a.button:active {
+  background: #3D1D1D;
+}
