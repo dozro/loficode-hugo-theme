@@ -8,10 +8,10 @@ enableEmoji = true
 
 # Output formats for SPA functionality
 [outputs]
-  home = ['html', 'json', 'pages', 'rss']
-  page = ['html', 'rss']
-  rss = ['rss']
-  section = ['html', 'rss']
+  home = ['html', 'json', 'pages', 'rss', 'atom', 'amp']
+  page = ['html', 'rss', 'atom', 'amp']
+  rss = ['rss', 'atom']
+  section = ['html', 'rss', 'atom', 'amp']
 
 # Custom output formats
 [outputFormats]
@@ -23,6 +23,17 @@ enableEmoji = true
     mediaType = "application/json"
     baseName = "pages"
     isPlainText = true
+  [outputFormats.atom]
+    mediaType = "application/atom+xml"
+    isPlainText = true
+    ugly = true
+    permalinkable = true
+    notAlternative = false
+    rel = "alternate"
+[mediaTypes]
+  [mediaTypes.'application/atom+xml']
+    suffixes = ['atom']
+
 
 # Pagination
 [pagination]
@@ -32,7 +43,12 @@ enableEmoji = true
 [params]
   description = "A cozy example site showcasing the LofiCode Hugo theme"
   tagline = "Coding with coffee and lo-fi beats ☕🎵"
+  # icon = ""
 
+  [params.selfHosting]
+    [params.selfHosting.fontAwesome]
+      enabled = false
+      remoteAddr = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   # legal information, may be required in some localities
   [params.legal]
     copyrightHolder = "Alice"
@@ -42,6 +58,7 @@ enableEmoji = true
   # Profile section
   [params.author]
     name = "LofiCode Dev"
+    email = "alice@example.org"
     pronouns = "they/them"
     gender = "Female"
     image = "images/profile.png"

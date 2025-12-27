@@ -34,6 +34,7 @@ Code changes see: <https://github.com/raisingpixels/loficode-hugo-theme/compare/
 - Support for a few more social networking links
 - Generator notice on homepage
 - option to link privacy policy and imprint (displayed on the homepage)
+- generates atom feeds as well as xml feeds
 
 ### Added configuration options
 

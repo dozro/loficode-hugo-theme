@@ -1,0 +1,32 @@
+<!-- 
+    Atom template for section sites
+    Copyright (c) 2025 Rye (itsrye.dev)
+    Licensed under Apache License 2.0
+-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ .Site.Title }}</title>
+    <link rel="alternate" type="text/html" href="{{ .Permalink }}" />
+    <link rel="self" href="{{ .Permalink }}" />
+    <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml" />
+    <id>{{ .Permalink }}</id>
+    <updated>{{ now.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+    {{ with .Site.Author.name }}<author>
+        <name>{{ . }}</name>
+        {{- with .Site.Author.email }}<email>{{ . }}</email>{{- end }}
+        <uri>{{ $.Site.BaseURL }}/schema/person</uri>
+    </author>{{ end }}
+    {{ range .Pages }}
+    <entry>
+        <title>{{ .Title }}</title>
+        <link href="{{ .Permalink }}"/>
+        <link rel="alternate" type="text/html" href="{{ .Permalink }}"/>
+        <id>{{ .Permalink }}</id>
+        <published>{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}</published>
+        <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+        <summary>{{ .Summary }}</summary>
+        {{ with .Site.Author.name }}<author><name>{{ . }}</name></author>{{ end }}
+    </entry>
+    {{ end }}
+</feed>

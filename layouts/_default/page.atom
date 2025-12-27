@@ -1,0 +1,75 @@
+<!-- 
+    Atom template for page sites
+    Copyright (c) 2025 Rye (itsrye.dev)
+    Licensed under Apache License 2.0
+-->
+
+{{- $authorEmail := "" }}
+{{- with site.Params.author }}
+  {{- if reflect.IsMap . }}
+    {{- with .email }}
+      {{- $authorEmail = . }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- $authorName := "" }}
+{{- with site.Params.author }}
+  {{- if reflect.IsMap . }}
+    {{- with .name }}
+      {{- $authorName = . }}
+    {{- end }}
+  {{- else }}
+    {{- $authorName  = . }}
+  {{- end }}
+{{- end }}
+
+{{- $pctx := . }}
+{{- if .IsHome }}{{ $pctx = .Site }}{{ end }}
+{{- $pages := slice }}
+{{- if or $.IsHome $.IsSection }}
+{{- $pages = $pctx.RegularPages }}
+{{- else }}
+{{- $pages = $pctx.Pages }}
+{{- end }}
+{{- $limit := .Site.Config.Services.RSS.Limit }}
+{{- if ge $limit 1 }}
+{{- $pages = $pages | first $limit }}
+{{- end }}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text"> {{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }} </title>
+    <subtitle type="text"> Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }} </subtitle>
+    <link rel="alternate" type="text/html" href="{{ .Permalink }}" />
+    <link rel="self" type="application/atom+xml" href="{{ .Permalink }}" />
+    <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}index.xml" />
+    <updated> {{ now.Format "2006-01-02T15:04:05Z07:00" }} </updated>
+    <id> {{ .Permalink }} </id>
+    <generator 
+        uri="https://gohugo.io/" 
+        version="{{ hugo.Version }}">
+        Hugo
+    </generator>
+    {{ $iconpath := .Site.Params.icon | default "images/favicon/default.ico" }}{{ with resources.Get $iconpath }} {{ with . | fingerprint }}{{ with resources.Copy "/rye/rss/images/favicon.ico" . | fingerprint }}<icon integrity="{{ .Data.Integrity }}">{{ .Permalink }}</icon>{{ end }}{{ end }}{{ end }}
+    {{ if not .Site.Copyright }} {{ with .Site.Params.legal.copyrightHolder }} <rights>Copyright {{ now.Format "2006" }} by {{ . }}</rights>{{ end }}{{ end }}
+    {{ if not .Date.IsZero }}<lastBuildDate>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{- with .OutputFormats.Get "RSS" }}<link href="{{ .Permalink }}" rel="self" type="{{ .MediaType }}" />{{- end }}
+    {{- range $pages }}
+    <entry>
+        <title>{{ .Title }}</title>
+        <link rel="alternate" type="text/html" href="{{ .Permalink }}" />
+        <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}index.xml" />
+        {{ with .Params.uuid }}
+            <id>{{ . }}</id>
+        {{ end }}
+        <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+        <published>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</published>
+        <author>
+            <name>{{ $authorName }}</name>
+            {{- with $authorEmail }}<email>{{ $authorEmail }}</email>{{- end }}
+            <uri>{{ $.Site.BaseURL }}/schema/person</uri>
+        </author>
+        <content type="html" xml:lang="{{ .Lang }}"> {{ .Summary | transform.XMLEscape | safeHTML }} </content>
+    </entry>
+    {{- end }}
+</feed>
