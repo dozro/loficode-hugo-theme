@@ -41,6 +41,7 @@
 <rss 
     version="2.0" 
     xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:rsl="https://rslstandard.org/rsl"
     >
   <channel>
     <title> {{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }} </title>
@@ -76,6 +77,7 @@
             {{- with $authorEmail }}<atom:email>{{ $authorEmail }}</atom:email>{{- end }}
             <atom:uri>{{ $.Site.BaseURL }}/schema/person</atom:uri>
         </atom:author>
+        {{ partial "rsl/item.rss" . }}
         <guid> {{ .Permalink }} </guid>
         <description> {{ .Summary | transform.XMLEscape | safeHTML }} </description>
     </item>

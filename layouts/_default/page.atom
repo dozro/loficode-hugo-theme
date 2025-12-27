@@ -36,8 +36,7 @@
 {{- if ge $limit 1 }}
 {{- $pages = $pages | first $limit }}
 {{- end }}
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:rsl="https://rslstandard.org/rsl">
     <title type="text"> {{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }} </title>
     <subtitle type="text"> Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }} </subtitle>
     <link rel="alternate" type="text/html" href="{{ .Permalink }}" />
@@ -69,6 +68,7 @@
             {{- with $authorEmail }}<email>{{ $authorEmail }}</email>{{- end }}
             <uri>{{ $.Site.BaseURL }}/schema/person</uri>
         </author>
+        {{ partial "rsl/item.atom" . }}
         <content type="html" xml:lang="{{ .Lang }}"> {{ .Summary | transform.XMLEscape | safeHTML }} </content>
     </entry>
     {{- end }}

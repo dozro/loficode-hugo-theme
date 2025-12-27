@@ -1,0 +1,57 @@
+<!-- Include rsl -->
+<!-- Hugo RSL Module by Rye -->
+{{ if not .Site.Params.legal.rsl.disable }}
+{{ with resources.Get "mod-hugo-rsl/prohibit-all-ai.rsl" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "mods/rye-rsl/license.rsl" . | fingerprint }}
+<link rel="license" type="application/rsl+xml" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
+{{ end }}
+{{ end }}
+{{ end }}
+{{ else if .Site.Params.legal.rsl.custom }}
+<script type="application/rsl+xml">
+    <rsl xmlns="https://rslstandard.org/rsl">
+        <content url="{{ .Permalink }}">
+            <license>
+            {{ if not .Site.Params.legal.rsl.enableAI }}
+                <prohibits type="usage">ai-train ai-input</prohibits>
+            {{ else }}
+                <permits type="usage">ai-train ai-input</permits>
+            {{ end }}
+                <permits type="usage">human-read human-display human-copy</permits>
+            {{ if not .Site.Params.legal.rsl.disablePersonal }}
+                <permits type="user">personal</permits>
+            {{ else }}
+                <prohibits type="user">personal</prohibits>
+            {{ end }}
+            {{ if not .Site.Params.legal.rsl.disableCommercial }}
+                <permits type="user">commercial</permits>
+            {{ else }}
+                <prohibits type="user">commercial</prohibits>
+            {{ end }}
+            {{ if not .Site.Params.legal.rsl.disableNonCommercial }}
+                <permits type="user">non-commercial</permits>
+            {{ else }}
+                <prohibits type="user">non-commercial</prohibits>
+            {{ end }}
+            {{ if not .Site.Params.legal.rsl.disableGovernment }}
+                <permits type="user">government</permits>
+            {{ else }}
+                <prohibits type="user">government</prohibits>
+            {{ end }}
+            {{ if not .Site.Params.legal.rsl.disableEducational }}
+                <permits type="user">educational</permits>
+            {{ else }}
+                <prohibits type="user">educational</prohibits>
+            {{ end }}
+            </license>
+        </content>
+        <copyright>
+            <holder>{{ .Site.Params.legal.copyrightHolder }}</holder>
+            <year>{{ now.Format "2006" }}</year>
+            <statement>Copyright by {{ .Site.Params.legal.copyrightHolder }}</statement>
+        </copyright>
+    </rsl>
+</script>
+{{ end }}
+<!-- end include of obfuscated rsl -->
