@@ -1,0 +1,24 @@
+// Section styling
+// Copyright (c) 2025 Rye 
+
+.container {
+    .section-content {
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+    .section-divider {
+        margin: 2rem 0;
+        border: none;
+        color: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+        background: #2A7B9B;
+        background: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    }
+    .post-list-title{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #2A7B9B;
+        @media(prefers-color-scheme: dark) {
+            color: #57C785;
+        }
+    }
+}

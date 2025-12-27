@@ -37,3 +37,7 @@
     {{ end }}
   {{ end }}
 {{ end }}
+
+{{ if .IsSection }}
+  {{ partial "section-include.html" . }}
+{{ end }}
