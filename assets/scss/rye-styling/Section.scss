@@ -2,9 +2,20 @@
 // Copyright (c) 2025 Rye 
 
 .container {
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
     .section-content {
         margin-bottom: 2rem;
         padding: 1rem;
+        ul {
+            padding: 1rem;
+        }
+        ol {
+            padding: 1rem;
+        }
     }
     .section-divider {
         margin: 2rem 0;
