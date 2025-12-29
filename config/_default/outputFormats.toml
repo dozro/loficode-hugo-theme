@@ -1,0 +1,17 @@
+# Custom output formats
+[JSON]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+[pages]
+    mediaType = "application/json"
+    baseName = "pages"
+    permalinkable = true
+    isPlainText = true
+[atom]
+    mediaType = "application/atom+xml"
+    isPlainText = true
+    ugly = true
+    permalinkable = true
+    notAlternative = false
+    rel = "alternate"

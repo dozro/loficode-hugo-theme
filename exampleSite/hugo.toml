@@ -6,34 +6,6 @@ theme = "loficode-hugo-theme"
 # Enable emoji support
 enableEmoji = true
 
-# Output formats for SPA functionality
-[outputs]
-  home = ['html', 'json', 'pages', 'rss', 'atom', 'amp']
-  page = ['html', 'rss', 'atom', 'amp']
-  rss = ['rss', 'atom']
-  section = ['html', 'rss', 'atom', 'amp']
-
-# Custom output formats
-[outputFormats]
-  [outputFormats.JSON]
-    mediaType = "application/json"
-    baseName = "index"
-    isPlainText = true
-  [outputFormats.pages]
-    mediaType = "application/json"
-    baseName = "pages"
-    isPlainText = true
-  [outputFormats.atom]
-    mediaType = "application/atom+xml"
-    isPlainText = true
-    ugly = true
-    permalinkable = true
-    notAlternative = false
-    rel = "alternate"
-[mediaTypes]
-  [mediaTypes.'application/atom+xml']
-    suffixes = ['atom']
-
 
 # Pagination
 [pagination]
