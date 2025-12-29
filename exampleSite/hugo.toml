@@ -96,3 +96,14 @@ enableEmoji = true
     contentDir = 'content/'
     languageName = 'Deutsch'
     weight = 20
+[outputs]
+home = ['html', 'json', 'pages', 'rss', 'atom', 'amp']
+page = ['html', 'rss', 'atom', 'amp']
+rss = ['rss', 'atom']
+section = ['html', 'rss', 'atom', 'amp', 'pages']
+taxonomy = ['html', 'rss']
+term = ['html', 'rss']
+
+[module]
+[[module.imports]]
+path = "github.com/dozro/loficode-hugo-theme"

@@ -1,0 +1,5 @@
+[hugoVersion]
+    extended = true
+    min = "0.55.0"
+[[imports]]
+    path = "codeberg.org/dozrye/hugo-og-img-generator"
