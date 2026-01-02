@@ -1,0 +1,12 @@
+<!-- Logo -->
+<a href="{{ "/" | absLangURL }}" class="rye-logo" title="{{ .Site.Params.Author.name }}">
+    <picture>
+        {{ with resources.GetMatch .Site.Params.Author.image }}
+        {{ $webpimg :=  .Resize "50x50 webp" }}
+        {{ $webpimg := resources.Copy "images/converted/logo.webp" $webpimg }}
+        <source srcset="{{ $webpimg | absURL }}" type="image/webp" />
+        {{ end }}
+        <img src="{{ .Site.Params.Author.image | absURL }}" alt="{{ .Site.Params.Author.name }}" height="50"
+            width="50" />
+    </picture>
+</a>
