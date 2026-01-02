@@ -18,6 +18,7 @@
 
     {{ if not (eq .Type "posts") }}
     {{ partial "generator-notice.html" . }}
+    {{ partial "footer.html" . }}
     {{ partial "ambient-bar.html" . }}
     {{ end }}
 
