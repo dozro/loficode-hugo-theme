@@ -1,0 +1,7 @@
+    {{ with resources.Get "scripts/keyboard-navigation.js" }}
+    {{ with . | fingerprint }}
+    {{ with resources.Copy "rye/js/keyboard-navigation.js" . | fingerprint }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{ end }}
+    {{ end }}
+    {{ end }}

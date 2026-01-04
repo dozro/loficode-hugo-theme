@@ -1,0 +1,38 @@
+{{if .Site.Params.useGoogleFonts }}
+{{ if .Site.Params.copyFontStylesheets }}
+<!-- Inter -->
+   {{ with resources.GetRemote "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" }}
+        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/google/css/inter.css" . | fingerprint }}
+        <link rel="stylesheet"
+              href="{{ $res.RelPermalink }}"
+              integrity="{{ $res.Data.Integrity }}"
+              crossorigin="anonymous">
+      {{ end }}
+    <!-- Orbitron -->
+    {{ with resources.GetRemote "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" }}
+        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/google/css/orbitron.css" . | fingerprint }}
+        <link rel="stylesheet"
+              href="{{ $res.RelPermalink }}"
+              integrity="{{ $res.Data.Integrity }}"
+              crossorigin="anonymous">
+      {{ end }}
+    <!-- JetBrains Mono -->
+    {{ with resources.GetRemote "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" }}
+        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/google/css/jetbrains-mono.css" . | fingerprint }}
+        <link rel="stylesheet"
+              href="{{ $res.RelPermalink }}"
+              integrity="{{ $res.Data.Integrity }}"
+              crossorigin="anonymous">
+      {{ end }}
+      {{ else }}
+      <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Inter -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+        <!-- Orbitron -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" />
+        <!-- JetBrains Mono -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" />
+    {{ end }}
+{{end}}

@@ -1,0 +1,6 @@
+home = ['html', 'json', 'pages', 'rss', 'atom', 'amp']
+page = ['html', 'rss', 'atom', 'amp']
+rss = ['rss', 'atom']
+section = ['html', 'rss', 'atom', 'amp', 'pages']
+taxonomy = ['html', 'rss']
+term = ['html', 'rss']

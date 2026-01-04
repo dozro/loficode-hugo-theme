@@ -64,7 +64,7 @@
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
     "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-    "targetPath" "css/SocialLinks.css"
+    "targetPath" "/rye/css/SocialLinks.css"
     "transpiler" "libsass"
     "vars" site.Params.styles
     "includePaths" (slice "assets/scss")

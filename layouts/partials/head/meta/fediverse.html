@@ -6,3 +6,6 @@
 {{- else if .Site.Params.fediverseIdentifier -}}
     <meta name="fediverse:creator" content="{{ .Site.Params.fediverseIdentifier }}" />
 {{ end }}
+{{- if .Site.Params.social.mastodon -}}
+    <link rel="me" href="{{ .Site.Params.social.mastodon }}" />
+{{- end -}}

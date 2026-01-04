@@ -1,0 +1,8 @@
+<!-- Meta Description -->
+{{ if .Description }}
+<meta name="description" content="{{ .Description }}" />
+{{ else if .IsHome }}
+<meta name="description" content="{{ .Site.Params.description }}" />
+{{ else }}
+<meta name="description" content="{{ .Summary | truncate 160 }}" />
+{{ end }}

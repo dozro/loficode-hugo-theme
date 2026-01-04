@@ -1,0 +1,37 @@
+{{ if not .Site.Params.legal.rsl.disable }}
+<rsl:content url="{{ .Permalink }}" lastmod="{{ now.Format "2006-01-02T15:04:05Z07:00"}}">
+    <rsl:license>
+        {{ if not .Site.Params.legal.rsl.enableAI }}
+        <rsl:prohibits type="usage">ai-train ai-input</rsl:prohibits>
+        {{ else }}
+        <rsl:permits type="usage">ai-train ai-input</rsl:permits>
+        {{ end }}
+        <rsl:permits type="usage">human-read human-display human-copy</rsl:permits>
+        {{ if not .Site.Params.legal.rsl.disablePersonal }}
+            <rsl:permits type="user">personal</rsl:permits>
+        {{ else }}
+            <rsl:prohibits type="user">personal</rsl:prohibits>
+        {{ end }}
+        {{ if not .Site.Params.legal.rsl.disableCommercial }}
+            <rsl:permits type="user">commercial</rsl:permits>
+        {{ else }}
+            <rsl:prohibits type="user">commercial</rsl:prohibits>
+        {{ end }}
+        {{ if not .Site.Params.legal.rsl.disableNonCommercial }}
+            <rsl:permits type="user">non-commercial</rsl:permits>
+        {{ else }}
+            <rsl:prohibits type="user">non-commercial</rsl:prohibits>
+        {{ end }}
+        {{ if not .Site.Params.legal.rsl.disableGovernment }}
+            <rsl:permits type="user">government</rsl:permits>
+        {{ else }}
+            <rsl:prohibits type="user">government</rsl:prohibits>
+        {{ end }}
+        {{ if not .Site.Params.legal.rsl.disableEducational }}
+            <rsl:permits type="user">educational</rsl:permits>
+        {{ else }}
+            <rsl:prohibits type="user">educational</rsl:prohibits>
+        {{ end }}
+    </rsl:license>
+</rsl:content>
+{{ end }}

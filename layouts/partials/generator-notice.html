@@ -14,7 +14,7 @@
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
     "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-    "targetPath" "css/Generator-Notice.css"
+    "targetPath" "/rye/css/Generator-Notice.css"
     "transpiler" "libsass"
     "vars" site.Params.styles
     "includePaths" (slice "assets/scss")

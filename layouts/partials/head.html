@@ -5,48 +5,28 @@
   .Title }} - {{ .Site.Title }}{{ end }}
 </title>
 
-<!-- Meta Description -->
-{{ if .Description }}
-<meta name="description" content="{{ .Description }}" />
-{{ else if .IsHome }}
-<meta name="description" content="{{ .Site.Params.description }}" />
-{{ else }}
-<meta name="description" content="{{ .Summary | truncate 160 }}" />
-{{ end }}
-
-<!-- Fediverse Creator -->
-{{ partial "head/meta/fediverse.html" . }}
-
-<!-- Open Graph -->
-{{ partial "head/meta/opengraph.html" . }}
-
-<!-- Twitter Card -->
-{{ partial "head/meta/twitter.html" . }}
-
-<!-- Schema -->
-{{ partial "head/meta/schema.html" . }}
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap"
-  rel="stylesheet"
-/>
-
-<!-- FontAwesome -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
+{{ partial "head/includes.html" . }}
 
 <!-- Styles -->
-<link rel="stylesheet" href="{{ "css/style.css" | absLangURL }}">
+
+{{ with resources.Get "css/style.css" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/css/style.css" . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with resources.Get "css/betterLinkStyle.css" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "/rye/css/betterLinkStyle.css" . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
 
 <!-- Keyboard Navigation -->
-<script 
-  src="/js/keyboard-navigation.js"
-  defer></script>
+{{ partial "keyboard-navigation-include.html" . }}
 
 <!-- Rye's Styling -->
 {{ partial "rye-styling.html" . }}
@@ -59,3 +39,5 @@
   href="{{ .Permalink | safeURL }}"
 />
 {{ end -}}
+
+{{ partial "head/rsl-include.html" . }}

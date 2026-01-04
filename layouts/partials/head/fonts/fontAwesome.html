@@ -1,0 +1,38 @@
+<!-- FontAwesome -->
+{{ $fa := .Site.Params.selfHosting.fontAwesome }}
+
+{{ if not $fa.enabled }}
+
+  {{ with $fa.remoteAddr }}
+    <link rel="stylesheet" href="{{ . }}">
+  {{ end }}
+  {{ if not $fa.remoteAddr }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {{ end }}
+
+{{ else }}
+
+  {{ with resources.Get "vendored/fontawesome/css/all.min.css" }}
+
+    {{ $res := . | fingerprint }}
+    <link rel="stylesheet"
+          href="{{ $res.RelPermalink }}"
+          integrity="{{ $res.Data.Integrity }}"
+          crossorigin="anonymous">
+
+  {{ else }}
+
+    {{ with $fa.remoteAddr }}
+      {{ with resources.GetRemote . }}
+        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fontawesome/css/all.min.css" . | fingerprint }}
+        <link rel="stylesheet"
+              href="{{ $res.RelPermalink }}"
+              integrity="{{ $res.Data.Integrity }}"
+              crossorigin="anonymous">
+      {{ end }}
+    {{ end }}
+
+  {{ end }}
+
+{{ end }}
+<!-- End FontAwesome -->

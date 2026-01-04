@@ -6,23 +6,6 @@ theme = "loficode-hugo-theme"
 # Enable emoji support
 enableEmoji = true
 
-# Output formats for SPA functionality
-[outputs]
-  home = ['html', 'json', 'pages', 'rss']
-  page = ['html', 'rss']
-  rss = ['rss']
-  section = ['html', 'rss']
-
-# Custom output formats
-[outputFormats]
-  [outputFormats.JSON]
-    mediaType = "application/json"
-    baseName = "index"
-    isPlainText = true
-  [outputFormats.pages]
-    mediaType = "application/json"
-    baseName = "pages"
-    isPlainText = true
 
 # Pagination
 [pagination]
@@ -32,7 +15,12 @@ enableEmoji = true
 [params]
   description = "A cozy example site showcasing the LofiCode Hugo theme"
   tagline = "Coding with coffee and lo-fi beats ☕🎵"
+  # icon = ""
 
+  [params.selfHosting]
+    [params.selfHosting.fontAwesome]
+      enabled = false
+      remoteAddr = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   # legal information, may be required in some localities
   [params.legal]
     copyrightHolder = "Alice"
@@ -42,6 +30,7 @@ enableEmoji = true
   # Profile section
   [params.author]
     name = "LofiCode Dev"
+    email = "alice@example.org"
     pronouns = "they/them"
     gender = "Female"
     image = "images/profile.png"
@@ -57,7 +46,6 @@ enableEmoji = true
   [partial.socialPreview]
     # Path to the default image, should be in static or assets
     defaultFeaturedImage = ""
-
 
   # Social links - Supported platforms: github, twitter, linkedin, email, mastodon, youtube, instagram, facebook
   [params.social]
@@ -97,3 +85,24 @@ enableEmoji = true
 [taxonomies]
   tag = "tags"
   category = "categories"
+
+[languages]
+  [languages.en]
+    contentDir = 'content/'
+    languageName = 'English'
+    weight = 10
+  [languages.de]
+    contentDir = 'content/'
+    languageName = 'Deutsch'
+    weight = 20
+[outputs]
+home = ['html', 'json', 'pages', 'rss', 'atom', 'amp']
+page = ['html', 'rss', 'atom', 'amp']
+rss = ['rss', 'atom']
+section = ['html', 'rss', 'atom', 'amp', 'pages']
+taxonomy = ['html', 'rss']
+term = ['html', 'rss']
+
+[module]
+[[module.imports]]
+path = "github.com/dozro/loficode-hugo-theme"

@@ -3,7 +3,7 @@
     {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
     "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-    "targetPath" "css/Footer.css"
+    "targetPath" "theme/hugo-lofi-theme/css/rye/footer.css"
     "transpiler" "libsass"
     "vars" site.Params.styles
     "includePaths" (slice "assets/scss")

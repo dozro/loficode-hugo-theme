@@ -1,5 +1,8 @@
 <!-- OpenGraph Meta Tags -->
 <!-- Copyright 2025 Rye (itsrye.dev). Licensed under Apache 2.0 -->
+{{ if not .Site.Params.socialPreview.disableDynamicGeneration }}
+{{ partial "og-image-generator.html" . }}
+{{ end }}
 <meta
   property="og:title"
   content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}"
