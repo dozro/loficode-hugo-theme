@@ -5,71 +5,7 @@
   .Title }} - {{ .Site.Title }}{{ end }}
 </title>
 
-<!-- Meta Description -->
-{{ if .Description }}
-<meta name="description" content="{{ .Description }}" />
-{{ else if .IsHome }}
-<meta name="description" content="{{ .Site.Params.description }}" />
-{{ else }}
-<meta name="description" content="{{ .Summary | truncate 160 }}" />
-{{ end }}
-
-<!-- Fediverse Creator -->
-{{ partial "head/meta/fediverse.html" . }}
-
-<!-- Open Graph -->
-{{ partial "head/meta/opengraph.html" . }}
-
-<!-- Twitter Card -->
-{{ partial "head/meta/twitter.html" . }}
-
-<!-- Schema -->
-{{ partial "head/meta/schema.html" . }}
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap"
-  rel="stylesheet"
-/>
-
-<!-- FontAwesome -->
-<!-- FontAwesome -->
-{{ $fa := .Site.Params.selfHosting.fontAwesome }}
-
-{{ if not $fa.enabled }}
-
-  {{ with $fa.remoteAddr }}
-    <link rel="stylesheet" href="{{ . }}">
-  {{ end }}
-
-{{ else }}
-
-  {{ with resources.Get "vendored/fontawesome/css/all.min.css" }}
-
-    {{ $res := . | fingerprint }}
-    <link rel="stylesheet"
-          href="{{ $res.RelPermalink }}"
-          integrity="{{ $res.Data.Integrity }}"
-          crossorigin="anonymous">
-
-  {{ else }}
-
-    {{ with $fa.remoteAddr }}
-      {{ with resources.GetRemote . }}
-        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fontawesome/css/all.min.css" . | fingerprint }}
-        <link rel="stylesheet"
-              href="{{ $res.RelPermalink }}"
-              integrity="{{ $res.Data.Integrity }}"
-              crossorigin="anonymous">
-      {{ end }}
-    {{ end }}
-
-  {{ end }}
-
-{{ end }}
-
+{{ partial "head/includes.html" . }}
 
 <!-- Styles -->
 

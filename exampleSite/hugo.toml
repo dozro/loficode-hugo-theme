@@ -47,7 +47,6 @@ enableEmoji = true
     # Path to the default image, should be in static or assets
     defaultFeaturedImage = ""
 
-
   # Social links - Supported platforms: github, twitter, linkedin, email, mastodon, youtube, instagram, facebook
   [params.social]
     github = "https://github.com/example"

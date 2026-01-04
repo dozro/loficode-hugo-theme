@@ -1,0 +1,39 @@
+{{if not .Site.Params.useGoogleFonts }}
+  {{ if .Site.Params.copyFontStylesheets }}
+  <!-- Bunny Fonts -->
+   <link rel="preconnect" href="https://fonts.bunny.net">
+   <!-- Inter -->
+   {{ with resources.GetRemote "https://fonts.bunny.net/css?family=inter:300,400,500,600,700" }}
+        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/bunny/css/inter.css" . | fingerprint }}
+        <link rel="stylesheet"
+              href="{{ $res.RelPermalink }}"
+              integrity="{{ $res.Data.Integrity }}"
+              crossorigin="anonymous">
+      {{ end }}
+    <!-- Orbitron -->
+    {{ with resources.GetRemote "https://fonts.bunny.net/css?family=orbitron:400,700" }}
+        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/bunny/css/orbitron.css" . | fingerprint }}
+        <link rel="stylesheet"
+              href="{{ $res.RelPermalink }}"
+              integrity="{{ $res.Data.Integrity }}"
+              crossorigin="anonymous">
+      {{ end }}
+    <!-- JetBrains Mono -->
+    {{ with resources.GetRemote "https://fonts.bunny.net/css?family=jetbrains-mono:400,500" }}
+        {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/bunny/css/jetbrains-mono.css" . | fingerprint }}
+        <link rel="stylesheet"
+              href="{{ $res.RelPermalink }}"
+              integrity="{{ $res.Data.Integrity }}"
+              crossorigin="anonymous">
+      {{ end }}
+    {{ else }}
+        <!-- Bunny Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <!-- Inter -->
+        <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700">
+        <!-- Orbitron -->
+        <link rel="stylesheet" href="https://fonts.bunny.net/css?family=orbitron:400,700">
+        <!-- JetBrains Mono -->
+        <link rel="stylesheet" href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500">
+    {{ end }}
+{{end}}
