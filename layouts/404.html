@@ -13,7 +13,7 @@
     {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment
         "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-        "targetPath" "refactored/css/404/main.css"
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/404/main.css"
         "transpiler" "libsass"
         "vars" site.Params.styles
         "includePaths" (slice "scss/refactored/")

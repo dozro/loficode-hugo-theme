@@ -1,0 +1,11 @@
+<nav class="footer-nav">
+    <ul>
+        <li><a href="{{ "/" | relURL }}">{{ T "homepage" }}</a></li>
+        {{ with .Site.Params.legal.imprint }}
+        <li><a href="{{ . }}">{{ T "imprint" }}</a></li>
+        {{ end }}
+        {{ with .Site.Params.legal.privacyPolicy }}
+        <li><a href="{{ . }}">{{ T "privacyPolicy" }}</a></li>
+        {{ end }}
+    </ul>
+</nav>

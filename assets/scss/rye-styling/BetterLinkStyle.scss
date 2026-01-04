@@ -1,0 +1,67 @@
+// Styles for better link appearance
+
+@import 'colors.scss';
+
+// Base link style
+a {
+
+    // Hover and focus states
+    &:not([class]):hover,
+    &:not([class]):focus-visible {
+        color: $activeLinkColor;
+        /* Darker on hover */
+        text-decoration: underline;
+        /* Underline only on hover/focus */
+        text-decoration-color: currentColor;
+    }
+
+    // Active state (clicking)
+    &:not([class]):active {
+        color: $activeLinkColor;
+    }
+
+    // Visited state
+    &:not([class]):visited {
+        color: $visitedLinkColor;
+    }
+
+    &:not([class]) {
+        background: var(--btn-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: $primaryTextColor;
+        text-decoration: none;
+        transition: color 0.2s ease,
+            text-decoration-color 0.2s ease;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+    }
+
+    // Button style for links with class "button"
+    &:not([class]).button {
+        display: inline-block;
+        padding: 0.45em 0.9em;
+        background: #0077cc;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.2s ease;
+    }
+    // Styles for links with class "button"
+    .button{
+        // Hover and focus states
+        &:hover,&:focus-visible {
+            background: $linkbuttonBgColor;    
+        }
+        // Visited state
+        &:visited {
+            background: darken($linkbuttonBgColor, 10%);
+        }
+        // Active state
+        &:active {
+            background: lighten($linkbuttonBgColor, 20%);
+        }
+    }
+}

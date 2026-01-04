@@ -1,0 +1,4 @@
+$primaryTextColor: #DCA1A1; // Dark brown
+$activeLinkColor: darken($primaryTextColor, 40%);
+$visitedLinkColor: lighten($activeLinkColor, 20%); 
+$linkbuttonBgColor: darken($primaryTextColor, 50%);
