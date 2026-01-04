@@ -35,6 +35,7 @@ Code changes see: <https://github.com/raisingpixels/loficode-hugo-theme/compare/
 - Generator notice on homepage
 - option to link privacy policy and imprint (displayed on the homepage)
 - generates atom feeds as well as xml feeds
+- It can now be added as a hugo module
 
 ### Added configuration options
 
@@ -115,7 +116,26 @@ It will automatically create <person/index.html> for a person definition.
 featuredImage: "example.png"
 ```
 
+### Hugo Module
+
+It can now be added to your site as a hugo module[^HugoModuleDocu]:
+
+```toml
+[module]
+[[module.imports]]
+path = "github.com/dozro/loficode-hugo-theme"
+```
+
+and run in your terminal:
+
+```bash
+# if you haven't initialized your site as a module yet run:
+hugo mod init github.com/<USER>/<REPO>
+# and then get the module
+hugo mod get github.com/dozro/loficode-hugo-theme
+```
 
 <!-- seperator to the footnotes, for those viewing this in a unsupported renderer -->
 
 [^PermaLicense]: Permalink to license: <https://github.com/raisingpixels/loficode-hugo-theme/blob/e2422ab990d0a914adee8e0d6c7492ffc985f653/LICENSE> (added in commit e2422ab990d0a914adee8e0d6c7492ffc985f653)
+[^HugoModuleDocu]: Hugo Module Documentation in the Hugo Documentation <https://gohugo.io/hugo-modules/use-modules/>
