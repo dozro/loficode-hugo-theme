@@ -4,6 +4,7 @@
 @import '../../foundation/fonts/monospace';
 @import '../../foundation/variables';
 @import '../../foundation/colors';
+@import '../../foundation/mixins/dontDisplayOnMobile';
 
 @mixin git-log-header {
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
@@ -65,10 +66,7 @@
                 color: var(--accent-secondary);
                 font-weight: 600;
                 min-width: 80px;
-                @media(max-width: 700px){
-                    // Hide commit hash on small screens
-                    display: none !important;
-                }
+                @include dontDisplayOnMobile();
             }
 
             .commit-message {
@@ -91,11 +89,7 @@
                 font-size: $smallFontSize;
                 min-width: 120px;
                 text-align: right;
-
-                @media(max-width: 700px){
-                    // Hide commit date on small screens
-                    display: none !important;
-                }
+                @include dontDisplayOnMobile();
             }
         }
     }

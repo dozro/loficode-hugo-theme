@@ -1015,6 +1015,7 @@
       }
     }
 
+    /* disabled as obsolete
     addBackToHomeButton() {
       // Check if there's already a back button
       if (document.querySelector('.back-to-home-btn')) return;
@@ -1064,6 +1065,7 @@
 
       document.body.appendChild(backButton);
     }
+      */
 
     handleInitialRoute() {
       // Only handle SPA routing if we're not on a real post page

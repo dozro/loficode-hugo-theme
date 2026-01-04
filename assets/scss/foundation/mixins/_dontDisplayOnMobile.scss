@@ -1,0 +1,5 @@
+@mixin dontDisplayOnMobile {
+    @media (max-width: 700px) {
+        display: none !important;
+    }
+}

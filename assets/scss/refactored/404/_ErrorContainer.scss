@@ -6,6 +6,7 @@
 @import 'GitLog';
 @import '../../foundation/variables';
 @import '../../foundation/fonts/monospace';
+@import '../../foundation/mixins/dontDisplayOnMobile';
 
 @keyframes message-rotate {
 
@@ -51,10 +52,7 @@
         text-align: center;
         position: relative;
         font-style: italic;
-        @media(max-width: 700px) {
-            // don't show rotating messages on small screens
-            display: none;
-        }
+        @include dontDisplayOnMobile();
 
         .rotating-message {
             opacity: 0;

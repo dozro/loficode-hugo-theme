@@ -6,3 +6,8 @@ $monospaceFontFamily: 'JetBrains Mono', 'Orbitron', monospace;
 $orbitronFontFamily: 'Orbitron','JetBrains Mono', monospace;
 $monospaceDefaultWeight: 400;
 $monospaceBoldWeight: 600;
+
+@mixin monospace-font {
+    font-family: $monospaceFontFamily;
+    font-weight: $monospaceDefaultWeight;
+}
