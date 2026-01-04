@@ -1,0 +1,63 @@
+<!-- Render image -->
+<!-- Try to resolve the image as a Page Resource -->
+{{ $image := .Page.Resources.GetMatch .Destination }}
+
+<!-- Fallback for static/remote images -->
+{{ if not $image }}
+  {{ if .IsBlock }}
+  <div class="rendered-image">
+    <div class="image-block">
+    <figure>
+      <img src="{{ .Destination | safeURL }}"
+        {{ with .PlainText }}alt="{{ . }}"{{ end }}
+        class="post-image"
+        >
+      {{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+    </figure>
+    </div>
+    </div>
+  {{ else }}
+  <div class="rendered-image">
+    <div class="image-inline">
+    <img src="{{ .Destination | safeURL }}"
+      {{ with .PlainText }}alt="{{ . }}"{{ end }}
+      {{ with .Title }}title="{{ . }}"{{ end }}
+      class="post-image"
+      >
+    </div>
+    </div>
+  {{ end }}
+{{ else }}
+
+  <!-- Create a portrait variant -->
+  {{ $portrait := $image.Fit "400x400" }}
+  {{ $portrait = resources.Copy "images/portrait.png" $portrait }}
+
+  {{ if .IsBlock }}
+  <div class="rendered-image"><div class="image-block">
+    <figure>
+      <picture>
+        <source
+          srcset="{{ $portrait.Permalink }}"
+          media="(orientation: portrait)">
+        <img
+          src="{{ $image.Permalink }}"
+          class="post-image"
+          {{ with .PlainText }}alt="{{ . }}"{{ end }}>
+      </picture>
+
+      {{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+    </figure>
+    </div></div>
+  {{ else }}
+  <div class="rendered-image"><div class="image-inline">
+    <img
+      src="{{ $image.Permalink }}"
+      {{ with .PlainText }}alt="{{ . }}"{{ end }}
+      {{ with .Title }}title="{{ . }}"{{ end }}
+      class="post-image"
+      >
+  </div></div>
+  {{ end }}
+
+{{ end }}
