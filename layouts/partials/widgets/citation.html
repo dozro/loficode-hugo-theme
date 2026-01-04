@@ -1,0 +1,77 @@
+{{ with resources.Get "scss/rye-styling/Citation.scss" }}
+{{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "theme/hugo-lofi-theme/css/rye/Citation.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ else }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ with resources.Get "scripts/citation.js" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/js/rye/widget/Citation.js" . | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}
+{{ end }}
+{{ end }}
+
+<button role="button" class="rye-quote" id="rye-cit-btn" title="Get this as a citation"
+  aria-label="Get this as a citation" onclick="showCitation()">
+  <i class="fa-solid fa-quote-left rye-quote"></i>
+</button>
+
+<div class="citation citation-hidden" id="rye-citation">
+    <button class="citation-close" aria-label="Close citation" onclick="hideCitation()">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    <h3>Citation</h3>
+    <h4>Structured Data</h4>
+    <div id="citation-schema-org">
+        <div itemscope itemtype="https://schema.org/CreativeWork">
+            {{ $authorname := .Params.author | default .Site.Params.Author.name }}
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="{{ $authorname }}" />
+                <link itemprop="url" href="{{ .Site.BaseURL }}/schema/person/index.html" />
+            </div>
+            {{ with .Params.date }}<p><strong>Date Published</strong>:<code class="schemaorg-data" itemprop="dateCreated" content="{{ . }}">{{ . }}</code></p>{{ end }}
+            {{ with .Params.dateModified }}<p><strong>Date Modified</strong>:<code class="schemaorg-data" itemprop="dateModified" content="{{ . }}">{{ . }}</code></p>{{ end }}
+            {{ with .Params.datePublished }}<p><strong>Date Created</strong>:<code class="schemaorg-data" itemprop="datePublished" content="{{ . }}">{{ . }}</code></p>{{ end }}
+            {{ with .Params.title }}<p><strong>Title</strong>:<code class="schemaorg-data" itemprop="headline" content="{{ . }}">{{ . }}</code></p>{{ end }}
+            {{ with .Params.publisher }}<p><strong>Publisher</strong>:<code class="schemaorg-data" itemprop="publisher" content="{{ . }}">{{ . }}</code></p>{{ end }}
+            {{ with .Params.url }}<p><strong>URL</strong>:<code class="schemaorg-data" itemprop="url" content="{{ . }}">{{ . }}</code></p>{{ end }}
+            {{ with .Params.description }}<p><strong>Abstract</strong>:<code class="schemaorg-data" itemprop="abstract" content="{{ . }}">{{ . }}</code></p>{{ end }}
+            <p><strong>Language</strong>:<code class="schemaorg-data" itemprop="inLanguage" content="{{ .Site.Language.Lang }}">{{ .Site.Language.Lang }}</code></p>
+            <p><strong>Copyright Year</strong>:<code class="schemaorg-data" itemprop="copyrightYear" content="{{ now.Format "2006" }}">{{ now.Format "2006" }}</code></p>
+            <div itemscope itemtype="https://schema.org/WebPage" itemprop="archivedAt">
+                <meta itemprop="identifier" itemtype="https://schema.org/identifier" content="{{ .Permalink }}" />
+                <meta itemprop="significantLink" itemtype="https://schema.org/URL" content="{{ .Permalink }}" />
+                <meta itemprop="lastReviewed" itemtype="https://schema.org/Date" content="{{ now.Format "2006-01-02 15:04 MST" }}" />
+            </div>
+        </div>
+    </div>
+    <h4>BibTeX</h4>
+    <p><button id="bibtex-copy" onclick="copyBibTex()">Copy BibTeX</button></p>
+    {{ $bibkey := .Permalink | base64Encode | safeURL }}
+    {{ with .File }}
+      {{ $bibkey = .BaseFileName }}
+    {{ end }}
+    <code id="bibtex-data">
+    @article{ {{ $bibkey }},
+      author  = "{{ $authorname }}",
+      title   = "{{ .Title | htmlEscape }}",
+      year    = {{ with .Params.datePublished }}{{ . | time.Format "2006" }}{{ else }}{{ now | time.Format "2006" }}{{ end }},
+      journal = "{{ .Site.Title }}",
+      url     = "{{ .Permalink }}"
+    }
+    </code>
+</div>

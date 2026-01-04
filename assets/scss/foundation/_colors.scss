@@ -13,7 +13,7 @@ $darkBgPrimaryLinearGradient100: darken($lightBgPrimaryLinearGradient100, 75%);
 $lightBgPrimary: linear-gradient(135deg, $lightBgPrimaryLinearGradient0 0%, $lightBgPrimaryLinearGradient25 25%, $lightBgPrimaryLinearGradient75 75%, $lightBgPrimaryLinearGradient100 100%);
 $darkBgPrimary: linear-gradient(135deg, $darkBgPrimaryLinearGradient0 0%, $darkBgPrimaryLinearGradient25 25%, $darkBgPrimaryLinearGradient75 75%, $darkBgPrimaryLinearGradient100 100%);
 $lightBgSecondary: rgba(255, 255, 255, 0.85);
-$darkBgSecondary: complement($lightBgSecondary);
+$darkBgSecondary: #28507b;
 $lightBgCard: rgba(255, 255, 255, 0.9);
 $darkBgCard: complement($lightBgCard);
 $darkBgCardAlt: rgba(30, 30, 30, 0.5);

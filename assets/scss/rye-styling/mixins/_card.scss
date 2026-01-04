@@ -17,4 +17,9 @@
     backdrop-filter: blur(4px);
     color: $lightTextMuted;
     line-height: 1.5;
+
+    p {
+        justify-content: center;
+        text-align: center;
+    }
 }

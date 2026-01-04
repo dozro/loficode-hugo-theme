@@ -1,0 +1,26 @@
+<!-- open rss button -->
+{{ with .AlternativeOutputFormats.Get "RSS" }}
+{{ with resources.Get "scss/rye-styling/RSSButton.scss" }}
+{{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "theme/hugo-lofi-theme/css/rye/RSSButton.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ else }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+<a href="{{ .Permalink | safeURL }}" target="_blank" rel="noopener noreferrer" class="rye-rss-link" title="RSS Feed"
+  aria-label="Subscribe to RSS Feed">
+  <i class="fa-solid fa-square-rss rye-rss-icon"></i>
+</a>
+{{ end }}
