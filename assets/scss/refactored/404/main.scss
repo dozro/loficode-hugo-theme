@@ -6,17 +6,28 @@
 @import 'light';
 @import 'dark';
 @import 'body';
+@import 'highContrast';
 @import '../SearchContainer';
 @import '../Button';
 @import 'GitLog';
 @import 'Particle';
 
+@media(prefers-contrast: more) {
+    :root {
+        @include highContrast($color-scheme: dark);
+    }
+}
+
 // Auto-detect light mode
 @media (prefers-color-scheme: light) {
     :root {
         // light theme
-
         @include light-theme;
+    }
+    @media(prefers-contrast: more){
+        :root {
+            @include highContrast($color-scheme: light);
+        }
     }
 }
 
@@ -26,6 +37,11 @@
         // dark theme
 
         @include dark-theme;
+    }
+    @media(prefers-contrast: more){
+        :root {
+            @include highContrast($color-scheme: dark);
+        }
     }
 }
 

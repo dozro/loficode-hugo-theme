@@ -32,17 +32,18 @@
     overflow: hidden;
 
     .error-title {
-        font-size: 2.5rem;
+        font-size: $subHeaderFontSize;
         font-weight: 600;
         margin-bottom: 1rem;
         color: var(--text-primary);
         @media (max-width: 768px) {
-            font-size: 2rem;
+            font-size: $subHeaderFontSizeMobile;
         }
     }
 
     .error-message {
         font-size: $largeFontSize;
+        position: fixed;
         color: var(--text-secondary);
         margin-bottom: 3rem;
         max-width: 600px;
@@ -50,6 +51,10 @@
         text-align: center;
         position: relative;
         font-style: italic;
+        @media(max-width: 700px) {
+            // don't show rotating messages on small screens
+            display: none;
+        }
 
         .rotating-message {
             opacity: 0;
