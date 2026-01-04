@@ -11,7 +11,7 @@
 @import 'GitLog';
 @import 'Particle';
 
-/* Auto-detect light mode */
+// Auto-detect light mode
 @media (prefers-color-scheme: light) {
     :root {
         // light theme
@@ -20,6 +20,7 @@
     }
 }
 
+// Auto-detect dark mode
 @media (prefers-color-scheme: dark) {
     :root {
         // dark theme
@@ -28,11 +29,13 @@
     }
 }
 
+// Default to dark theme
 :root {
     // dark theme as default
     @include dark-theme;
 }
 
+// Explicit theme selectors
 [data-theme="light"] {
     @include light-theme;
 }

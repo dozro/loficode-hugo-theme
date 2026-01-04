@@ -1,12 +1,15 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
+@import '../../foundation/fonts/monospace';
+@import '../../foundation/variables';
+
 @mixin git-log-header {
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
     color: white;
     padding: 1rem 1.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
+    font-family: $monospaceFontFamily;
+    font-weight: $monospaceBoldWeight;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -30,7 +33,7 @@
 
     .git-log-content {
         padding: 1.5rem;
-        font-family: 'JetBrains Mono', monospace;
+        font-family: $monospaceFontFamily;
         font-size: 0.9rem;
         line-height: 1.6;
 
@@ -76,7 +79,7 @@
 
             .commit-date {
                 color: var(--text-muted);
-                font-size: 0.8rem;
+                font-size: $smallFontSize;
                 min-width: 120px;
                 text-align: right;
 

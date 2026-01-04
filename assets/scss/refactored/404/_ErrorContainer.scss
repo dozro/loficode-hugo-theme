@@ -4,6 +4,8 @@
 @import 'keyframes/GlowPulse';
 
 @import 'GitLog';
+@import '../../foundation/variables';
+@import '../../foundation/fonts/monospace';
 
 @keyframes message-rotate {
 
@@ -40,7 +42,7 @@
     }
 
     .error-message {
-        font-size: 1.2rem;
+        font-size: $largeFontSize;
         color: var(--text-secondary);
         margin-bottom: 3rem;
         max-width: 600px;
@@ -72,18 +74,19 @@
     }
 
     .error-code {
-        font-family: 'Orbitron', monospace;
-        font-size: 4rem;
+        font-family: $orbitronFontFamily;
+        font-size: $hugeFontSize;
         font-weight: 700;
         background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        margin-bottom: 1rem;
+        margin-bottom: $defaultMargin;
         text-shadow: 0 0 30px var(--glow-color);
         animation: glow-pulse 2s ease-in-out infinite alternate;
         @media (max-width: 768px) {
-            font-size: 3rem;
+            font-size: $largeFontSize;
+            margin-bottom: $smallMargin;
         }
     }
 

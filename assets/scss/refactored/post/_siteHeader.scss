@@ -1,0 +1,9 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@mixin SiteHeader {
+    background: var(--bg-secondary);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+}

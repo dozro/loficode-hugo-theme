@@ -16,6 +16,7 @@ $lightBgSecondary: rgba(255, 255, 255, 0.85);
 $darkBgSecondary: complement($lightBgSecondary);
 $lightBgCard: rgba(255, 255, 255, 0.9);
 $darkBgCard: complement($lightBgCard);
+$darkBgCardAlt: rgba(30, 30, 30, 0.5);
 $lightAccentPrimary: #FF006B;
 $darkAccentPrimary: #9c104a;
 $lightAccentSecondary: #00CED1;
@@ -38,3 +39,7 @@ $lightErrorColor: #FF4444;
 $darkErrorColor: lighten($lightErrorColor, 10%);
 $lightSuccessColor: #44FF88;
 $darkSuccessColor: lighten($lightSuccessColor, 10%);
+
+$lightActiveLinkColor: darken($lightTextPrimary, 40%);
+$lightVisitedLinkColor: lighten($lightActiveLinkColor, 20%); 
+$lightLinkbuttonBgColor: darken($lightTextPrimary, 50%);

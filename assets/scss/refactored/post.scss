@@ -1,0 +1,38 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@import 'post/backdrop.scss';
+@import 'post/content.scss';
+@import 'post/siteHeader.scss';
+
+// SPA Post Overlay
+.post-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .active {
+        opacity: 1;
+        visibility: visible;
+
+        // For regular post pages, make backdrop transparent
+        .post-overlay-backdrop {
+            background: transparent;
+            backdrop-filter: none;
+            pointer-events: none;
+        }
+    }
+    .post-overlay-content {
+        @include postContent();
+    }
+    // Ensure SPA overlay header matches regular page header
+    .site-header {
+        @include SiteHeader();
+    }
+}

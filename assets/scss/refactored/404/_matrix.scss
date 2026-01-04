@@ -2,7 +2,8 @@
 // copyright remains with Raising Pixels (original author) and under original license
 
 @import 'keyframes/matrix-fall';
-@import '../foundation/fonts.scss';
+@import '../../foundation/fonts/monospace';
+@import '../../foundation/variables';
 
 @mixin matrix {
 
@@ -22,7 +23,7 @@
         position: absolute;
         top: -100%;
         font-family: $monospaceFontFamily;
-        font-size: 14px;
+        font-size: $defaultFontSize;
         color: var(--accent-secondary);
         animation: matrix-fall linear infinite;
         text-shadow: 0 0 5px currentColor;

@@ -1,0 +1,9 @@
+// Some simple CSS animations used throughout the theme
+// Copyright 2026 Rye (itsrye.dev)
+
+@import 'keyframes/scale-up-center';
+
+@mixin scaleUpCenter{
+    -webkit-animation: scale-up-center 0.2s ease-in both;
+	        animation: scale-up-center 0.2s ease-in both;
+}
