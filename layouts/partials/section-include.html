@@ -2,7 +2,7 @@
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
     "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-    "targetPath" "/rye/css/rye-section.css"
+    "targetPath" "theme/hugo-lofi-theme/css/rye/Section.css"
     "transpiler" "libsass"
     "vars" site.Params.styles
     "includePaths" (slice "assets/scss")

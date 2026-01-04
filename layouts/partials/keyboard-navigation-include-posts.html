@@ -1,13 +1,13 @@
     {{ with resources.Get "scripts/keyboard-navigation.js" }}
     {{ with . | fingerprint }}
-    {{ with resources.Copy "rye/js/keyboard-navigation.js" . | fingerprint }}
+    {{ with resources.Copy "theme/hugo-lofi-theme/js/rye/KeyboardNavigation.js" . | fingerprint }}
     <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
     {{ end }}
     {{ end }}
     {{ end }}
     {{ with resources.Get "scripts/keyboard-navigation-posts.js" }}
     {{ with . | fingerprint }}
-    {{ with resources.Copy "rye/js/keyboard-navigation-posts.js" . | fingerprint }}
+    {{ with resources.Copy "theme/hugo-lofi-theme/js/rye/KeyboardNavigationPosts.js" . | fingerprint }}
     <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
     {{ end }}
     {{ end }}
