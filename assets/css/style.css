@@ -2704,18 +2704,6 @@ footer {
     box-shadow: 0 4px 15px var(--glow-color);
 }
 
-/* SPA Post Overlay */
-.post-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 /* Ambient bar in overlay should be fixed to viewport bottom */
 .ambient-bar {
@@ -2726,48 +2714,8 @@ footer {
     z-index: 10000 !important;
 }
 
-.post-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
 
-.post-overlay-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-}
-
-/* For regular post pages, make backdrop transparent */
-.post-overlay.active .post-overlay-backdrop {
-    background: transparent;
-    backdrop-filter: none;
-    pointer-events: none;
-}
-
-.post-overlay-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-primary);
-    background-attachment: fixed;
-    transform: translateY(50px);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    padding-bottom: 120px; /* Space for ambient bar + navigation */
-}
-
-/* Ensure SPA overlay header matches regular page header */
-.post-overlay .site-header {
-    background: var(--bg-secondary);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 20px var(--shadow-color);
-}
+/*  */
 
 .post-overlay.active .post-overlay-content {
     transform: translateY(0);
