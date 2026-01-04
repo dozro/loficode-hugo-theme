@@ -42,6 +42,27 @@ LofiCode embraces the cozy, nostalgic feeling of lo-fi aesthetics while maintain
 
 ### 1. Install the Theme
 
+Preferably add it as a hugo module:
+
+Add the following to your config:
+
+```toml
+[module]
+[[module.imports]]
+path = "github.com/dozro/loficode-hugo-theme"
+```
+
+and run in your terminal:
+
+```bash
+# if you haven't initialized your site as a module yet run:
+hugo mod init github.com/<USER>/<REPO>
+# and then get the module
+hugo mod get github.com/dozro/loficode-hugo-theme
+```
+
+Or alternatively:
+
 ```bash
 # Clone into your Hugo site's themes directory
 git clone https://github.com/dozro/loficode-hugo-theme.git themes/loficode
@@ -58,8 +79,12 @@ Add the theme to your `hugo.toml`:
 theme = "loficode"
 
 [params]
-  author = "Your Name"
   description = "Your site description"
+
+  [params.author]
+    name = "Your Name"
+    image = "images/profile.png"
+
 
   # Profile section
   [params.profile]
