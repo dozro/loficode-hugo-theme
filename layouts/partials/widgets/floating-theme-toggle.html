@@ -1,15 +1,15 @@
 {{ with resources.Get "scripts/404/themeToggle.js" }}
 {{ with . | fingerprint }}
-{{ with resources.Copy "theme/hugo-lofi-theme/js/refactored/404/ThemeToggle.js" . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/js/refactored/fl/ThemeToggle.js" . | fingerprint }}
 <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
 {{ end }}
 {{ end }}
 {{ end }}
-{{ with resources.Get "scss/refactored/404/theme-toggle.scss" }}
+{{ with resources.Get "scss/refactored/floating-theme-toggle.scss" }}
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
     "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-    "targetPath" "theme/hugo-lofi-theme/css/refactored/404/ThemeToggle.css"
+    "targetPath" "theme/hugo-lofi-theme/css/refactored/fl/ThemeToggle.css"
     "transpiler" "libsass"
     "vars" site.Params.styles
     "includePaths" (slice "assets/scss")
