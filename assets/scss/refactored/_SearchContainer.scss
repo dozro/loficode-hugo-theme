@@ -84,6 +84,13 @@
     }
 
     /* Search Results */
+    .show{
+        display: block !important;
+        visibility: visible !important;
+        opacity: 95% !important;
+        background: var(--bg-card);
+        color: var(--text-primary);
+    }
     .search-results {
         position: absolute;
         top: calc(100% + 2px);

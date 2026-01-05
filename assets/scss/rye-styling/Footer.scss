@@ -14,6 +14,13 @@ footer {
     ul {
         list-style-type: none;
     }
+    .footer-bar{
+        justify-self: center;
+        width: fit-content;
+        height: fit-content;
+        display: inline-block;
+        
+    }
 
     i {
         vertical-align: middle;
@@ -30,9 +37,9 @@ footer {
     .rye-tags-wrapper {
         margin-top: 0.5rem;
         border: none;
-        .rye-tag-icon {
-            color: $darkTextSecondary;
-            margin-right: 0.3rem;
-        }
+    }
+    .rye-icon {
+        color: var(--accent-primary);
+        margin-right: 0.3rem;
     }
 }

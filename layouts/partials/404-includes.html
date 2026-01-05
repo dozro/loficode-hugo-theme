@@ -1,0 +1,40 @@
+{{ with resources.Get "scss/refactored/404/main.scss" }}
+{{ $opts := dict
+        "enableSourceMap" hugo.IsDevelopment
+        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/404/main.css"
+        "transpiler" "libsass"
+        "vars" site.Params.styles
+        "includePaths" (slice "scss/refactored/")
+    }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ else }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ with resources.Get "scripts/404/postSearchAndRecent.js" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/js/refactored/404/PostSearchAndRecent.js" . | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}
+{{ end }}
+{{ end }}
+{{ with resources.Get "scripts/404/matrixRain.js" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/js/refactored/404/MatrixRain.js" . | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" load="eager"></script>
+{{ end }}
+{{ end }}
+{{ end }}
+{{ with resources.Get "scripts/404/particle.js" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/js/refactored/404/Particle.js" . | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}
+{{ end }}
+{{ end }}
