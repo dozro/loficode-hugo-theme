@@ -1,13 +1,13 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
-@import '../../foundation/variables';
-@import '../../foundation/fonts/emoji';
+@import '../foundation/variables';
+@import '../foundation/fonts/emoji';
 
 /* Theme Toggle */
 .theme-toggle {
-    position: fixed;
-    top: 2rem;
+    position: fixed !important;
+    bottom: 2rem;
     right: 2rem;
     background: var(--bg-card);
     border: 2px solid var(--border-color);
