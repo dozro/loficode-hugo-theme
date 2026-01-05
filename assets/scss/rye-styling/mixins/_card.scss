@@ -1,0 +1,25 @@
+// Card Styling Mixin
+// Copyright 2026 Rye (itsrye.dev)
+@import '../../foundation/colors';
+@import '../../foundation/fonts/sansSerif';
+@mixin card() {
+    @media (prefers-contrast: more) {
+            filter: contrast(200%);
+    }
+    font-family: $sansSerifFontFamily;
+    font-size: 0.95rem;
+    background-color: $darkBgCardAlt;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    color: $lightTextMuted;
+    line-height: 1.5;
+
+    p {
+        justify-content: center;
+        text-align: center;
+    }
+}

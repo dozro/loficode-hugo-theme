@@ -1,0 +1,13 @@
+// Monospace Font
+
+@import url(https://fonts.bunny.net/css?family=jetbrains-mono:100,200,300,400,500,600,700,800);
+@import url(https://fonts.bunny.net/css?family=orbitron:400,500,600);
+$monospaceFontFamily: 'JetBrains Mono', 'Orbitron', monospace;
+$orbitronFontFamily: 'Orbitron','JetBrains Mono', monospace;
+$monospaceDefaultWeight: 400;
+$monospaceBoldWeight: 600;
+
+@mixin monospace-font {
+    font-family: $monospaceFontFamily;
+    font-weight: $monospaceDefaultWeight;
+}

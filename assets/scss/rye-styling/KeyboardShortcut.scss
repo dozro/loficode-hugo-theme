@@ -1,0 +1,13 @@
+// Styling for keyboard shortcut hints
+
+@import '../foundation/fonts/monospace';
+@import '../foundation/variables';
+@import '../foundation/mixins/dontDisplayOnMobile';
+
+.keyboard-shortcut-hint{
+    @include monospace-font();
+    @media (prefers-contrast: more) {
+        filter: contrast(150%);
+    }
+    @include dontDisplayOnMobile();
+}

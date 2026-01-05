@@ -1,6 +1,8 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
+@import '../../foundation/variables';
+
 @keyframes coffee-glitch {
 
     0%,
@@ -38,13 +40,24 @@
 
 @mixin CoffeeGlitch {
     .coffee-glitch {
-        font-size: 8rem;
-        margin-bottom: 2rem;
+        font-size: $hugeFontSize;
+        margin-bottom: $defaultMargin;
         position: relative;
         display: inline-block;
         animation: coffee-glitch 3s ease-in-out infinite;
         @media (max-width: 768px) {
-            font-size: 6rem;
+            font-size: $defaultFontSize;
+            margin-bottom: $smallMargin;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            animation: none !important;
+            transform: none !important;
+            filter: none !important;
+            text-shadow: none !important;
+        }
+        @media (max-width: 480px) {
+            font-size: $largeFontSize;
+            margin-bottom: $smallMargin;
         }
     }
 }

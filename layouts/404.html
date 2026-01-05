@@ -13,7 +13,7 @@
     {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment
         "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
-        "targetPath" "refactored/css/404/main.css"
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/404/main.css"
         "transpiler" "libsass"
         "vars" site.Params.styles
         "includePaths" (slice "scss/refactored/")
@@ -49,17 +49,7 @@
     </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button 
-        class="theme-toggle" 
-        id="themeToggle" 
-        title="Toggle theme"
-        role="button"
-        aria-label="Toggle between light and dark theme"
-        tabindex="-1"
-    >
-      🌙
-    </button>
+    {{ partial "widgets/404/theme-toggle.html" . }}
 
     <!-- Matrix Rain Background -->
     <div class="matrix-rain" id="matrixRain"></div>
@@ -175,32 +165,6 @@
     </div>
 
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-
-        function getInitialTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) return savedTheme;
-            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-
-        function updateThemeIcon() {
-            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-            themeToggle.textContent = isDark ? '☀️' : '🌙';
-        }
-
-        const currentTheme = getInitialTheme();
-        htmlElement.setAttribute('data-theme', currentTheme);
-        updateThemeIcon();
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon();
-        });
 
         // Matrix rain effect
         function createMatrixRain() {
@@ -247,115 +211,25 @@
         let searchData = [];
 
         async function loadSearchData() {
-            try {
-                // Try multiple possible endpoints
-                const endpoints = ['/index.json', '/'];
+            const endpoints = ['/index.json', '/search/index.json'];
 
-                for (const endpoint of endpoints) {
-                    try {
-                        const response = await fetch(endpoint);
-                        if (response.ok) {
-                            if (endpoint === '/') {
-                                // If we're fetching the home page, we need to extract JSON from it
-                                const text = await response.text();
-                                // This is a fallback - in a real scenario, we'd have proper JSON endpoint
-                                searchData = [
-                                    {
-                                        title: "Welcome to LofiCode Theme",
-                                        url: "/posts/welcome-to-loficode/",
-                                        excerpt: "Welcome to the LofiCode Hugo theme! This theme is designed for developers and creatives who want to create a warm, inviting blog with a retro lo-fi aesthetic."
-                                    },
-                                    {
-                                        title: "Git Workflow Zen: Finding Peace in Version Control",
-                                        url: "/posts/git-workflow-zen/",
-                                        excerpt: "Version control doesn't have to be stressful. Like a well-organized workspace or a perfectly brewed cup of coffee, a good Git workflow can bring zen to your development process."
-                                    },
-                                    {
-                                        title: "Building Cozy Digital Workspaces",
-                                        url: "/posts/building-cozy-workspaces/",
-                                        excerpt: "Creating a workspace that sparks joy and productivity is an art form. Whether you're working from home, a coffee shop, or a traditional office, the right environment can make all the difference."
-                                    },
-                                    {
-                                        title: "JavaScript Debugging Like a Pro",
-                                        url: "/posts/javascript-debugging-tips/",
-                                        excerpt: "Debugging JavaScript can feel like solving a mystery novel. You have clues scattered throughout your code, and you need to piece them together to find the culprit."
-                                    },
-                                    {
-                                        title: "Coffee and Code: The Perfect Pairing",
-                                        url: "/posts/coffee-and-code/",
-                                        excerpt: "There's something magical about the combination of freshly brewed coffee and clean code. Both require patience, attention to detail, and a deep appreciation for the craft."
-                                    }
-                                ];
-                                return;
-                            } else {
-                                searchData = await response.json();
-                                return;
-                            }
-                        }
-                    } catch (e) {
-                        continue;
+            for (const endpoint of endpoints) {
+                try {
+                    const response = await fetch(endpoint);
+                    if (!response.ok) continue;
+
+                    const data = await response.json();
+
+                    if (Array.isArray(data)) {
+                        searchData = data;
+                        return;
                     }
+                } catch {
+                    // try next endpoint
                 }
-
-                // Fallback data if all endpoints fail
-                searchData = [
-                    {
-                        title: "Welcome to LofiCode Theme",
-                        url: "/posts/welcome-to-loficode/",
-                        excerpt: "Welcome to the LofiCode Hugo theme! This theme is designed for developers and creatives who want to create a warm, inviting blog with a retro lo-fi aesthetic."
-                    },
-                    {
-                        title: "Git Workflow Zen: Finding Peace in Version Control",
-                        url: "/posts/git-workflow-zen/",
-                        excerpt: "Version control doesn't have to be stressful. Like a well-organized workspace or a perfectly brewed cup of coffee, a good Git workflow can bring zen to your development process."
-                    },
-                    {
-                        title: "Building Cozy Digital Workspaces",
-                        url: "/posts/building-cozy-workspaces/",
-                        excerpt: "Creating a workspace that sparks joy and productivity is an art form. Whether you're working from home, a coffee shop, or a traditional office, the right environment can make all the difference."
-                    },
-                    {
-                        title: "JavaScript Debugging Like a Pro",
-                        url: "/posts/javascript-debugging-tips/",
-                        excerpt: "Debugging JavaScript can feel like solving a mystery novel. You have clues scattered throughout your code, and you need to piece them together to find the culprit."
-                    },
-                    {
-                        title: "Coffee and Code: The Perfect Pairing",
-                        url: "/posts/coffee-and-code/",
-                        excerpt: "There's something magical about the combination of freshly brewed coffee and clean code. Both require patience, attention to detail, and a deep appreciation for the craft."
-                    }
-                ];
-            } catch (error) {
-                console.log('Could not load search data, using fallback');
-                // Fallback search data
-                searchData = [
-                    {
-                        title: "Welcome to LofiCode Theme",
-                        url: "/posts/welcome-to-loficode/",
-                        excerpt: "Welcome to the LofiCode Hugo theme! This theme is designed for developers and creatives who want to create a warm, inviting blog with a retro lo-fi aesthetic."
-                    },
-                    {
-                        title: "Git Workflow Zen: Finding Peace in Version Control",
-                        url: "/posts/git-workflow-zen/",
-                        excerpt: "Version control doesn't have to be stressful. Like a well-organized workspace or a perfectly brewed cup of coffee, a good Git workflow can bring zen to your development process."
-                    },
-                    {
-                        title: "Building Cozy Digital Workspaces",
-                        url: "/posts/building-cozy-workspaces/",
-                        excerpt: "Creating a workspace that sparks joy and productivity is an art form. Whether you're working from home, a coffee shop, or a traditional office, the right environment can make all the difference."
-                    },
-                    {
-                        title: "JavaScript Debugging Like a Pro",
-                        url: "/posts/javascript-debugging-tips/",
-                        excerpt: "Debugging JavaScript can feel like solving a mystery novel. You have clues scattered throughout your code, and you need to piece them together to find the culprit."
-                    },
-                    {
-                        title: "Coffee and Code: The Perfect Pairing",
-                        url: "/posts/coffee-and-code/",
-                        excerpt: "There's something magical about the combination of freshly brewed coffee and clean code. Both require patience, attention to detail, and a deep appreciation for the craft."
-                    }
-                ];
             }
+
+            throw new Error('No valid search index found');
         }
 
         function performSearch(query) {

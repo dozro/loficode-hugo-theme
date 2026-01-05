@@ -1,0 +1,45 @@
+// Colors
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+$lightBgPrimaryLinearGradient0: #FFE5B4;
+$lightBgPrimaryLinearGradient25: #FFCCCB;
+$lightBgPrimaryLinearGradient75: #DDA0DD;
+$lightBgPrimaryLinearGradient100: #98D8E8;
+$darkBgPrimaryLinearGradient0: darken($lightBgPrimaryLinearGradient0, 75%);
+$darkBgPrimaryLinearGradient25: darken($lightBgPrimaryLinearGradient25, 75%);
+$darkBgPrimaryLinearGradient75: darken($lightBgPrimaryLinearGradient75, 75%);
+$darkBgPrimaryLinearGradient100: darken($lightBgPrimaryLinearGradient100, 75%);
+$lightBgPrimary: linear-gradient(135deg, $lightBgPrimaryLinearGradient0 0%, $lightBgPrimaryLinearGradient25 25%, $lightBgPrimaryLinearGradient75 75%, $lightBgPrimaryLinearGradient100 100%);
+$darkBgPrimary: linear-gradient(135deg, $darkBgPrimaryLinearGradient0 0%, $darkBgPrimaryLinearGradient25 25%, $darkBgPrimaryLinearGradient75 75%, $darkBgPrimaryLinearGradient100 100%);
+$lightBgSecondary: rgba(255, 255, 255, 0.85);
+$darkBgSecondary: #28507b;
+$lightBgCard: rgba(255, 255, 255, 0.9);
+$darkBgCard: complement($lightBgCard);
+$darkBgCardAlt: rgba(30, 30, 30, 0.5);
+$lightAccentPrimary: #FF006B;
+$darkAccentPrimary: #9c104a;
+$lightAccentSecondary: #00CED1;
+$darkAccentSecondary: #197abfb4;
+$lightAccentTertiary: #FF7F50;
+$darkAccentTertiary: darken($lightAccentTertiary, 20%);
+$lightTextPrimary: darken(complement($lightBgPrimaryLinearGradient100), 20%);
+$darkTextPrimary: #c37260;
+$lightTextSecondary: #5A4B7C;
+$darkTextSecondary: lighten($lightTextSecondary, 50%);
+$lightTextMuted: #8B7BA8;
+$darkTextMuted: complement($lightTextMuted);
+$lightBorderColor: rgba(255, 0, 107, 0.2);
+$darkBorderColor: darken($lightBorderColor, 10%);
+$lightShadowColor: rgba(255, 126, 80, 0.15);
+$darkShadowColor: darken($lightShadowColor, 10%);
+$lightGlowColor: rgba(255, 0, 107, 0.3);
+$darkGlowColor: darken($lightGlowColor, 10%);
+$lightErrorColor: #FF4444;
+$darkErrorColor: lighten($lightErrorColor, 10%);
+$lightSuccessColor: #44FF88;
+$darkSuccessColor: lighten($lightSuccessColor, 10%);
+
+$lightActiveLinkColor: darken($lightTextPrimary, 40%);
+$lightVisitedLinkColor: lighten($lightActiveLinkColor, 20%); 
+$lightLinkbuttonBgColor: darken($lightTextPrimary, 50%); 

@@ -1,0 +1,42 @@
+<!-- refactored styling -->
+<!-- Copyright 2026 Rye (itsrye.dev) -->
+
+{{ with resources.Get "scss/refactored/main/main.scss" }}
+{{ $opts := dict
+        "enableSourceMap" hugo.IsDevelopment
+        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/main.css"
+        "transpiler" "libsass"
+        "vars" site.Params.styles
+        "includePaths" (slice "scss/refactored/")
+    }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ else }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with resources.Get "scss/refactored/post.scss" }}
+{{ $opts := dict
+        "enableSourceMap" hugo.IsDevelopment
+        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/Post.css"
+        "transpiler" "libsass"
+        "vars" site.Params.styles
+        "includePaths" (slice "scss/refactored/")
+    }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<!--<link rel="stylesheet" href="{{ .RelPermalink }}">-->
+{{ else }}
+{{ with . | fingerprint }}
+<!--<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">-->
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}

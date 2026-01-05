@@ -1,0 +1,77 @@
+@import '../foundation/colors';
+
+.citation-hidden{
+    display: none !important;
+}
+
+.citation{
+    position: fixed;
+    bottom: 1rem;
+    left: 30vw;
+    right: 30vw;
+    width: 40vw;
+    max-height: 400px;
+    overflow-y: auto;
+    background: $darkBgPrimary !important;
+    background-color: $darkBgPrimary !important;
+    color: $darkTextPrimary;
+    border: 2px solid $darkAccentPrimary;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px $darkAccentPrimary;
+    padding: 1rem;
+    z-index: 1000;
+
+    @media(prefers-color-scheme: light){
+        background: $lightBgPrimary !important;
+        background-color: $lightBgPrimary !important;
+        color: $lightTextPrimary;
+        border: 2px solid $lightAccentPrimary;
+        box-shadow: 0 4px 16px $lightAccentPrimary;
+    }
+
+    .citation-close{
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: none;
+        border: none;
+        color: $darkTextPrimary;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--accent-primary);
+        }
+
+        @media(prefers-color-scheme: light){
+            color: $lightTextPrimary;
+        }
+    }
+    #bibtex-copy{
+        background: darken($darkAccentPrimary, 10%);
+        border: none;
+        color: lighten($darkTextPrimary, 20%);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        @media(prefers-color-scheme: light){
+            background: $lightAccentPrimary;
+            color: $lightTextPrimary;
+        }
+
+        &:hover {
+            background: $darkAccentSecondary;
+            @media(prefers-color-scheme: light){
+                background: $lightAccentSecondary;
+            }
+        }
+    }
+}
+
+#rye-cit-btn{
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+}

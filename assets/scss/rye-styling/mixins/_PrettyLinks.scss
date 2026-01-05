@@ -1,8 +1,8 @@
 // Neon gradient link styling for PrettyLinks.scss
 // Copyright 2025 Rye (itsrye.dev)
 @mixin PrettyLink {
+    // neon gradient text effect
     background: linear-gradient(90deg, #ff6aff, #00ffc2);
-    /* neon gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;

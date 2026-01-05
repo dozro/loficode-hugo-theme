@@ -6,33 +6,52 @@
 @import 'light';
 @import 'dark';
 @import 'body';
+@import 'highContrast';
 @import '../SearchContainer';
 @import '../Button';
 @import 'GitLog';
 @import 'Particle';
 
-/* Auto-detect light mode */
-@media (prefers-color-scheme: light) {
+@media(prefers-contrast: more) {
     :root {
-        // light theme
-
-        @include light-theme;
+        @include highContrast($color-scheme: dark);
     }
 }
 
+// Auto-detect light mode
+@media (prefers-color-scheme: light) {
+    :root {
+        // light theme
+        @include light-theme;
+    }
+    @media(prefers-contrast: more){
+        :root {
+            @include highContrast($color-scheme: light);
+        }
+    }
+}
+
+// Auto-detect dark mode
 @media (prefers-color-scheme: dark) {
     :root {
         // dark theme
 
         @include dark-theme;
     }
+    @media(prefers-contrast: more){
+        :root {
+            @include highContrast($color-scheme: dark);
+        }
+    }
 }
 
+// Default to dark theme
 :root {
     // dark theme as default
     @include dark-theme;
 }
 
+// Explicit theme selectors
 [data-theme="light"] {
     @include light-theme;
 }

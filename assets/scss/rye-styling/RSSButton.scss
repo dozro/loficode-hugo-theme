@@ -1,0 +1,31 @@
+// Styling for RSS Button
+@import '../foundation/colors';
+@import '../foundation/simpleAnimations';
+.rss-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: var(--btn-gradient);
+    border-radius: 6px;
+    color: $lightTextPrimary;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        background: darken($lightAccentPrimary, 5%);
+        @include scaleUpCenter;
+    }
+
+    &:active {
+        background: darken($lightAccentPrimary, 10%);
+    }
+
+    .rss-icon {
+        width: 1rem;
+        height: 1rem;
+        fill: currentColor;
+    }
+}
