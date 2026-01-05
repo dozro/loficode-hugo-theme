@@ -5,6 +5,13 @@
 {{ end }}
 {{ end }}
 {{ end }}
+{{ with resources.Get "scripts/keyboard-shortcuts-theme.js" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/js/refactored/KeyboardShortcuts.js" . | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}
+{{ end }}
+{{ end }}
 {{ with resources.Get "scss/rye-styling/KeyboardShortcut.scss" }}
 {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
