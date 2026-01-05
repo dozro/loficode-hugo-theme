@@ -1,6 +1,9 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
+@import '../foundation/variables';
+@import '../foundation/fonts/emoji';
+
 /* Theme Toggle */
 .theme-toggle {
     position: fixed;
@@ -18,6 +21,8 @@
     align-items: center;
     justify-content: center;
     font-size: $largeFontSize;
+    font-family: $NonColorEmoji;
+    font-weight: 400;
     z-index: 100;
     backdrop-filter: blur(10px);
 
