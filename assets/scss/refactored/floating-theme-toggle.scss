@@ -21,8 +21,7 @@
     align-items: center;
     justify-content: center;
     font-size: $largeFontSize;
-    font-family: $NonColorEmoji;
-    font-weight: 400;
+    @include  noncolor-emoji-font();
     z-index: 100;
     backdrop-filter: blur(10px);
 

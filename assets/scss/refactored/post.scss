@@ -2,11 +2,10 @@
 // copyright remains with Raising Pixels (original author) and under original license
 
 @import 'post/backdrop.scss';
-@import 'post/content.scss';
+
+@import 'post/reading-progress';
 
 main {
-
-    
 
     // SPA Post Overlay
     .post-overlay {
@@ -20,6 +19,10 @@ main {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         @import 'post/postdate';
+        @import 'post/content.scss';
+        @import 'post/tag';
+        @import 'post/overlay_readingprogess';
+        @import 'post/overlay_site_title';
 
         // For regular post pages, make backdrop transparent
         .post-overlay-backdrop {
@@ -27,10 +30,6 @@ main {
             backdrop-filter: none;
             pointer-events: none;
         }
-
-        //.post-overlay-content {
-        //    @include postContent();
-        //}
 
         // Ensure SPA overlay header matches regular page header
         @import 'post/siteHeader.scss';

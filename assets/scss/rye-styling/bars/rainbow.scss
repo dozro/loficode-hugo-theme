@@ -2,6 +2,8 @@
 
 $heightBar: 8px;
 
+@import '../../foundation/keyframes/shake';
+
 .rye-rainbow-bar{
     padding-top: $heightBar*2;
     padding-bottom: $heightBar*1.5;
@@ -31,5 +33,9 @@ $heightBar: 8px;
     }
     .rainbow-violet{
         background-color: violet;
+    }
+
+    &:hover{
+       @include shake-rotation(); 
     }
 }
