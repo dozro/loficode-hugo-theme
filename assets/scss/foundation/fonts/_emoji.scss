@@ -1,4 +1,24 @@
-@import url(https://fonts.bunny.net/css?family=noto-color-emoji:400|noto-emoji:500,600);
+@mixin noncolor-emoji-font {
+    font-family: 'Noto Emoji', 'Noto Color Emoji', sans-serif;
+    @media(prefers-reduced-data: reduce){
+        font-family: sans-serif;
+    }
+    @media(prefers-reduced-data: no-preference){
+        @import url(https://fonts.bunny.net/css?family=noto-emoji:500);
+        font-family: 'Noto Emoji', 'Noto Color Emoji', sans-serif;
+        font-weight: 500;
+    }
+}
 
-$ColorEmoji: 'Noto Color Emoji', 'Noto Emoji', sans-serif;
-$NonColorEmoji: 'Noto Emoji','Noto Color Emoji', sans-serif;
+@mixin color-emoji-font {
+    font-family: 'Noto Color Emoji', 'Noto Emoji', sans-serif;
+    @media(prefers-reduced-data: reduce) {
+        font-family: sans-serif;
+    }
+
+    @media(prefers-reduced-data: no-preference) {
+        @import url(https://fonts.bunny.net/css?family=noto-color-emoji:400);
+        font-family: 'Noto Color Emoji', 'Noto Emoji', sans-serif;
+        font-weight: 400;
+    }
+}

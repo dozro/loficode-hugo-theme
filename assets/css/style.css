@@ -762,13 +762,6 @@ nav {
     flex-wrap: wrap;
 }
 
-.post-date {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    white-space: nowrap;
-    font-family: 'JetBrains Mono', monospace;
-}
-
 .post-subtitle {
     color: var(--text-secondary);
     font-size: 0.95rem;
@@ -849,10 +842,6 @@ nav {
     border: 1px solid var(--border-color);
 }
 
-.coffee-cups {
-    filter: drop-shadow(0 0 6px var(--accent-tertiary));
-}
-
 .post-mood {
     background: var(--btn-gradient);
     color: white;
@@ -929,21 +918,6 @@ nav {
     }
 }
 
-/* Blog Post Pages */
-.post-content {
-    padding: 1rem;
-    position: relative;
-    overflow: hidden;
-    border: none;
-    outline: none;
-}
-
-@media (max-width: 768px) {
-    .post-content {
-        padding: 0.5rem;
-    }
-}
-
 /* Post Header */
 .post-header {
     margin-bottom: 2rem;
@@ -1006,23 +980,6 @@ nav {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 1rem;
-}
-
-.post-tag {
-    background: var(--btn-gradient);
-    color: white;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-a.post-tag {
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
 }
 
 /* Typography */
@@ -2698,12 +2655,6 @@ footer {
 }
 
 
-/*  */
-
-.post-overlay.active .post-overlay-content {
-    transform: translateY(0);
-}
-
 .post-overlay-header {
     position: sticky;
     top: 0;
@@ -2721,33 +2672,6 @@ footer {
     flex: 1;
 }
 
-.overlay-site-title {
-    font-family: 'Orbitron', monospace;
-    font-size: 1.2rem;
-    font-weight: 700;
-    background: var(--btn-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.overlay-site-title::before {
-    content: "☕";
-    font-size: 1rem;
-    -webkit-text-fill-color: var(--accent-tertiary) !important;
-    color: var(--accent-tertiary);
-    filter: drop-shadow(0 0 8px var(--accent-tertiary));
-    background: none;
-}
-
-.overlay-site-title:hover {
-    filter: drop-shadow(0 0 10px var(--glow-color));
-}
 
 .post-overlay-close {
     background: var(--bg-card);
@@ -2778,8 +2702,7 @@ footer {
     margin: 0 auto;
 }
 
-/* Override reading progress for overlay */
-.post-overlay .reading-progress {
+.reading-progress {
     position: fixed;
     top: 0;
     left: 0;

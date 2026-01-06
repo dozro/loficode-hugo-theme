@@ -1,0 +1,11 @@
+{{ with .Params.author }}
+<span 
+    class="post-author"
+    role="text"
+    aria-label="{{ T "ariaLabelAuthor" }}"
+    >
+    <span class="post-author-label" id="post-author-label">{{ T "postBy" }}</span>
+    <!--{{ partial "tooltip.html" (printf "%s" (T "postAuthorTooltip") ) }}-->
+    <span class="post-author-value" id="post-author-value" aria-labelledby="post-author-label">{{ . }}</span>
+</span>
+{{ end }}

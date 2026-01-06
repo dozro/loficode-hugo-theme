@@ -1,0 +1,13 @@
+<span class="coffee-cups" role="none">
+    {{ $coffees := "" }}
+    {{ $maxCups := 5 }}
+    {{ $cupsToShow := .ReadingTime }}
+    {{ if gt .ReadingTime $maxCups }}
+    {{ $cupsToShow = $maxCups }}
+    {{ end }}
+    {{ range (seq $cupsToShow) }}
+    {{ $coffees = print $coffees "☕" }}
+    {{ end }}
+    {{ $coffees }}
+</span>
+<span role="note">{{ .ReadingTime }} min read</span>

@@ -77,7 +77,7 @@
     }
 
     .error-code {
-        font-family: $orbitronFontFamily;
+        @include orbitron-font();
         font-size: $hugeFontSize;
         font-weight: 700;
         background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));

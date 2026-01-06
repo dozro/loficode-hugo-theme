@@ -22,7 +22,7 @@
     .matrix-column {
         position: absolute;
         top: -100%;
-        font-family: $monospaceFontFamily;
+        @include monospace-font();
         font-size: $defaultFontSize;
         color: var(--accent-secondary);
         animation: matrix-fall linear infinite;

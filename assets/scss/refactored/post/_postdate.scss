@@ -1,0 +1,23 @@
+// post date
+
+@import '../../foundation/fonts/monospace';
+@import '../../foundation/fonts/sansSerif';
+@import '../../foundation/fonts/emoji';
+
+.post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    .post-date-label{
+        @include sansserif-font();
+    }
+    .post-date-value{
+        @include monospace-font();
+    }
+    &::before{
+        @include color-emoji-font;
+        margin-right: 10px;
+        background: transparent;
+        content: "⌲";
+    }
+}

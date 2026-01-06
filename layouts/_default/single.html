@@ -24,21 +24,10 @@
         <article class="post-content">
             <header class="post-header">
                 <div class="post-meta">
-                    <span class="post-date">{{ .Date.Format "2006.01.02" }}</span>
+                    {{ partial "post/date.html" . }}
+                    {{ partial "post/author.html" . }}
                     <div class="reading-time-post">
-                        <span class="coffee-cups">
-                            {{ $coffees := "" }}
-                            {{ $maxCups := 5 }}
-                            {{ $cupsToShow := .ReadingTime }}
-                            {{ if gt .ReadingTime $maxCups }}
-                                {{ $cupsToShow = $maxCups }}
-                            {{ end }}
-                            {{ range (seq $cupsToShow) }}
-                                {{ $coffees = print $coffees "☕" }}
-                            {{ end }}
-                            {{ $coffees }}
-                        </span>
-                        <span>{{ .ReadingTime }} min read</span>
+                        {{partial "post/coffee-cups.html" . }}
                     </div>
                 </div>
                 <h1 class="post-title">{{ .Title }}</h1>

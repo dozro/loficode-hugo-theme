@@ -1,0 +1,23 @@
+// Styling for post author
+
+@import '../../foundation/fonts/monospace';
+@import '../../foundation/fonts/sansSerif';
+@import '../../foundation/fonts/emoji';
+
+.post-author{
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    .post-author-label{
+        @include sansserif-font();
+    }
+    .post-author-value{
+        @include monospace-font();
+    }
+    &::before{
+        @include color-emoji-font;
+        margin-right: 10px;
+        background: transparent;
+        content: "⌲";
+    }
+}

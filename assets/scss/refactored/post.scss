@@ -2,24 +2,28 @@
 // copyright remains with Raising Pixels (original author) and under original license
 
 @import 'post/backdrop.scss';
-@import 'post/content.scss';
-@import 'post/siteHeader.scss';
 
-// SPA Post Overlay
-.post-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+@import 'post/reading-progress';
 
-    .active {
-        opacity: 1;
-        visibility: visible;
+main {
+
+    // SPA Post Overlay
+    .post-overlay {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        @import 'post/postdate';
+        @import 'post/postauthor';
+        @import 'post/content.scss';
+        @import 'post/tag';
+        @import 'post/overlay_readingprogess';
+        @import 'post/overlay_site_title';
 
         // For regular post pages, make backdrop transparent
         .post-overlay-backdrop {
@@ -27,12 +31,21 @@
             backdrop-filter: none;
             pointer-events: none;
         }
-    }
-    .post-overlay-content {
-        @include postContent();
-    }
-    // Ensure SPA overlay header matches regular page header
-    .site-header {
-        @include SiteHeader();
+
+        // Ensure SPA overlay header matches regular page header
+        @import 'post/siteHeader.scss';
+        @import 'post/reading-progress';
+        &.active{
+            opacity: 1 !important;
+            visibility: visible !important;
+            .post-overlay-backdrop {
+                background: transparent;
+                backdrop-filter: none;
+                pointer-events: none;
+            }
+            .post-overlay-content{
+                transform: translateY(0);
+            }
+        }
     }
 }

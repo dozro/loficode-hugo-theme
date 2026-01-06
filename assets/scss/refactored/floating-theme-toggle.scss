@@ -6,6 +6,8 @@
 
 /* Theme Toggle */
 .theme-toggle {
+    $padding: 0px;
+    $margin: 5px;
     position: fixed !important;
     bottom: 2rem;
     right: 2rem;
@@ -14,6 +16,8 @@
     color: var(--text-primary);
     width: 50px;
     height: 50px;
+    padding: $padding $padding $padding $padding;
+    margin: $margin $margin*1.5 $margin $margin*1.5;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -21,8 +25,7 @@
     align-items: center;
     justify-content: center;
     font-size: $largeFontSize;
-    font-family: $NonColorEmoji;
-    font-weight: 400;
+    @include noncolor-emoji-font();
     z-index: 100;
     backdrop-filter: blur(10px);
 
@@ -34,10 +37,15 @@
     }
 
     @media (max-width: 768px) {
-        top: 1rem;
-        right: 1rem;
+        top: 1.25rem;
+        font-size: 13pt;
+        padding: $padding/2 $padding/1.5 $padding/2 $padding/1.5;
+        margin: $margin/2 $margin/1.5 $margin/2 $margin/1.5;
+        width: 45px;
+        height: 45px;
+        right: 3rem;
         width: 40px;
         height: 40px;
-        font-size: $defaultFontSize;
+        @include color-emoji-font();
     }
 }

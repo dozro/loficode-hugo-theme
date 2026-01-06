@@ -2,3 +2,8 @@
 
 @import url(https://fonts.bunny.net/css?family=advent-pro:300);
 $sansSerifFontFamily: 'Advent Pro', Arial, Helvetica, sans-serif;
+
+@mixin sansserif-font{
+    font-family: $sansSerifFontFamily;
+    font-weight: 300;
+}

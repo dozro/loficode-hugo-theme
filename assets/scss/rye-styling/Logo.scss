@@ -2,11 +2,13 @@
 // Copyright 2025 Rye (itsrye.dev)
 
 .rye-logo {
+    position: relative;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     overflow: hidden;
-    display: inline-block;
+    display: inline;
+    flex-grow: unset;
     
     @media (max-width: 768px) {
         width: 20px;
