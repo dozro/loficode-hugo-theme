@@ -5,5 +5,8 @@
         {{ partial "footer/copyright-notice.html" . }}
         {{ partial "footer/footer-nav.html" . }}
         {{ partial "footer/bar.html" . }}
+        {{ if .Site.Params.ui.rainbowBar.enabled }}
+            {{ partial "bars/rainbow.html" . }}
+        {{ end }}
     </div>
 </footer>
