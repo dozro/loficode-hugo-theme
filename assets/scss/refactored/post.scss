@@ -19,6 +19,7 @@ main {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         @import 'post/postdate';
+        @import 'post/postauthor';
         @import 'post/content.scss';
         @import 'post/tag';
         @import 'post/overlay_readingprogess';

@@ -27,19 +27,7 @@
                     {{ partial "post/date.html" . }}
                     {{ partial "post/author.html" . }}
                     <div class="reading-time-post">
-                        <span class="coffee-cups">
-                            {{ $coffees := "" }}
-                            {{ $maxCups := 5 }}
-                            {{ $cupsToShow := .ReadingTime }}
-                            {{ if gt .ReadingTime $maxCups }}
-                                {{ $cupsToShow = $maxCups }}
-                            {{ end }}
-                            {{ range (seq $cupsToShow) }}
-                                {{ $coffees = print $coffees "☕" }}
-                            {{ end }}
-                            {{ $coffees }}
-                        </span>
-                        <span>{{ .ReadingTime }} min read</span>
+                        {{partial "post/coffee-cups.html" . }}
                     </div>
                 </div>
                 <h1 class="post-title">{{ .Title }}</h1>

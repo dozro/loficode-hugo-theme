@@ -1,17 +1,17 @@
-// post date
+// Styling for post author
 
 @import '../../foundation/fonts/monospace';
 @import '../../foundation/fonts/sansSerif';
 @import '../../foundation/fonts/emoji';
 
-.post-date {
+.post-author{
     font-size: 0.8rem;
     color: var(--text-muted);
     white-space: nowrap;
-    .post-date-label{
+    .post-author-label{
         @include sansserif-font();
     }
-    .post-date-value{
+    .post-author-value{
         @include monospace-font();
     }
     &::before{

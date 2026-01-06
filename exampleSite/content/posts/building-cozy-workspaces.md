@@ -5,6 +5,7 @@ date: 2024-01-15T14:30:00Z
 tags: ["productivity", "workspace", "design", "wellness"]
 featured: true
 mood: "Focused"
+author: "Alice Watson"
 ---
 
 In our fast-paced digital world, creating a cozy workspace isn't just about aesthetics—it's about crafting an environment that nurtures creativity, reduces stress, and helps you do your best work.

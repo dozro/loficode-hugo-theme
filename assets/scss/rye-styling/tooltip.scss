@@ -1,0 +1,41 @@
+// Copyright 2026 Rye (itsrye.dev)
+
+.tooltip {
+    $tooltipBR: 6px;
+    position: relative;
+    display: inline-block;
+    background: transparent;
+    border-bottom: 1px dotted black;
+    opacity: 95%;
+    cursor: pointer;
+
+    .rye-icon{
+        opacity: 75%;
+        @media(prefers-reduced-transparency: reduce){
+            opacity: 100%;
+        }
+    }
+
+    .tooltiptext {
+        visibility: hidden;
+        width: 250px;
+        background: fixed;
+        background-color: var(--bg-card);
+        color: #ffffff;
+        text-align: center;
+        padding: 0px 15pt;
+        border-radius: $tooltipBR 0 0 $tooltipBR*2;
+        position: absolute;
+        z-index: 1;
+        opacity: 95%;
+        @media(max-width: 700px){
+            width: 125px;
+        }
+    }
+
+    &:hover{
+        .tooltiptext {
+            visibility: visible;
+        }
+    }
+}
