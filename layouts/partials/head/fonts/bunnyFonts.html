@@ -5,7 +5,7 @@
    <!-- Inter -->
    {{ with resources.GetRemote "https://fonts.bunny.net/css?family=inter:300,400,500,600,700" }}
         {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/bunny/css/inter.css" . | fingerprint }}
-        <link rel="stylesheet"
+        <link rel="stylesheet" as="font" blocking="none" type="text/css"
               href="{{ $res.RelPermalink }}"
               integrity="{{ $res.Data.Integrity }}"
               crossorigin="anonymous">
@@ -13,7 +13,7 @@
     <!-- Orbitron -->
     {{ with resources.GetRemote "https://fonts.bunny.net/css?family=orbitron:400,700" }}
         {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/bunny/css/orbitron.css" . | fingerprint }}
-        <link rel="stylesheet"
+        <link rel="stylesheet" as="font" blocking="none" type="text/css"
               href="{{ $res.RelPermalink }}"
               integrity="{{ $res.Data.Integrity }}"
               crossorigin="anonymous">
@@ -21,7 +21,7 @@
     <!-- JetBrains Mono -->
     {{ with resources.GetRemote "https://fonts.bunny.net/css?family=jetbrains-mono:400,500" }}
         {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/bunny/css/jetbrains-mono.css" . | fingerprint }}
-        <link rel="stylesheet"
+        <link rel="stylesheet" as="font" blocking="none" type="text/css"
               href="{{ $res.RelPermalink }}"
               integrity="{{ $res.Data.Integrity }}"
               crossorigin="anonymous">
@@ -30,10 +30,10 @@
         <!-- Bunny Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <!-- Inter -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700">
+        <link rel="stylesheet" as="font" blocking="none" type="text/css" href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700">
         <!-- Orbitron -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css?family=orbitron:400,700">
+        <link rel="stylesheet" as="font" blocking="none" type="text/css" href="https://fonts.bunny.net/css?family=orbitron:400,700">
         <!-- JetBrains Mono -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500">
+        <link rel="stylesheet" as="font" blocking="none" type="text/css" href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500">
     {{ end }}
 {{end}}

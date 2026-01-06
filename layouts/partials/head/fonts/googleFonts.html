@@ -3,7 +3,7 @@
 <!-- Inter -->
    {{ with resources.GetRemote "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" }}
         {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/google/css/inter.css" . | fingerprint }}
-        <link rel="stylesheet"
+        <link rel="stylesheet" as="font" blocking="none"
               href="{{ $res.RelPermalink }}"
               integrity="{{ $res.Data.Integrity }}"
               crossorigin="anonymous">
@@ -11,7 +11,7 @@
     <!-- Orbitron -->
     {{ with resources.GetRemote "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" }}
         {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/google/css/orbitron.css" . | fingerprint }}
-        <link rel="stylesheet"
+        <link rel="stylesheet" as="font" blocking="none"
               href="{{ $res.RelPermalink }}"
               integrity="{{ $res.Data.Integrity }}"
               crossorigin="anonymous">
@@ -19,7 +19,7 @@
     <!-- JetBrains Mono -->
     {{ with resources.GetRemote "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" }}
         {{ $res := resources.Copy "theme/hugo-lofi-theme/vendored/fonts/google/css/jetbrains-mono.css" . | fingerprint }}
-        <link rel="stylesheet"
+        <link rel="stylesheet" as="font" blocking="none"
               href="{{ $res.RelPermalink }}"
               integrity="{{ $res.Data.Integrity }}"
               crossorigin="anonymous">
@@ -29,10 +29,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <!-- Inter -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+        <link rel="stylesheet" as="font" blocking="none" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
         <!-- Orbitron -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" />
+        <link rel="stylesheet" as="font" blocking="none" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" />
         <!-- JetBrains Mono -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" />
+        <link rel="stylesheet" as="font" blocking="none" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" />
     {{ end }}
 {{end}}

@@ -1,7 +1,8 @@
 {{ with .Params.author }}
 <span 
     class="post-author"
-    role="author"
+    role="text"
+    aria-label="{{ T "ariaLabelAuthor" }}"
     >
     <span class="post-author-label" id="post-author-label">{{ T "postBy" }}</span>
     <!--{{ partial "tooltip.html" (printf "%s" (T "postAuthorTooltip") ) }}-->

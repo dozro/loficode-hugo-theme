@@ -12,10 +12,26 @@
     }}
 {{ with . | toCSS $opts }}
 {{ if hugo.IsDevelopment }}
-<link rel="stylesheet" href="{{ .RelPermalink }}">
+<link 
+  rel="stylesheet" 
+  as="style"
+  blocking="none"
+  type="text/css"
+  fetchpriority="low"
+  href="{{ .RelPermalink }}"
+  />
 {{ else }}
 {{ with . | fingerprint }}
-<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+<link 
+  rel="stylesheet" 
+  as="style"
+  blocking="none"
+  fetchpriority="low"
+  type="text/css"
+  href="{{ .RelPermalink }}" 
+  integrity="{{ .Data.Integrity }}" 
+  crossorigin="anonymous"
+  />
 {{ end }}
 {{ end }}
 {{ end }}
@@ -32,10 +48,10 @@
   }}
   {{ with . | toCSS $opts }}
     {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
+      <link rel="stylesheet" type="text/css" fetchpriority="low" blocking="none" href="{{ .RelPermalink }}">
     {{ else }}
       {{ with . | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" fetchpriority="low" blocking="none" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
       {{ end }}
     {{ end }}
   {{ end }}
@@ -52,10 +68,26 @@
   }}
   {{ with . | toCSS $opts }}
     {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
+      <link 
+        rel="stylesheet" 
+        as="style"
+        blocking="none"
+        type="text/css"
+        fetchpriority="low"
+        href="{{ .RelPermalink }}"
+        />
     {{ else }}
       {{ with . | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link 
+          rel="stylesheet" 
+          as="style"
+          blocking="none"
+          type="text/css"
+          fetchpriority="low"
+          href="{{ .Permalink }}" 
+          integrity="{{ .Data.Integrity }}" 
+          crossorigin="anonymous"
+        />  
       {{ end }}
     {{ end }}
   {{ end }}
@@ -72,10 +104,26 @@
   }}
   {{ with . | toCSS $opts }}
     {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
+      <link 
+        rel="stylesheet" 
+        as="style"
+        blocking="none"
+        type="text/css"
+        fetchpriority="low"
+        href="{{ .RelPermalink }}"
+        />
     {{ else }}
       {{ with . | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link 
+        rel="stylesheet" 
+        as="style"
+        blocking="none"
+        fetchpriority="low"
+        type="text/css"
+        href="{{ .Permalink }}" 
+        integrity="{{ .Data.Integrity }}" 
+        crossorigin="anonymous"
+        />
       {{ end }}
     {{ end }}
   {{ end }}

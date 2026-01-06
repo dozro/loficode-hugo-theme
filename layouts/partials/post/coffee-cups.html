@@ -1,4 +1,4 @@
-<span class="coffee-cups">
+<span class="coffee-cups" role="none">
     {{ $coffees := "" }}
     {{ $maxCups := 5 }}
     {{ $cupsToShow := .ReadingTime }}
@@ -10,4 +10,4 @@
     {{ end }}
     {{ $coffees }}
 </span>
-<span>{{ .ReadingTime }} min read</span>
+<span role="note">{{ .ReadingTime }} min read</span>

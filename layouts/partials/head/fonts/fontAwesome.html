@@ -1,14 +1,14 @@
 <!-- FontAwesome -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script fetchpriority="low" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" attributionsrc="true" integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 {{ $fa := .Site.Params.selfHosting.fontAwesome }}
 
 {{ if not $fa.enabled }}
 
   {{ with $fa.remoteAddr }}
-    <link rel="stylesheet" href="{{ . }}">
+    <link rel="stylesheet" fetchpriority="low" as="style" blocking="none" type="text/css" href="{{ . }}">
   {{ end }}
   {{ if not $fa.remoteAddr }}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" fetchpriority="low" as="style" blocking="none" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {{ end }}
 
 {{ else }}
@@ -19,6 +19,7 @@
     <link rel="stylesheet"
           href="{{ $res.RelPermalink }}"
           integrity="{{ $res.Data.Integrity }}"
+          as="style" blocking="none" type="text/css"
           crossorigin="anonymous">
 
   {{ else }}
@@ -29,6 +30,7 @@
         <link rel="stylesheet"
               href="{{ $res.RelPermalink }}"
               integrity="{{ $res.Data.Integrity }}"
+              as="style" blocking="none" type="text/css"
               crossorigin="anonymous">
       {{ end }}
     {{ end }}
