@@ -5,7 +5,7 @@
 </head>
 <body>
     {{ if not .IsHome }}
-    <div class="reading-progress"></div>
+    <div role="progressbar" class="reading-progress"></div>
     {{ end }}
 
     {{ if not (eq .Type "posts") }}

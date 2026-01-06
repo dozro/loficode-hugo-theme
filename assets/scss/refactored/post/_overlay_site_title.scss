@@ -1,6 +1,19 @@
 @import '../../foundation/fonts/monospace';
 @import '../../foundation/fonts/emoji';
 
+.post-overlay-title{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    .rye-logo{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .overlay-site-title{
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
 .overlay-site-title {
     @include orbitron-font();
     font-size: 1.2rem;
@@ -20,7 +33,7 @@
     }
 
     &::before {
-        content: "☕";
+        content: "";
         @include noncolor-emoji-font();
         font-size: 1rem;
         -webkit-text-fill-color: var(--accent-tertiary) !important;
