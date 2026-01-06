@@ -2,3 +2,8 @@
 
 $ColorEmoji: 'Noto Color Emoji', 'Noto Emoji', sans-serif;
 $NonColorEmoji: 'Noto Emoji','Noto Color Emoji', sans-serif;
+
+@mixin color-emoji-font {
+    font-family: $ColorEmoji;
+    font-weight: 400;
+}
