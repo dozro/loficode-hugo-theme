@@ -59,7 +59,7 @@ enableEmoji = true
     facebook = "https://facebook.com/example"
     xing = "https://xing.com/example"
     git = "https://gitea.com"
-    gitea = "https://gitea.com"
+    #gitea = "https://gitea.com"
 
 # Main navigation menu
 [[menu.main]]
