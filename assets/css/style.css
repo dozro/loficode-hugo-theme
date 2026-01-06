@@ -762,13 +762,6 @@ nav {
     flex-wrap: wrap;
 }
 
-.post-date {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    white-space: nowrap;
-    font-family: 'JetBrains Mono', monospace;
-}
-
 .post-subtitle {
     color: var(--text-secondary);
     font-size: 0.95rem;
@@ -847,10 +840,6 @@ nav {
     background: var(--bg-secondary);
     border-radius: 20px;
     border: 1px solid var(--border-color);
-}
-
-.coffee-cups {
-    filter: drop-shadow(0 0 6px var(--accent-tertiary));
 }
 
 .post-mood {
@@ -2697,12 +2686,6 @@ footer {
     z-index: 10000 !important;
 }
 
-
-/*  */
-
-.post-overlay.active .post-overlay-content {
-    transform: translateY(0);
-}
 
 .post-overlay-header {
     position: sticky;

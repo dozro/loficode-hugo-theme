@@ -1,0 +1,16 @@
+// post date
+
+@import '../../foundation/fonts/monospace';
+@import '../../foundation/fonts/sansSerif';
+
+.post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    .post-date-label{
+        @include sansserif-font();
+    }
+    .post-date-value{
+        @include monospace-font();
+    }
+}

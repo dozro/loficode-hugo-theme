@@ -1,7 +1,7 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
-@mixin SiteHeader {
+.site-header {
     background: var(--bg-secondary);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
