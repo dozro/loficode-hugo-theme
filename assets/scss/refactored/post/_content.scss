@@ -3,6 +3,7 @@
 
 $paddingBot: 120px;
 $paddingLeft: 30px;
+$paddingRight: 25px;
 
 // Blog Post Pages
 .post-content {
@@ -16,6 +17,7 @@ $paddingLeft: 30px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     padding-bottom: $paddingBot; 
     padding-left: $paddingLeft;
+    padding-right: $paddingRight;
     border: none;
     outline: none;
     display: flex;
@@ -25,6 +27,7 @@ $paddingLeft: 30px;
 
     @media(max-width: 700px){
         padding-left: $paddingLeft/2;
+        padding-right: $paddingRight/2;
     }
 
     @media(prefers-reduced-transparency: reduce){

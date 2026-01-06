@@ -3,6 +3,7 @@
 @import '../../foundation/colors';
 @import '../../foundation/fonts/sansSerif';
 @mixin card() {
+    
     @media (prefers-contrast: more) {
             filter: contrast(200%);
     }

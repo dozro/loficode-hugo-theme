@@ -5,6 +5,8 @@
 @import 'mixins/card';
 
 footer {
+    position: absolute;
+    width: 100%;
     @include card();
 
     a {

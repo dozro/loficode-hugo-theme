@@ -4,18 +4,20 @@ $monospaceDefaultWeight: 400;
 $monospaceBoldWeight: 600;
 
 @mixin monospace-font {
-    @import url(https://fonts.bunny.net/css?family=jetbrains-mono:100,200,300,400,500,600,700,800);
     font-weight: $monospaceDefaultWeight;
+    font-family: 'JetBrains Mono', 'Orbitron', monospace;;
     @media(prefers-reduced-data: reduce){
         font-family: monospace;
     }
     @media(prefers-reduced-motion: no-preference){
-        font-family: 'JetBrains Mono', 'Orbitron', monospace;;
+        @import url(https://fonts.bunny.net/css?family=jetbrains-mono:100,200,300,400,500,600,700,800);
+        font-family: 'JetBrains Mono', 'Orbitron', monospace;
     }
 }
 
 @mixin orbitron-font {
     font-weight: $monospaceDefaultWeight;
+    font-family: 'Orbitron','JetBrains Mono', monospace;
     @media(prefers-reduced-data: no-preference){
         @import url(https://fonts.bunny.net/css?family=orbitron:400,500,600);
         font-family: 'Orbitron','JetBrains Mono', monospace;
