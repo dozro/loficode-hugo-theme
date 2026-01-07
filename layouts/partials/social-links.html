@@ -41,7 +41,7 @@
 {{ $href = printf "mailto:%s" $url }}
 {{ end }}
 
-<a href="{{ $href }}" target="_blank" rel="me" class="social-link" title="{{ $data.title }}">
+<a href="{{ $href }}" target="_blank" rel="me" class="social-link social-link-{{ $data.title }}" title="{{ $data.title }}">
     {{ if ne $data.img "" }}
     <img 
         src="{{ $data.img }}" 
@@ -74,7 +74,7 @@
       <link rel="stylesheet" as="style" blocking="none" fetchpriority="low" href="{{ .RelPermalink }}">
     {{ else }}
       {{ with . | fingerprint }}
-        <link rel="stylesheet" as="style" blocking="none" fetchpriority="low" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        <link rel="stylesheet" as="style" blocking="none" fetchpriority="low" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
       {{ end }}
     {{ end }}
   {{ end }}
