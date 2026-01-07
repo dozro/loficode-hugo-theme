@@ -1,0 +1,59 @@
+// refactored
+
+@import 'mixins';
+
+.mute-toggle {
+    background: var(--bg-card);
+    border: 3px solid var(--accent-primary);
+    width: 36px;
+    height: 36px;
+    padding: 0.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-size: 1rem;
+    color: var(--accent-primary);
+    margin-right: 0.75rem;
+    box-shadow:
+        0 4px 0 var(--accent-primary),
+        0 4px 8px rgba(255, 0, 107, 0.2);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+
+    @include iconi();
+
+    @media (max-width: 768px) {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+        border-width: 2px;
+        margin-right: 0.5rem;
+        box-shadow:
+            0 3px 0 var(--accent-primary),
+            0 3px 6px rgba(255, 0, 107, 0.2);
+    }
+
+    .muted {
+        background: var(--text-muted);
+        border-color: var(--text-muted);
+        color: white;
+        box-shadow:
+            0 4px 0 var(--text-muted),
+            0 4px 8px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+            box-shadow:
+                0 6px 0 var(--text-muted),
+                0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    &:hover {
+        @include iconhover();
+    }
+
+    &:active {
+        @include iconactive();
+    }
+
+}

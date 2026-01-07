@@ -1,0 +1,76 @@
+// refactored version 
+
+@import '../keyframes/equalizer';
+
+@mixin eqichild($height, $animationdelay, $animationduration){
+    height: $height;
+    animation-delay: $animationdelay;
+    animation-duration : $animationduration;
+    @media (max-width: 768px) {
+        height: $height/1.5;
+    }
+}
+
+// Equalizer Animation
+.equalizer {
+
+    .muted{
+        .equalizer-bar {
+            // Muted equalizer just changes opacity, but keeps animating
+            opacity: 0.3;
+        }
+    }
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 24px;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+        height: 18px;
+        gap: 1px;
+    }
+
+    .equalizer-bar {
+        width: 3px;
+        background: var(--btn-gradient);
+        border-radius: 2px;
+        animation: equalizer 1.5s ease-in-out infinite;
+
+        @media (max-width: 768px) {
+            width: 2px;
+        }
+
+        &:nth-child(1) {
+            @include eqichild(8px, 0s, 1.2s);
+        }
+
+        &:nth-child(2) {
+            @include eqichild(12px, 0.1s, 1.4s);
+        }
+
+        &:nth-child(3) {
+            @include eqichild(16px, 0.2s, 1.1s);
+        }
+
+        &:nth-child(4) {
+            @include eqichild(6px, 0.3s, 1.6s);
+        }
+
+        &:nth-child(5) {
+            @include eqichild(14px, 0.4s, 1.3s);
+        }
+
+        &:nth-child(6) {
+            @include eqichild(10px, 0.5s, 1.5s);
+        }
+
+        &:nth-child(7) {
+            @include eqichild(18px, 0.6s, 1.2s);
+        }
+
+        &:nth-child(8) {
+            @include eqichild(8px, 0.7s, 1.4s);
+        }
+    }
+}

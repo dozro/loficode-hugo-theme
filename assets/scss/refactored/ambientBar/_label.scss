@@ -1,0 +1,9 @@
+// refactored Version
+
+@import '../../foundation/mixins/smallDisplaysAdjustment';
+
+.ambient-label {
+    @include labelSmallDisplayAdjustment(120px, 0.85rem, false);
+    color: var(--text-secondary);
+    font-weight: 500;
+}

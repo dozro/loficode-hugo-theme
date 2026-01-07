@@ -1,0 +1,16 @@
+// refactored version
+
+@keyframes pixel-glow {
+    0% {
+        box-shadow:
+            0 5px 0 var(--accent-primary),
+            0 5px 15px var(--glow-color),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow:
+            0 5px 0 var(--accent-primary),
+            0 5px 20px var(--glow-color),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+}

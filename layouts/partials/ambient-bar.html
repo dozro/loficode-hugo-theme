@@ -1,4 +1,23 @@
 <div class="ambient-bar">
+    {{ with resources.Get "scss/refactored/ambientBar.scss" }}
+    {{ $opts := dict
+        "enableSourceMap" hugo.IsDevelopment
+        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/AmbientBar.css"
+        "transpiler" "libsass"
+        "vars" site.Params.styles
+        "includePaths" (slice "assets/scss")
+    }}
+    {{ with . | toCSS $opts }}
+    {{ if hugo.IsDevelopment }}
+    <link rel="stylesheet" type="text/css" as="style" blocking="none" fetchpriority="low" href="{{ .RelPermalink }}">
+    {{ else }}
+    {{ with . | fingerprint }}
+    <link rel="stylesheet" type="text/css" as="style" blocking="none" fetchpriority="low" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
     <div class="ambient-controls">
         <button 
             class="mute-toggle muted" 
