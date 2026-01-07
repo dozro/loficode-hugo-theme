@@ -4,22 +4,25 @@
 @import 'gradientShift';
 @import 'mixins/card';
 
-.generator-notice {
-    @include card();
-    a {
-        @include PrettyLink;
-    }
+@scope(.generator-notice) {
+    :scope {
+        @include card();
 
-    i {
-        vertical-align: middle;
-        margin: 0 0.2em;
-        // subtle glow effect
-        filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.3));
-    }
+        a {
+            @include PrettyLink;
+        }
 
-    p {
-        margin: 0;
-        // slightly faded for lofi effect
-        opacity: 0.95;
+        i {
+            vertical-align: middle;
+            margin: 0 0.2em;
+            // subtle glow effect
+            filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.3));
+        }
+
+        p {
+            margin: 0;
+            // slightly faded for lofi effect
+            opacity: 0.95;
+        }
     }
 }

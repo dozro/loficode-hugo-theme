@@ -4,44 +4,49 @@
 @import 'gradientShift';
 @import 'mixins/card';
 
-footer {
-    position: absolute;
-    width: 100%;
-    @include card();
+@scope {
+    :scope {
+        position: absolute;
+        width: 100%;
+        @include card();
 
-    a {
-        @include PrettyLink;
-    }
+        a {
+            @include PrettyLink;
+        }
 
-    ul {
-        list-style-type: none;
-    }
-    .footer-bar{
-        justify-self: center;
-        width: fit-content;
-        height: fit-content;
-        display: inline-block;
-        
-    }
+        ul {
+            list-style-type: none;
+        }
 
-    i {
-        vertical-align: middle;
-        margin: 0 0.2em;
-        /* subtle glow */
-        filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.3));
-    }
+        .footer-bar {
+            justify-self: center;
+            width: fit-content;
+            height: fit-content;
+            display: inline-block;
 
-    p {
-        margin: 0;
-        /* slightly faded for lofi effect */
-        opacity: 0.95;
-    }
-    .rye-tags-wrapper {
-        margin-top: 0.5rem;
-        border: none;
-    }
-    .rye-icon {
-        color: var(--accent-primary);
-        margin-right: 0.3rem;
+        }
+
+        i {
+            vertical-align: middle;
+            margin: 0 0.2em;
+            /* subtle glow */
+            filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.3));
+        }
+
+        p {
+            margin: 0;
+            /* slightly faded for lofi effect */
+            opacity: 0.95;
+        }
+
+        .rye-tags-wrapper {
+            margin-top: 0.5rem;
+            border: none;
+        }
+
+        .rye-icon {
+            color: var(--accent-primary);
+            margin-right: 0.3rem;
+        }
     }
 }
