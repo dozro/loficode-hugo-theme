@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" as="style" blocking="none" fetchpriority="low" href="{{ .RelPermalink }}">
 {{ else }}
 {{ with . | fingerprint }}
-<link rel="stylesheet" type="text/css" as="style" blocking="none" fetchpriority="low" href="{{ .Permalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" as="style" blocking="none" fetchpriority="low" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{ end }}
 {{ end }}
 {{ end }}
