@@ -1,0 +1,32 @@
+// refactored version
+
+@import '../../foundation/mixins/smallDisplaysAdjustment';
+
+.volume-slider {
+    @include smallDisplayAdjustment(80px, 4px);
+    background: var(--border-color);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        background: var(--btn-gradient);
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 2px 8px var(--glow-color);
+    }
+
+    &::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        background: var(--btn-gradient);
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 2px 8px var(--glow-color);
+    }
+}
