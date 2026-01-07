@@ -1,3 +1,6 @@
+// mixin to not display something on mobile
+// Copyright 2026 Rye (itsrye.dev)
+
 @mixin dontDisplayOnMobile {
     @media (max-width: 700px) {
         display: none !important;
