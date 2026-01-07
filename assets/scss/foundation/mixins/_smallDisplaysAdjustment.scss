@@ -13,6 +13,24 @@
     }
 }
 
+@mixin smallDisplayWidthAdjustment($width){
+    @media (max-width: 768px) {
+        width: $width/1.5;
+    }
+    @media (max-width: 480px) {
+        width: $width/1.75;
+    }
+}
+
+@mixin smallDisplayHeightAdjustment($height){
+    @media (max-height: 768px) {
+        height: $height/1.5;
+    }
+    @media (max-height: 480px) {
+        height: $height/1.75;
+    }
+}
+
 @mixin textSmallDisplayAdjustment($fontSize){
     font-size: $fontSize;
     @media (max-width: 768px) {
