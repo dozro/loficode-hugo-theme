@@ -1,9 +1,17 @@
 // refactored version 
 
 @import '../keyframes/equalizer';
+@import '../../foundation/mixins/largeDisplaysAdjustment';
+@import '../../foundation/mixins/smallDisplaysAdjustment';
+@import '../../foundation/mixins/animationAdjustment';
 
 @mixin eqichild($height, $animationdelay, $animationduration){
     height: $height;
+    width: 15px;
+    @include smallDisplayHeightAdjustment($height);
+    @include smallDisplayWidthAdjustment(15px);
+    @include largeDisplayHeightAdjustment($height);
+    @include animationAccessibilityAdjustment($animationdelay, $animationduration);
     animation-delay: $animationdelay;
     animation-duration : $animationduration;
     @media (max-width: 768px) {
@@ -32,7 +40,7 @@
     }
 
     .equalizer-bar {
-        width: 3px;
+        width: 150px;
         background: var(--btn-gradient);
         border-radius: 2px;
         animation: equalizer 1.5s ease-in-out infinite;

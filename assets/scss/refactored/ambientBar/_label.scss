@@ -1,9 +1,14 @@
 // refactored Version
 
 @import '../../foundation/mixins/smallDisplaysAdjustment';
+@import '../../foundation/mixins/largeDisplaysAdjustment';
 
 .ambient-label {
-    @include labelSmallDisplayAdjustment(120px, 0.85rem, false);
+    $minWidth: 120px;
+    min-width: $minWidth;
+    justify-self: center;
+    @include labelSmallDisplayAdjustment($minWidth, 0.85rem, false);
+    @include labelLargeDisplayAdjustment($minWidth, 0.85rem);
     color: var(--text-secondary);
     font-weight: 500;
 }

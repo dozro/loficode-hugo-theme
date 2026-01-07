@@ -1,9 +1,15 @@
 // refactored version
 
 @import '../../foundation/mixins/smallDisplaysAdjustment';
+@import '../../foundation/mixins/largeDisplaysAdjustment';
 
 .volume-slider {
-    @include smallDisplayAdjustment(80px, 4px);
+    $width: 80px;
+    $height: 4px;
+    width: $width;
+    height: $height;
+    @include smallDisplayAdjustment($width, $height);
+    @include largeDisplayAdjustment($width, $height);
     background: var(--border-color);
     border-radius: 2px;
     outline: none;

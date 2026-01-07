@@ -1,0 +1,8 @@
+// Copyright 2026 Rye
+
+@mixin animationAccessibilityAdjustment($animationdelay, $animationduration){
+    @media(prefers-reduced-motion: reduce){
+        animation-duration: $animationduration*2.22;
+        animation-delay: $animationdelay*2.25;
+    }
+}

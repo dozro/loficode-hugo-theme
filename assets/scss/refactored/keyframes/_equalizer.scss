@@ -5,6 +5,14 @@
         transform: scaleY(0.3);
         opacity: 0.6;
     }
+    33%{
+        transform: scaleY(0.2);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scaleY(0.75);
+        opacity: 0.75;
+    }
     50% {
         transform: scaleY(1);
         opacity: 1;
