@@ -1,0 +1,80 @@
+// main StyleSheet
+// refactored SCSS file
+// copyright remains with Raising Pixels (original author) and under original license
+
+nav {
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr auto;
+        gap: 0.5rem;
+    }
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        min-width: 0;
+        /* Allow shrinking */
+    }
+
+    .back-link {
+        color: var(--accent-primary);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        border: 1px solid transparent;
+
+        &:hover {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 15px var(--glow-color);
+        }
+    }
+
+    .nav-links {
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 400;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+
+            &:visited {
+                &:hover{
+                    background: var(--accent-tertiary);
+                    color: white;
+                    box-shadow: 0 4px 15px var(--glow-color);
+                }
+            }
+
+            &:hover {
+                background: var(--accent-secondary);
+                color: white;
+                box-shadow: 0 4px 15px var(--glow-color);
+            }
+        }
+    }
+}

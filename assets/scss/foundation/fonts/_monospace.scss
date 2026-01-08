@@ -20,10 +20,10 @@ $monospaceBoldWeight: 600;
 
 @mixin orbitron-font {
     font-weight: $monospaceDefaultWeight;
-    font-family: 'Orbitron','JetBrains Mono', monospace;
+    font-family: 'Orbitron','JetBrains Mono', 'Noto Color Emoji', monospace;
     @media(prefers-reduced-data: no-preference){
-        @import url(https://fonts.bunny.net/css?family=orbitron:400,500,600);
-        font-family: 'Orbitron','JetBrains Mono', monospace;
+        @import url(https://fonts.bunny.net/css?family=noto-color-emoji:400|orbitron:400,500,600,700,800,900);
+        font-family: 'Orbitron','JetBrains Mono', 'Noto Color Emoji', monospace;
     }
     @media(prefers-reduced-data: reduce){
         font-family: monospace;

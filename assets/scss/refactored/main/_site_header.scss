@@ -1,0 +1,23 @@
+// main StyleSheet
+// refactored SCSS file
+// copyright remains with Raising Pixels (original author) and under original license
+
+@scope(.site-header) {
+    :scope {
+        background: var(--bg-secondary);
+        backdrop-filter: blur(20px);
+        padding: 0.5rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 4px 20px var(--shadow-color);
+
+        @media (max-width: 768px) {
+            padding: 0.5rem 0;
+        }
+    }
+
+    @import 'site_header/nav';
+    @import 'site_header/search';
+}
