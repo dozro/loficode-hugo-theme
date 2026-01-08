@@ -12,6 +12,7 @@
     </p>
 </div>
 
+{{ if hugo.IsDevelopment }}
 {{ with resources.Get "scss/rye-styling/Generator-Notice.scss" }}
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
@@ -31,4 +32,4 @@
     {{ end }}
   {{ end }}
 {{ end }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+{{ end }}

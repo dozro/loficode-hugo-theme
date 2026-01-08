@@ -1,6 +1,7 @@
 <!-- Rye styling -->
 <!-- Copyright 2026 Rye (itsrye.dev) -->
 
+{{ if hugo.IsDevelopment }}
 {{ with resources.Get "scss/rye-styling/BetterLinkStyle.scss" }}
 {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment
@@ -36,7 +37,25 @@
 {{ end }}
 {{ end }}
 {{ end }}
+{{ end }}
 
+{{ with resources.Get "scss/rye-styling/production.scss" }}
+  {{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "theme/hugo-lofi-theme/css/rye/ProductionStyling.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+  {{ with . | toCSS $opts }}
+    {{ if not hugo.IsDevelopment }}
+      <link rel="stylesheet" type="text/css" fetchpriority="low" blocking="none" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if hugo.IsDevelopment }}
 {{ with resources.Get "scss/rye-styling/main_styling/main.scss" }}
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
@@ -55,4 +74,5 @@
       {{ end }}
     {{ end }}
   {{ end }}
+{{ end }}
 {{ end }}

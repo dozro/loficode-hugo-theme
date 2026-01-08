@@ -1,4 +1,5 @@
 <!-- open rss button -->
+{{ if hugo.IsDevelopment }}
 {{ with .AlternativeOutputFormats.Get "RSS" }}
 {{ with resources.Get "scss/rye-styling/RSSButton.scss" }}
 {{ $opts := dict
@@ -19,6 +20,10 @@
 {{ end }}
 {{ end }}
 {{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .AlternativeOutputFormats.Get "RSS" }}
 <a href="{{ .Permalink | safeURL }}" target="_blank" rel="noopener noreferrer" class="rye-rss-link" title="RSS Feed"
   aria-label="Subscribe to RSS Feed">
   <i class="fa-solid fa-square-rss rye-rss-icon rye-icon"></i>
