@@ -335,7 +335,10 @@
       const li = document.createElement("li");
       const a = document.createElement("a");
       a.href = `#${heading.id}`;
-      a.textContent = heading.textContent;
+      if (heading.getAttribute("data-heading-text"))
+        a.textContent = heading.getAttribute("data-heading-text");
+      else
+        a.textContent = heading.textContent;
       a.addEventListener("click", (e) => {
         e.preventDefault();
         const headerHeight = document.querySelector('.site-header')?.offsetHeight || 80;

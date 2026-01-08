@@ -1,4 +1,4 @@
-<h{{ .Level }} id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
+<h{{ .Level }} data-heading-text="{{ .Text }}" id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
   {{ partial "widgets/heading-anchor.html" . }}
   {{ .Text }}
 </h{{ .Level }}>
