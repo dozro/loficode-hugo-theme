@@ -1,0 +1,24 @@
+// main StyleSheet
+// refactored SCSS file
+// copyright remains with Raising Pixels (original author) and under original license
+
+@import 'light_lofi';
+@import 'dark_lofi';
+
+:root{
+    @include light-mode-lofi();
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        @include dark-mode-lofi;
+    }
+}
+
+[data-theme="light"]{
+    @include light-mode-lofi();
+}
+
+[data-theme="dark"]{
+    @include dark-mode-lofi;
+}

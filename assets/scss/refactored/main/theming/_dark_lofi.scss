@@ -1,0 +1,30 @@
+// main StyleSheet
+// refactored SCSS file
+// copyright remains with Raising Pixels (original author) and under original license
+
+@mixin dark-mode-lofi {
+    /* Dark mode - Deep vaporwave */
+    --bg-primary: linear-gradient(135deg, #1A0B2E 0%, #16213E 25%, #0F3460 75%, #533A7B 100%);
+    --bg-secondary: rgba(26, 11, 46, 0.95);
+    --bg-card: rgba(42, 25, 75, 0.9);
+    --accent-primary: #FF0080;
+    --accent-secondary: #00CED1;
+    --accent-tertiary: #FF6B35;
+    --text-primary: #E0E0FF;
+    --text-secondary: #B8B3D4;
+    --text-muted: #8A7CA8;
+    --border-color: rgba(255, 0, 128, 0.3);
+    --shadow-color: rgba(255, 107, 53, 0.2);
+    --glow-color: rgba(0, 255, 255, 0.4);
+    --code-bg: rgba(0, 0, 0, 0.8);
+    --code-border: rgba(0, 255, 255, 0.2);
+    --code-text: #f8f8f2;
+
+    /* Button gradients for dark */
+    --btn-gradient: linear-gradient(135deg, #FF0080 0%, #FF6B35 100%);
+    --btn-gradient-hover: linear-gradient(135deg, #E6006B 0%, #E65F2E 100%);
+
+    /* Tag gradients for dark */
+    --tag-gradient: linear-gradient(135deg, #2A1B4B 0%, #3D2B5F 100%);
+    --tag-text: #B8B3D4;
+}
