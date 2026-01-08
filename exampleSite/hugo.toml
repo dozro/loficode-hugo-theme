@@ -19,6 +19,8 @@ enableEmoji = true
 
   [params.customization]
     minimalist = true
+    modularCSS = true
+    languageChooser = true
 
   [params.selfHosting]
     [params.selfHosting.fontAwesome]
@@ -108,5 +110,5 @@ term = ['html', 'rss']
 
 [module]
 [[module.imports]]
-path = "codeberg.org/dozrye/hugo-og-img-generator"
-#path = "github.com/dozro/loficode-hugo-theme"
+#path = "codeberg.org/dozrye/hugo-og-img-generator"
+path = "github.com/dozro/loficode-hugo-theme"

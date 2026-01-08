@@ -1,4 +1,4 @@
-{{ if hugo.IsDevelopment }}
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/rye-styling/Citation.scss" }}
 {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment

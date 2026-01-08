@@ -12,7 +12,7 @@
     </p>
 </div>
 
-{{ if hugo.IsDevelopment }}
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/rye-styling/Generator-Notice.scss" }}
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment

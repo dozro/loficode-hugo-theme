@@ -1,7 +1,7 @@
 <!-- Rye styling -->
 <!-- Copyright 2026 Rye (itsrye.dev) -->
 
-{{ if hugo.IsDevelopment }}
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/rye-styling/BetterLinkStyle.scss" }}
 {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment
@@ -39,6 +39,7 @@
 {{ end }}
 {{ end }}
 
+{{ if not .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/rye-styling/production.scss" }}
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment
@@ -49,13 +50,14 @@
     "includePaths" (slice "assets/scss")
   }}
   {{ with . | toCSS $opts }}
-    {{ if not hugo.IsDevelopment }}
-      <link rel="stylesheet" type="text/css" fetchpriority="low" blocking="none" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{ with . | fingerprint }}
+        <link rel="stylesheet" type="text/css" fetchpriority="low" blocking="none" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
 
-{{ if hugo.IsDevelopment }}
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/rye-styling/main_styling/main.scss" }}
   {{ $opts := dict
     "enableSourceMap" hugo.IsDevelopment

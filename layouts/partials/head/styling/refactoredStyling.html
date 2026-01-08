@@ -1,6 +1,6 @@
 <!-- refactored styling -->
 <!-- Copyright 2026 Rye (itsrye.dev) -->
-{{ if hugo.IsDevelopment }}
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/refactored/main/main.scss" }}
 {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment
@@ -84,7 +84,7 @@
 {{ end }}
 {{ end }}
 
-{{ if hugo.IsDevelopment }}
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/refactored/post.scss" }}
 {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment

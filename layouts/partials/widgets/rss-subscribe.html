@@ -1,5 +1,5 @@
 <!-- open rss button -->
-{{ if hugo.IsDevelopment }}
+{{ if .Site.Params.customization.modularCSS }}
 {{ with .AlternativeOutputFormats.Get "RSS" }}
 {{ with resources.Get "scss/rye-styling/RSSButton.scss" }}
 {{ $opts := dict

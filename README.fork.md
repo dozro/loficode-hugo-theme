@@ -77,6 +77,17 @@ Difference to the upstream version:
 
 - refactored to [layouts/partials/head/meta/fediverse.html](./layouts/partials/head/meta/fediverse.html)
 
+### Modularization of styling
+
+Better seperation of concerns in Stylesheets.
+
+Stylesheets may still be bundled with a config option:
+
+```toml
+  [params.customization]
+    modularCSS = true
+```
+
 ### Schema.org
 
 #### Person
