@@ -1,0 +1,20 @@
+// refactored version to SCCS from the css version
+// refactored by Rye
+// Copyright remains with original author
+
+@import '../../../foundation/fonts/monospace';
+@import '../../../foundation/mixins/accessibilityAdjustment';
+
+
+code {
+    @include monospace-font();
+    @include transparentBackground();
+    padding: 0;
+    border-radius: 0;
+    color: var(--code-text) !important;
+
+    &[style] {
+        @include transparentBackground();
+        color: var(--code-text) !important;
+    }
+}

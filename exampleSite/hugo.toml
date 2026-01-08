@@ -17,6 +17,9 @@ enableEmoji = true
   tagline = "Coding with coffee and lo-fi beats ☕🎵"
   # icon = ""
 
+  [params.customization]
+    minimalist = true
+
   [params.selfHosting]
     [params.selfHosting.fontAwesome]
       enabled = false
@@ -105,4 +108,5 @@ term = ['html', 'rss']
 
 [module]
 [[module.imports]]
-path = "github.com/dozro/loficode-hugo-theme"
+path = "codeberg.org/dozrye/hugo-og-img-generator"
+#path = "github.com/dozro/loficode-hugo-theme"

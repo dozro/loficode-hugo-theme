@@ -1,3 +1,6 @@
 // main Styling SCSS file for Rye's lofi theme customizations
 // Copyright 2025 Rye (itsrye.dev)
-@import 'Generator-Notice';
+@import '../Generator-Notice';
+@import 'headingAnchor';
+@import 'logo';
+@import 'imageRender';

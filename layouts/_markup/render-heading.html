@@ -1,0 +1,5 @@
+<h{{ .Level }} id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
+  {{ partial "widgets/heading-anchor.html" . }}
+  <a href="#{{ .Anchor }}">#</a>
+  {{ .Text }}
+</h{{ .Level }}>

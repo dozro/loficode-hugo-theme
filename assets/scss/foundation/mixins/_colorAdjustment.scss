@@ -1,0 +1,34 @@
+@mixin darkmode {
+  @at-root {
+    @media (prefers-color-scheme: dark) {
+      #{&} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin darkmode-color($color, $base: false) {
+  @if $base {
+    color: $color;
+  }
+
+  @at-root {
+    @media (prefers-color-scheme: dark) {
+      #{&} {
+        color: $color !important;
+      }
+    }
+  }
+}
+
+@mixin darkmode-color-for($selector, $color) {
+  @at-root {
+    @media (prefers-color-scheme: dark) {
+      #{$selector} {
+        color: $color !important;
+      }
+    }
+  }
+}
+

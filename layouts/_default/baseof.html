@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" data-theme="light">
+<html lang="{{ .Site.LanguageCode }}" data-theme="light" {{ if .Site.Params.customization.Minimalist }} data-minimum-styling="true"{{ end }}>
 <head>
     {{ partial "head.html" . }}
 </head>

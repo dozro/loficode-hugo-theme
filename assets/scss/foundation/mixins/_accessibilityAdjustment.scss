@@ -1,0 +1,11 @@
+// Copyright 2026 Rye
+
+@mixin transparentBackground(){
+    background: transparent !important;
+    @media(prefers-reduced-transparency: reduce){
+        background: var(--bg-primary);
+    }
+    @media(prefers-reduced-transparency: no-preference){
+        background: transparent;
+    }
+}

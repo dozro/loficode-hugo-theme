@@ -1,0 +1,48 @@
+// refactored version to SCCS from the css version
+// refactored by Rye
+// Copyright remains with original author
+
+// Add proper spacing between line numbers and code
+@scope(.chroma) {
+
+    :scope {
+        background: var(--code-bg) !important;
+        color: var(--code-text) !important;
+    }
+
+    .lnt,
+    .ln {
+        margin-right: 1rem !important;
+        padding-right: 1rem !important;
+        border-right: 1px solid var(--border-color) !important;
+        color: var(--text-muted) !important;
+        user-select: none;
+
+        &:first-child {
+            padding-right: 0 !important;
+        }
+
+        &:last-child {
+            padding-left: 1rem !important;
+        }
+    }
+
+    // Ensure line number table has proper spacing
+    .lntable {
+        border-spacing: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        width: 100% !important;
+
+        td {
+            vertical-align: top !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+        }
+    }
+
+    @import 'highlight_chroma_pre';
+    @import 'highlight_chroma_code';
+}

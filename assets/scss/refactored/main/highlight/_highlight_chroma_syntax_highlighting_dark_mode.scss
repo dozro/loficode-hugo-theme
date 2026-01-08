@@ -1,0 +1,306 @@
+// refactored version to SCCS from the css version
+// refactored by Rye
+// Copyright remains with original author
+
+@import '../../../foundation/mixins/colorAdjustment';
+
+// Monokai-inspired Syntax Highlighting for Dark Theme
+
+.k,
+.kc,
+.kd,
+.kn,
+.kp,
+.kr,
+.kp {
+    // Keywords - Pink
+    $col: #ff79c6;
+    color: $col !important;
+    font-weight: bold !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    $chroma-classes: (
+        ".highlight .chroma .k",
+        ".highlight .chroma .kc",
+        ".highlight .chroma .kd",
+        ".highlight .chroma .kn",
+        ".highlight .chroma .kp",
+        ".highlight .chroma .kr",
+        ".highlight .chroma .kp"
+    );
+
+@each $cls in $chroma-classes {
+    @include darkmode-color-for(#{$cls}, $col);
+}
+}
+
+.s,
+.sa,
+.sb,
+.sc,
+.dl,
+.sd,
+.s2,
+.se,
+.sh,
+.si,
+.sx,
+.sr,
+.s1,
+.ss {
+    // Strings - Green
+    $col: #50fa7b;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    $chroma-classes: (
+        ".highlight .chroma .s",
+        ".highlight .chroma .sa",
+        ".highlight .chroma .sb",
+        ".highlight .chroma .sc",
+        ".highlight .chroma .dl",
+        ".highlight .chroma .sd",
+        ".highlight .chroma .s2",
+        ".highlight .chroma .se",
+        ".highlight .chroma .sh",
+        ".highlight .chroma .si",
+        ".highlight .chroma .sx",
+        ".highlight .chroma .sr",
+        ".highlight .chroma .s1",
+        ".highlight .chroma .ss",
+    );
+
+@each $cls in $chroma-classes {
+    @include darkmode-color-for(#{$cls}, $col);
+}
+}
+
+.m,
+.mb,
+.mf,
+.mh,
+.mi,
+.il,
+.mo {
+    // Numbers - Purple
+    $col: #bd93f9;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    $chroma-classes: (
+        ".highlight .chroma .m",
+        ".highlight .chroma .mb",
+        ".highlight .chroma .mf",
+        ".highlight .chroma .mh",
+        ".highlight .chroma .mi",
+        ".highlight .chroma .il",
+        ".highlight .chroma .mo",
+    );
+
+@each $cls in $chroma-classes {
+    @include darkmode-color-for(#{$cls}, $col);
+}
+}
+
+.n,
+.na,
+.nb,
+.bp,
+.nc,
+.no,
+.nd,
+.ni,
+.ne,
+.nf,
+.fm,
+.nl,
+.nn,
+.nx,
+.py,
+.nt,
+.nv,
+.vc,
+.vg,
+.vi,
+.vm {
+    // Functions/Variables - Cyan
+    $col: #8be9fd;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    ;
+    $chroma-classes: (
+        ".highlight .chroma .n",
+        ".highlight .chroma .na",
+        ".highlight .chroma .nb",
+        ".highlight .chroma .bp",
+        ".highlight .chroma .nc",
+        ".highlight .chroma .no",
+        ".highlight .chroma .nd",
+        ".highlight .chroma .ni",
+        ".highlight .chroma .ne",
+        ".highlight .chroma .nf",
+        ".highlight .chroma .fm",
+        ".highlight .chroma .nl",
+        ".highlight .chroma .nn",
+        ".highlight .chroma .nx",
+        ".highlight .chroma .py",
+        ".highlight .chroma .nt",
+        ".highlight .chroma .nv",
+        ".highlight .chroma .vc",
+        ".highlight .chroma .vg",
+        ".highlight .chroma .vi",
+        ".highlight .chroma .vm"
+    );
+
+@each $cls in $chroma-classes {
+    @include darkmode-color-for(#{$cls}, $col);
+}
+}
+
+.o,
+.ow {
+    //Operators - Pink
+    $col: #ff79c6;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    $chroma-classes: (
+        ".highlight .chroma .o",
+        ".highlight .chroma .ow"
+    );
+
+@each $cls in $chroma-classes {
+    @include darkmode-color-for(#{$cls}, $col);
+}
+}
+
+.c,
+.ch,
+.cm,
+.c1,
+.cs {
+    // Comments - Gray
+    $col: #6272a4;
+    color: $col !important;
+    font-style: italic !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    $chroma-classes: (
+        ".highlight .chroma .c",
+        ".highlight .chroma .ch",
+        ".highlight .chroma .cm",
+        ".highlight .chroma .c1",
+        ".highlight .chroma .cs",
+    );
+
+@each $cls in $chroma-classes {
+    @include darkmode-color-for(#{$cls}, $col);
+}
+}
+
+.p {
+    // Punctuation - White
+    $col: #f8f8f2;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    ;
+    @include darkmode-color-for(".highlight .chroma .p", $col);
+}
+
+.cp,
+.cpf {
+    // Preprocessor - Pink
+    $col: #ff79c6;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    ;
+    $chroma-classes: (
+        ".highlight .chroma .cp",
+        ".highlight .chroma .cpf",
+    );
+
+@each $cls in $chroma-classes {
+    @include darkmode-color-for(#{$cls}, $col);
+}
+}
+
+.gd {
+    // Deleted - Red
+    $col: #ff5555;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    ;
+    @include darkmode-color-for(".highlight .chroma .gd", $col);
+}
+
+.gi {
+    // Inserted - Green
+    $col: #50fa7b;
+    color: $col !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    ;
+    @include darkmode-color-for(".highlight .chroma .gi", $col);
+}
+
+.gh {
+    // Heading - Purple
+    $col: #bd93f9;
+    color: $col !important;
+    font-weight: bold !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    ;
+    @include darkmode-color-for(".highlight .chroma .gh", $col);
+}
+
+.gu {
+    // Subheading - Cyan
+    $col: #8be9fd;
+    color: $col !important;
+    font-weight: bold !important;
+
+    @include darkmode {
+        color: $col !important;
+    }
+
+    ;
+    @include darkmode-color-for(".highlight .chroma .gu", $col);
+}
