@@ -1,4 +1,5 @@
 @import '../../foundation/simpleAnimations';
+@import '../../foundation/colors';
 
 @mixin betterLinkStyleHighContrastInternal(){
     filter: contrast(5000%);

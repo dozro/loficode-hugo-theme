@@ -5,6 +5,7 @@ theme = "loficode-hugo-theme"
 
 # Enable emoji support
 enableEmoji = true
+enableGitInfo = true
 
 
 # Pagination
@@ -21,6 +22,9 @@ enableEmoji = true
     minimalist = true
     modularCSS = true
     languageChooser = true
+    publishGitAuthorName = true
+    publishGitCommitLink = true
+    gitRepositoryURL = "https://github.com/dozro/loficode-hugo-theme"
 
   [params.selfHosting]
     [params.selfHosting.fontAwesome]

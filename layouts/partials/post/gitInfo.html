@@ -1,0 +1,56 @@
+{{ if .Site.Params.customization.modularCSS }}
+{{ with resources.Get "scss/rye-styling/post/GitInfo.scss" }}
+{{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "theme/hugo-lofi-theme/css/rye/GitInfo.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ else }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .GitInfo }}
+<div class="post-gitinfo">
+  {{ if .AuthorDate }}
+  <span class="post-gitinfo-item-label"
+      id="git-author-date-label">Last edited: </span><span class="post-gitinfo-item-value"
+      id="git-author-date">{{ .AuthorDate.Format "2006-01-02" }}</span>
+  {{ end }}
+  {{ if and .AuthorName $.Site.Params.customization.publishGitAuthorName }}
+  <span class="post-gitinfo-item-label"
+      id="git-author-name-label">by </span><span class="post-gitinfo-item-value" id="git-author-name"
+      data-git-author="{{ .AuthorName }}">{{ .AuthorName }}</span>
+  {{ end }}
+  {{ if .AbbreviatedHash }}
+  <span class="post-gitinfo-item-label"
+      id="git-commit-hash-label">Hash: </span><span class="post-gitinfo-item-value"
+      id="git-commit-hash">{{ .AbbreviatedHash }}</span>
+  {{ end }}
+  {{ if and $.Site.Params.customization.publishGitCommitLink $.Site.Params.customization.gitRepositoryURL .Hash }}
+    <a class="post-gitinfo-item-value git-commit-link" id="git-commit-link" href="{{ printf "%s/commit/%s" $.Site.Params.customization.gitRepositoryURL .Hash }}" target="_blank" rel="noopener noreferrer"> 
+        {{ if hasPrefix $.Site.Params.customization.gitRepositoryURL "https://github.com"   }}
+            <i class="fa-brands fa-github icon rye-icon"></i>
+        {{ else if hasPrefix $.Site.Params.customization.gitRepositoryURL "https://gitlab.com"   }}
+            <i class="fa-brands fa-gitlab icon rye-icon"></i>
+        {{ else if hasPrefix $.Site.Params.customization.gitRepositoryURL "https://bitbucket.org"   }}
+            <i class="fa-brands fa-bitbucket icon rye-icon"></i>
+        {{ else }}
+            <i class="fa-brands fa-git-alt icon rye-icon"></i>
+        {{ end }}
+        View Commit
+    </a>
+  {{ end }}
+
+</div>
+{{ end }}
