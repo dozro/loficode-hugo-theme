@@ -18,11 +18,11 @@
 {{ end }}
 {{ end }}
 {{ end }}
+{{ end }}
 {{ with resources.Get "scripts/QRShare.js" }}
 {{ with . | fingerprint }}
 {{ with resources.Copy "theme/hugo-lofi-theme/js/rye/widget/QRShare.js" . | fingerprint }}
 <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
-{{ end }}
 {{ end }}
 {{ end }}
 {{ end }}

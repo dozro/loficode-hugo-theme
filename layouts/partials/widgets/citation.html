@@ -18,6 +18,7 @@
 {{ end }}
 {{ end }}
 {{ end }}
+{{ end }}
 {{ with resources.Get "scripts/citation.js" }}
 {{ with . | fingerprint }}
 {{ with resources.Copy "theme/hugo-lofi-theme/js/rye/widget/Citation.js" . | fingerprint }}
@@ -25,7 +26,7 @@
 {{ end }}
 {{ end }}
 {{ end }}
-{{ end }}
+
 
 <button role="button" class="rye-quote" id="rye-cit-btn" title="Get this as a citation"
   aria-label="Get this as a citation" onclick="showCitation()">

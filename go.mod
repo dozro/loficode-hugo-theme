@@ -8,4 +8,5 @@ require (
 
 retract (
 	[v1.4.0, v1.4.6] // reason: bug during hugo build
+	v1.4.7 // reason: faulty imports
 )
