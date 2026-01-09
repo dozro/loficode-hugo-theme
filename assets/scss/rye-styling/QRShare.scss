@@ -1,0 +1,89 @@
+@import '../foundation/colors';
+@import 'mixins/betterLinkStyle';
+
+
+@scope(.qr-share-wrapper) {
+    .rye-qr-modal {
+        &.is-hidden {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        position: fixed;
+        display: grid;
+        bottom: 1rem;
+        left: 30vw;
+        right: 30vw;
+        width: 40vw;
+        max-height: 400px;
+        overflow-y: auto;
+        background: var(--bg-primary) !important;
+        background-color:  var(--bg-primary) !important;
+        color: $darkTextPrimary;
+        border: 2px solid var(--accent-primary);
+        border-radius: 8px;
+        box-shadow: 0 4px 16px var(--accent-primary);
+        padding: 1rem;
+        z-index: 1000;
+
+
+
+        .rye-qr-image{
+            position: relative;
+            left: 15px;
+            grid-row: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            justify-self: center;
+
+            @media(prefers-color-scheme: dark){
+                filter: invert(100%);
+            }
+        }
+        #qr-code-modal-heading{
+            grid-row: 1;
+            grid-column: 1;
+        }
+        #qr-code-modal-scan-text{
+            grid-row: 2;
+            grid-column: 1;
+        }
+
+        #qr-code-modal-url{
+            grid-row: 4;
+            grid-column: 1;
+            .qr-url{
+                @include betterLinkStyle(true);
+            }
+        }
+
+        .qr-close {
+            position: absolute;
+            grid-row: 1;
+            grid-column: 2;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            color: $darkTextPrimary;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--accent-primary);
+            }
+
+            @media(prefers-color-scheme: light) {
+                color: $lightTextPrimary;
+            }
+        }
+    }
+
+    #rye-qr-btn {
+        background: none;
+        border: none;
+        color: var(--accent-primary);
+        font-size: 1rem;
+        cursor: copy;
+    }
+}

@@ -1,0 +1,31 @@
+{{ if .Site.Params.Customization.LanguageChooser }}
+{{ if .Site.Params.customization.modularCSS }}
+{{ with resources.Get "scss/rye-styling/LanguageChooser.scss" }}
+{{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "theme/hugo-lofi-theme/css/rye/LanguageChooser.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ else }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+<label id="language-select-label" for="language-select"><i class="fa-solid fa-language icon rye-icon"></i>{{ T "labelLanguageSelector" }}</label>
+
+<select name="languages" id="language-select" aria-labelledby="language-select-label" aria-label="select the language you want this content to be in">
+  {{ range .Site.Languages }}
+  <option value="{{ .Lang }}" data-lang-code="{{ .Lang }}">{{ .LanguageName }}</option>
+  {{ end }}
+</select>
+{{ end}}

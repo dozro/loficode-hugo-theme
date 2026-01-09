@@ -1,3 +1,4 @@
+{{ if not .Site.Params.disableHugoGeneratorInject }}
 <div class="generator-notice">
     <p>
         {{ T "builtWith" }}
@@ -31,5 +32,6 @@
       {{ end }}
     {{ end }}
   {{ end }}
+{{ end }}
 {{ end }}
 {{ end }}

@@ -1,0 +1,48 @@
+@import '../../foundation/simpleAnimations';
+
+@mixin betterLinkStyleHighContrastInternal(){
+    filter: contrast(5000%);
+}
+
+@mixin betterLinkStyle($increasedContrast: false) {
+
+    @media(prefers-contrast: more){
+        @include betterLinkStyleHighContrastInternal;
+    }
+    @if($increasedContrast){
+        @include betterLinkStyleHighContrastInternal;
+    }
+    @if(not $increasedContrast){
+        background: var(--btn-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+    color: var(--text-primary);
+    text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+
+    // Hover and focus states
+    &:hover,
+    &:focus-visible {
+        // Darker on hover
+        color: $lightActiveLinkColor;
+        text-decoration: underline;
+        // Underline only on hover/focus
+        text-decoration-color: currentColor;
+        @include scaleUpCenter;
+    }
+
+    // Active state (clicking)
+    &:active {
+        // Darker on active
+        color: $lightActiveLinkColor;
+    }
+
+    // Visited state
+    &:visited {
+        color: $lightVisitedLinkColor;
+    }
+}

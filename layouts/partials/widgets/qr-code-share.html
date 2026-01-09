@@ -1,0 +1,50 @@
+{{ if .Site.Params.customization.modularCSS }}
+{{ with resources.Get "scss/rye-styling/QRShare.scss" }}
+{{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "theme/hugo-lofi-theme/css/rye/QRShare.css"
+    "transpiler" "libsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "assets/scss")
+  }}
+{{ with . | toCSS $opts }}
+{{ if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ else }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ with resources.Get "scripts/QRShare.js" }}
+{{ with . | fingerprint }}
+{{ with resources.Copy "theme/hugo-lofi-theme/js/rye/widget/QRShare.js" . | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+<div class="qr-share-wrapper">
+    <button role="button" class="rye-qr-button" id="rye-qr-btn" title="Get a QR code for this page"
+        aria-label="Get this as a citation" onclick="showQR()">
+        <i class="fa-solid fa-qrcode rye-qr icon rye-icon"></i>
+    </button>
+
+
+    <div class="rye-qr-modal is-hidden" id="rye-qr-share">
+        <button class="qr-close" aria-label="Close QR" onclick="hideQR()">
+            <i class="fa-solid fa-xmark rye-icon"></i>
+        </button>
+        <h3 id="qr-code-modal-heading">QR Code for this page</h3>
+        {{ $text := .Permalink }}
+        <p id="qr-code-modal-scan-text">Scan this code to share the page URL</p>
+        <p id="qr-code-modal-url">URL: <a class="qr-url" href="{{ $text }}">{{ $text }}</a></p>
+        {{ with images.QR $text }}
+        <img class="rye-qr-image" loading="lazy" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"
+            alt="QR code for {{ $text }}">
+        {{ end }}
+    </div>
+</div>
