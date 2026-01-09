@@ -1,0 +1,21 @@
+// refactored version to SCCS from the css version
+// refactored by Rye
+// Copyright remains with original author
+
+
+pre {
+    margin: 0;
+    padding: 3.5rem 1rem 1rem 1rem;
+    @include monospace-font();
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--code-text) !important;
+    overflow-x: auto;
+    background: var(--code-bg) !important;
+
+    // Override Hugo's Chroma syntax highlighting inline styles
+    &[style] {
+        background: var(--code-bg) !important;
+        color: var(--code-text) !important;
+    }
+}

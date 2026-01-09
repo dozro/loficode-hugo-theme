@@ -1,0 +1,47 @@
+// main StyleSheet
+// refactored SCSS file
+// copyright remains with Raising Pixels (original author) and under original license
+
+@import '../../foundation/fonts/monospace';
+@import '../../foundation/fonts/emoji';
+@import '../../foundation/mixins/screenAdjustments';
+
+.logo {
+    @include orbitron-font();
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--btn-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+    flex-shrink: 1;
+    line-height: 1.2;
+    word-break: break-word;
+
+    &::before {
+        content: "☕";
+        @include color-emoji-font();
+        @include textLargeDisplayAdjustment(1.2rem);
+        @include textSmallDisplayAdjustment(1.2rem);
+        font-size: 1.2rem;
+        -webkit-text-fill-color: var(--accent-tertiary) !important;
+        color: var(--accent-tertiary);
+        filter: drop-shadow(0 0 8px var(--accent-tertiary));
+        background: none;
+    }
+
+    @media (max-width: 768px) {
+        white-space: normal;
+        line-height: 1.2;
+        max-width: calc(100vw - 120px);
+    }
+
+    @media (max-width: 480px) {
+        max-width: calc(100vw - 100px);
+    }
+}

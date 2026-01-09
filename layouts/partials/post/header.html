@@ -1,0 +1,20 @@
+<header class="post-header">
+    {{ partial "post/meta.html" . }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ if .Params.subtitle }}
+    <p class="post-subtitle">{{ .Params.subtitle }}</p>
+    {{ end }}
+
+    {{ if .Params.tags }}
+    <div class="post-tags-header">
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}" class="post-tag">{{ . }}</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="post-technical-info">
+        {{ partial "post/gitInfo.html" . }}
+    </div>
+
+</header>

@@ -1,0 +1,28 @@
+// main StyleSheet
+// refactored SCSS file
+// copyright remains with Raising Pixels (original author) and under original license
+
+@import '../../foundation/fonts/sansSerif';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include inter-font();
+    background: var(--bg-primary);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    padding-bottom: 80px;
+    @media (max-width: 768px) {
+        padding-bottom: 70px;
+    }
+    @media (max-width: 480px) {
+        padding-bottom: 60px;
+    }
+}

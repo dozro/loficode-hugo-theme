@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" data-theme="light">
+<html 
+    lang="{{ .Site.LanguageCode }}" 
+    data-theme="light" 
+    data-sub-theme="{{ .Site.Params.customization.SubTheme | default "lofi" }}" 
+    {{ if .Site.Params.customization.Minimalist }} data-minimum-styling="true"{{ end }}
+    {{ with .GitInfo }} data-git-enabled="true" data-git-commit-hash="{{ .Hash }}" {{ if and .AuthorName $.Site.Params.customization.publishGitAuthorName }} data-git-author="{{ .AuthorName }}"{{end}}{{ end }}
+    >
 <head>
     {{ partial "head.html" . }}
 </head>

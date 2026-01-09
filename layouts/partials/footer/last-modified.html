@@ -1,0 +1,6 @@
+<p class="site-last-modified" data-lastmod="{{ .Site.Lastmod }}">
+    <label for="site-lastmod-date">{{ T "lastMod" }}:</label>
+    <span class="last-modified-date" id="site-lastmod-date">
+        {{ .Site.Lastmod | time.Format ":date_long" }}
+    </span>
+</p>

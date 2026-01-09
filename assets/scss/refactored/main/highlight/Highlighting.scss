@@ -1,0 +1,78 @@
+// refactored version to SCCS from the css version
+// refactored by Rye
+// Copyright remains with original author
+
+// Markdown Code Fences - Auto-styled to match shortcode
+
+@import '../../../foundation/fonts/emoji';
+@import '../../../foundation/fonts/monospace';
+
+// Dark Theme
+[data-theme="dark"] {
+    .highlight .chroma{
+        @import 'highlight_chroma_syntax_highlighting_dark_mode';
+    }
+}
+
+@scope(.highlight) {
+    :scope {
+        position: relative;
+        margin: 2rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--code-bg);
+        border: 1px solid var(--code-border);
+        box-shadow: 0 8px 32px var(--shadow-color);
+
+        &::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--btn-gradient);
+            color: white;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        &::after {
+            content: "Copy";
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 3;
+            border: none;
+            user-select: none;
+        }
+
+        &:hover::after {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        &[data-copied="true"]::after {
+            @include noncolor-emoji-font();
+            content: "✓";
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--accent-primary);
+        }
+
+        @import 'highlight_code';
+
+        @import 'highlight_pre';
+
+        @import 'highlight_chroma';
+    }
+}

@@ -1,0 +1,60 @@
+// Copyright Rye (itsrye.dev)
+
+@import '../../foundation/fonts/monospace';
+@import '../../foundation/fonts/condensed';
+@import '../mixins/betterLinkStyle';
+
+@scope(.post-gitinfo) {
+    :scope {
+        display: grid !important;
+        max-width: 600px;
+        justify-self: center;
+        padding-bottom: 0px;
+    }
+
+    $itemsOffsetTopRow: 0;
+
+    #post-gitinfo-item-label {
+        grid-column: 1;
+        grid-row: $itemsOffsetTopRow+1;
+    }
+
+    #git-author-date {
+        grid-column: 2;
+        grid-row: $itemsOffsetTopRow+1;
+    }
+
+    #git-author-name-label {
+        margin-left: 10px;
+        grid-column: 3;
+        grid-row: $itemsOffsetTopRow+1;
+    }
+
+    #git-author-name {
+        grid-column: 4;
+        grid-row: $itemsOffsetTopRow+1;
+    }
+
+    #git-commit-hash-label {
+        grid-column: 1;
+        grid-row: $itemsOffsetTopRow+2;
+    }
+
+    #git-commit-hash {
+        grid-column: 2;
+        grid-row: $itemsOffsetTopRow+2;
+    }
+    #git-commit-link{
+        grid-column: 4;
+        grid-row: $itemsOffsetTopRow+2;
+        @include betterLinkStyle();
+    }
+
+    .post-gitinfo-item-value{
+        @include monospace-font();
+        margin-left: 10px;
+    }
+    .post-gitinfo-item-label{
+        @include roboto-condensed-font();
+    }
+}

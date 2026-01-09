@@ -77,6 +77,24 @@ Difference to the upstream version:
 
 - refactored to [layouts/partials/head/meta/fediverse.html](./layouts/partials/head/meta/fediverse.html)
 
+### Modularization of styling
+
+Better seperation of concerns in Stylesheets.
+
+Stylesheets may still be bundled with a config option:
+
+```toml
+  [params.customization]
+    modularCSS = true
+```
+
+### QR-Code Sharing
+
+![QR-Share-Modal](images/qr-share-modal.png)
+
+On each pages footer there is now an option to share this page as a qr code.
+Which when clicked opens a small overlay with the qr code displayed.
+
 ### Schema.org
 
 #### Person

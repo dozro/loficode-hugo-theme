@@ -22,27 +22,7 @@
         </div>
         <div class="post-layout">
         <article class="post-content">
-            <header class="post-header">
-                <div class="post-meta">
-                    {{ partial "post/date.html" . }}
-                    {{ partial "post/author.html" . }}
-                    <div class="reading-time-post">
-                        {{partial "post/coffee-cups.html" . }}
-                    </div>
-                </div>
-                <h1 class="post-title">{{ .Title }}</h1>
-                {{ if .Params.subtitle }}
-                <p class="post-subtitle">{{ .Params.subtitle }}</p>
-                {{ end }}
-
-                {{ if .Params.tags }}
-                <div class="post-tags-header">
-                    {{ range .Params.tags }}
-                    <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}" class="post-tag">{{ . }}</a>
-                    {{ end }}
-                </div>
-                {{ end }}
-            </header>
+            {{ partial "post/header.html" . }}
             <div class="post-body">
                 {{ .Content }}
             </div>

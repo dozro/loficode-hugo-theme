@@ -1,11 +1,58 @@
 <!-- refactored styling -->
 <!-- Copyright 2026 Rye (itsrye.dev) -->
-
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/refactored/main/main.scss" }}
 {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment
         "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
         "targetPath" "theme/hugo-lofi-theme/css/refactored/main.css"
+        "transpiler" "libsass"
+        "vars" site.Params.styles
+        "includePaths" (slice "scss/refactored/")
+    }}
+{{ with . | toCSS $opts }}
+<link 
+    rel="stylesheet" 
+    as="style"
+    blocking="render"
+    fetchpriority="high"
+    type="text/css"
+    href="{{ .RelPermalink }}"
+    />
+{{ end }}
+{{ end }}
+{{ else }}
+{{ with resources.Get "scss/refactored/main/main_all_inclusive.scss" }}
+{{ $opts := dict
+        "enableSourceMap" hugo.IsDevelopment
+        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/MainProduction.css"
+        "transpiler" "libsass"
+        "vars" site.Params.styles
+        "includePaths" (slice "scss/refactored/")
+    }}
+{{ with . | toCSS $opts }}
+{{ with . | fingerprint }}
+<link 
+    rel="stylesheet" 
+    as="style"
+    blocking="render"
+    fetchpriority="high"
+    type="text/css"
+    href="{{ .RelPermalink }}" 
+    integrity="{{ .Data.Integrity }}" 
+    crossorigin="anonymous"
+    />
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with resources.Get "/scss/refactored/main/highlight/Highlighting.scss" }}
+{{ $opts := dict
+        "enableSourceMap" hugo.IsDevelopment
+        "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+        "targetPath" "theme/hugo-lofi-theme/css/refactored/Highlighting.css"
         "transpiler" "libsass"
         "vars" site.Params.styles
         "includePaths" (slice "scss/refactored/")
@@ -37,6 +84,7 @@
 {{ end }}
 {{ end }}
 
+{{ if .Site.Params.customization.modularCSS }}
 {{ with resources.Get "scss/refactored/post.scss" }}
 {{ $opts := dict
         "enableSourceMap" hugo.IsDevelopment
@@ -47,7 +95,6 @@
         "includePaths" (slice "scss/refactored/")
     }}
 {{ with . | toCSS $opts }}
-{{ if hugo.IsDevelopment }}
 <link 
     rel="stylesheet"
     as="style"
@@ -56,19 +103,6 @@
     type="text/css"
     href="{{ .RelPermalink }}"
     />
-{{ else }}
-{{ with . | fingerprint }}
-<link 
-    rel="stylesheet"
-    as="style"
-    blocking="none"
-    fetchpriority="high"
-    type="text/css"
-    href="{{ .RelPermalink }}" 
-    integrity="{{ .Data.Integrity }}" 
-    crossorigin="anonymous" 
-    />
-{{ end }}
 {{ end }}
 {{ end }}
 {{ end }}

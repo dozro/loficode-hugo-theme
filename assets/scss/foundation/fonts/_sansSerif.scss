@@ -1,9 +1,15 @@
 // Sans-Serif Font
 
+@import 'commons';
+
 @import url(https://fonts.bunny.net/css?family=advent-pro:300);
-$sansSerifFontFamily: 'Advent Pro', Arial, Helvetica, sans-serif;
+@import url(https://fonts.bunny.net/css?family=inter:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
 
 @mixin sansserif-font{
     font-family: $sansSerifFontFamily;
     font-weight: 300;
+}
+
+@mixin inter-font{
+    font-family: 'Inter', 'Advent Pro', Arial, Helvetica, sans-serif;
 }
