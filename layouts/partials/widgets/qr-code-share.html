@@ -43,8 +43,11 @@
         <p id="qr-code-modal-scan-text">Scan this code to share the page URL</p>
         <p id="qr-code-modal-url">URL: <a class="qr-url" href="{{ $text }}">{{ $text }}</a></p>
         {{ with images.QR $text }}
+        {{ $id := printf "qr-%s.png" (md5 $text) }}
+        {{ with resources.Copy (printf "images/qr-codes/%s" $id) . }}
         <img class="rye-qr-image" loading="lazy" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"
             alt="QR code for {{ $text }}">
+        {{ end }}
         {{ end }}
     </div>
 </div>
