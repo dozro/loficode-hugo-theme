@@ -11,6 +11,7 @@
       <img src="{{ .Destination | safeURL }}"
         {{ with .PlainText }}alt="{{ . }}"{{ end }}
         class="post-image"
+        loading="lazy"
         >
       {{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
     </figure>
@@ -23,6 +24,7 @@
       {{ with .PlainText }}alt="{{ . }}"{{ end }}
       {{ with .Title }}title="{{ . }}"{{ end }}
       class="post-image"
+      loading="lazy"
       >
     </div>
     </div>
@@ -42,7 +44,7 @@
           media="(orientation: portrait)">
         <img
           src="{{ $image.Permalink }}"
-          class="post-image"
+          class="post-image" loading="lazy"
           {{ with .PlainText }}alt="{{ . }}"{{ end }}>
       </picture>
 
@@ -56,6 +58,7 @@
       {{ with .PlainText }}alt="{{ . }}"{{ end }}
       {{ with .Title }}title="{{ . }}"{{ end }}
       class="post-image"
+      loading="lazy"
       >
   </div></div>
   {{ end }}
