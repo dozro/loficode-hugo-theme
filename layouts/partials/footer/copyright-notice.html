@@ -1,4 +1,4 @@
 <!-- Copyright Notice -->
 {{ $hugoConfigOption := .Site.Copyright }}
 {{ $copyrightHolder := .Site.Params.legal.copyrightHolder | default $hugoConfigOption | default .Site.Title }}
-<p>&copy; {{ now.Format "2006" }} {{ $copyrightHolder }}. All rights reserved.</p>
+<p class="site-copyright-holder" data-copyrightholder="{{ $copyrightHolder }}">&copy; {{ now.Format "2006" }} {{ $copyrightHolder }}. All rights reserved.</p>
