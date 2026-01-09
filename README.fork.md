@@ -88,6 +88,13 @@ Stylesheets may still be bundled with a config option:
     modularCSS = true
 ```
 
+### QR-Code Sharing
+
+![QR-Share-Modal](images/qr-share-modal.png)
+
+On each pages footer there is now an option to share this page as a qr code.
+Which when clicked opens a small overlay with the qr code displayed.
+
 ### Schema.org
 
 #### Person
