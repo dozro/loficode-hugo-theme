@@ -7,5 +7,5 @@ require (
 )
 
 retract (
-	[v1.4.0, v1.4.5] // reason: critical bug in hugo build process
+	[v1.4.0, v1.4.6] // reason: bug during hugo build
 )
