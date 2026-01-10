@@ -7,7 +7,7 @@
         $height: 15px;
         height: $height;
         width: 100%;
-        @include largeDisplayHeightAdjustment($height);
+        @include displayHeightAdjustment($height);
         @media(prefers-color-scheme: dark){
             filter: grayscale(50%);;
         }

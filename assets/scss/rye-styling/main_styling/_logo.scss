@@ -1,19 +1,20 @@
 // Logo Styling
 // Copyright 2025 Rye (itsrye.dev)
 
+@import '../../foundation/mixins/screenAdjustments';
+@import '../../foundation/keyframes/heartbeat';
+
 .rye-logo {
+    $width: 25px;
+    $height: 25px;
     position: relative;
-    width: 25px;
-    height: 25px;
+    width: $width;
+    height: $height;
     border-radius: 50%;
     overflow: hidden;
     display: inline;
     flex-grow: unset;
-    
-    @media (max-width: 768px) {
-        width: 20px;
-        height: 20px;
-    }
+    @include displayScreenAdjustment($width, $height);
 
     img {
         width: 25px;
@@ -37,5 +38,9 @@
         @media(prefers-color-scheme: dark) {
             filter: brightness(80%) contrast(150%) grayscale(75%);
         }
+    }
+
+    &:hover{
+        @include heartbeat();
     }
 }
