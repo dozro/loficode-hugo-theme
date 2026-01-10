@@ -1,11 +1,16 @@
 // Copyright 2026 Rye
 
+@import '../../foundation/mixins/screenAdjustments';
+
 @scope(.rye-flag-shortcode){
     :scope{
-        display: inline;
+        display: inline-flex;
     }
     .flag-image{
-        height: 15pt;
-        width: 10px;
+        height: inherit;
+        width: 15px;
+        display: inline;
+        @include displayHeightAdjustment(15pt);
+        @include displayWidthAdjustment(15px);
     }
 }

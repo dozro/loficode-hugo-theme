@@ -20,6 +20,15 @@
     }
 }
 
+@mixin largeDisplayWidthAdjustment($width){
+    @media (min-width: 1500px) {
+        width: $width*1.5;
+    }
+    @media (min-width: 2000px) {
+        width: $width*1.5;
+    }
+}
+
 @mixin textLargeDisplayAdjustment($fontSize){
     @media (min-width: 1500px) {
         font-size: $fontSize*1.25;
