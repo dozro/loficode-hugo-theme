@@ -1,14 +1,8 @@
 // Copyright 2026 Rye
 
 @mixin largeDisplayAdjustment($width, $height){
-    @media (min-width: 1500px) {
-        width: $width*1.5;
-        height: $height*1.5;
-    }
-    @media (min-width: 2000px) {
-        width: $width*1.75;
-        height: $height*1.75;
-    }
+    @include largeDisplayHeightAdjustment($height);
+    @include largeDisplayWidthAdjustment($width);
 }
 
 @mixin largeDisplayHeightAdjustment($height){
