@@ -25,6 +25,9 @@ enableGitInfo = true
     publishGitAuthorName = true
     publishGitCommitLink = true
     gitRepositoryURL = "https://github.com/dozro/loficode-hugo-theme"
+    [params.customization.showPride]
+      rainbow = true
+      trans = true
 
   [params.selfHosting]
     [params.selfHosting.fontAwesome]

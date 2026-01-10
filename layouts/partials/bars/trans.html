@@ -1,0 +1,7 @@
+<!-- Trans Bar -->
+<div class="rye-flag-bar rye-trans-flag-bar">
+    {{ with resources.Get "images/svg/flags/trans.svg" }}
+    {{ $transSVG := . | resources.Minify }}
+    <img src="{{ $transSVG.RelPermalink }}" alt="Transgender flag decorative bar" class="flag-bar-image" loading="lazy">
+    {{ end }}
+</div>

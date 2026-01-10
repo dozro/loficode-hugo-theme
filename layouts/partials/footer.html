@@ -5,8 +5,11 @@
         {{ partial "footer/copyright-notice.html" . }}
         {{ partial "footer/footer-nav.html" . }}
         {{ partial "footer/bar.html" . }}
-        {{ if .Site.Params.ui.rainbowBar.enabled }}
+        {{ if .Site.Params.customization.showPride.rainbow }}
             {{ partial "bars/rainbow.html" . }}
+        {{ end }}
+        {{ if .Site.Params.customization.showPride.trans }}
+            {{ partial "bars/trans.html" . }}
         {{ end }}
         {{ partial "footer/last-modified.html" . }}
     </div>

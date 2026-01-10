@@ -1,0 +1,15 @@
+// Copyright 2026 Rye
+
+@import '../../foundation/mixins/screenAdjustments';
+
+@scope(.rye-flag-bar){
+    .flag-bar-image{
+        $height: 15px;
+        height: $height;
+        width: 100%;
+        @include largeDisplayHeightAdjustment($height);
+        @media(prefers-color-scheme: dark){
+            filter: grayscale(50%);;
+        }
+    }
+}
