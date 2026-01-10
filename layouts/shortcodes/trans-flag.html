@@ -1,0 +1,7 @@
+<!-- Trans flag -->
+<div class="rye-flag-shortcode rye-trans-flag-shortcode">
+    {{ with resources.Get "images/svg/flags/trans.svg" }}
+    {{ $transSVG := . | resources.Minify }}
+    <img src="{{ $transSVG.RelPermalink }}" alt="Transgender flag" class="flag-image" loading="lazy">
+    {{ end }}
+</div>

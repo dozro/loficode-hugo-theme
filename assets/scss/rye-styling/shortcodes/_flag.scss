@@ -1,0 +1,11 @@
+// Copyright 2026 Rye
+
+@scope(.rye-flag-shortcode){
+    :scope{
+        display: inline;
+    }
+    .flag-image{
+        height: 15pt;
+        width: 10px;
+    }
+}
