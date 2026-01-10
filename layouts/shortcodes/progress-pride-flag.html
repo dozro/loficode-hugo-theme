@@ -1,0 +1,7 @@
+<!-- Progress Pride Bar -->
+<span class="rye-flag-shortcode rye-progress-pride-flag-shortcode">
+    {{ with resources.Get "images/svg/flags/progress-pride.svg" }}
+    {{ $progressPrideSVG := . | resources.Minify }}
+    <img src="{{ $progressPrideSVG.RelPermalink }}" alt="Progress Pride flag" class="flag-image" loading="lazy">
+    {{ end }}
+</span>

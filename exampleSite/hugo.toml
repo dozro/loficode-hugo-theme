@@ -28,6 +28,7 @@ enableGitInfo = true
     [params.customization.showPride]
       rainbow = true
       trans = true
+      progressPride = false
 
   [params.selfHosting]
     [params.selfHosting.fontAwesome]
