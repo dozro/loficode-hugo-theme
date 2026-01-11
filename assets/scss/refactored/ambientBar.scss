@@ -1,6 +1,8 @@
 // refactored version of the styling for ambient bar
 
 @import 'ambientBar/mixins';
+@import '../foundation/mixins/screenAdjustments';
+@import '../foundation/keyframes/vibration';
 
 // Ambient Sound Bar - Sticky Bottom 
 @scope {
@@ -40,14 +42,18 @@
 
         .ambient-icon {
             background: var(--bg-card);
-            width: 36px;
-            height: 36px;
+            $wdth: 42.5px;
+            $hght: 42.5px;
+            width: $wdth;
+            height: $hght;
+            @include displayScreenAdjustment($wdth, $hght);
             border: 3px solid var(--border-color);
             padding: 0.3rem;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            font-size: $fontSize;
+            font-size: $fontSize+0.2rem;
+            @include displayTextSizeAdjustment($fontSize+0.125rem);
             color: var(--text-muted);
             position: relative;
             box-shadow:
@@ -65,7 +71,7 @@
                 @include iconactive();
             }
 
-            .active {
+            &.active {
                 background: var(--btn-gradient);
                 border-color: var(--accent-primary);
                 color: white;
@@ -101,6 +107,10 @@
         gap: 0.5rem;
         @import 'ambientBar/equalizer';
         @import 'ambientBar/volumeSlider';
+
+        &:hover {
+            @include vibration01;
+        }
 
     }
 }
