@@ -1,12 +1,9 @@
 // refactored styling for 404 page
 // copyright remains with Raising Pixels (original author) and under original license
 
-@import 'keyframes/float';
-
-@import 'light';
-@import 'dark';
+@import '../keyframes/index';
+@import '../main/theming/index';
 @import 'body';
-@import 'highContrast';
 @import '../SearchContainer';
 @import '../Button';
 @import 'GitLog';
@@ -22,7 +19,7 @@
 @media (prefers-color-scheme: light) {
     :root {
         // light theme
-        @include light-theme;
+        @include light-mode-lofi;
     }
     @media(prefers-contrast: more){
         :root {
@@ -36,7 +33,7 @@
     :root {
         // dark theme
 
-        @include dark-theme;
+        @include dark-mode-lofi;
     }
     @media(prefers-contrast: more){
         :root {
@@ -48,16 +45,16 @@
 // Default to dark theme
 :root {
     // dark theme as default
-    @include dark-theme;
+    @include dark-mode-lofi;
 }
 
 // Explicit theme selectors
 [data-theme="light"] {
-    @include light-theme;
+    @include light-mode-lofi;
 }
 
 [data-theme="dark"] {
-    @include dark-theme;
+    @include dark-mode-lofi;
 }
 
 * {

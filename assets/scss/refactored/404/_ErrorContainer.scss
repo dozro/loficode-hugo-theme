@@ -1,25 +1,12 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
-@import 'keyframes/GlowPulse';
+@import '../keyframes/index';
 
 @import 'GitLog';
 @import '../../foundation/variables';
 @import '../../foundation/fonts/monospace';
 @import '../../foundation/mixins/dontDisplayOnMobile';
-
-@keyframes message-rotate {
-
-    0%,
-    20% {
-        opacity: 1;
-    }
-
-    25%,
-    100% {
-        opacity: 0;
-    }
-}
 
 @mixin error-container {
 
@@ -56,7 +43,7 @@
 
         .rotating-message {
             opacity: 0;
-            animation: message-rotate 8s ease-in-out infinite;
+            @include kf-message-rotate();
             @media (prefers-reduced-motion: reduce) {
                 animation: none !important;
                 opacity: 1;
@@ -86,7 +73,7 @@
         background-clip: text;
         margin-bottom: $defaultMargin;
         text-shadow: 0 0 30px var(--glow-color);
-        animation: glow-pulse 2s ease-in-out infinite alternate;
+        @include kf-glow-pulse();
         @media (max-width: 768px) {
             font-size: $largeFontSize;
             margin-bottom: $smallMargin;

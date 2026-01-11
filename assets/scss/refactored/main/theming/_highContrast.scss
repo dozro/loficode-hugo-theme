@@ -1,3 +1,6 @@
+// refactored SCSS file
+// copyright remains with Raising Pixels (original author) and under original license
+
 @mixin highContrast($color-scheme: dark) {
   @if $color-scheme == light {
     --bg-primary: #ffffff;

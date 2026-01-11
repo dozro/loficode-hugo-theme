@@ -1,0 +1,12 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@keyframes social-pulse {
+    0% {
+        text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+    }
+
+    100% {
+        text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    }
+}

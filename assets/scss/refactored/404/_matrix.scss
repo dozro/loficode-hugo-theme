@@ -1,7 +1,7 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
-@import 'keyframes/matrix-fall';
+@import '../keyframes/index';
 @import '../../foundation/fonts/monospace';
 @import '../../foundation/variables';
 
@@ -25,7 +25,7 @@
         @include monospace-font();
         font-size: $defaultFontSize;
         color: var(--accent-secondary);
-        animation: matrix-fall linear infinite;
+        @include kf-matrix-fall();
         text-shadow: 0 0 5px currentColor;
     }
 }

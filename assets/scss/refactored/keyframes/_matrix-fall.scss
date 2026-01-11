@@ -1,0 +1,11 @@
+// refactored to scss by Rye
+// copyright remains with Raising Pixels (original author) and under original license
+
+@mixin kf-matrix-fall {
+    animation: matrix-fall linear infinite;
+    @keyframes matrix-fall {
+        to {
+            transform: translateY(100vh);
+        }
+    }
+}
