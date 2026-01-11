@@ -5,6 +5,7 @@
 @import '../../foundation/variables';
 @import '../../foundation/colors';
 @import '../../foundation/mixins/dontDisplayOnMobile';
+@import '../../foundation/mixins/screenAdjustments';
 
 @mixin git-log-header {
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
@@ -39,6 +40,7 @@
     .git-log-content {
         padding: 1.5rem;
         @include monospace-font();
+        @include textSmallDisplayAdjustment(0.9rem);
         font-size: 0.9rem;
         line-height: 1.6;
 

@@ -1,7 +1,8 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
-@import '../../foundation/variables';
+@import '../../foundation/fonts/emoji';
+@import '../../foundation/mixins/screenAdjustments';
 
 @keyframes coffee-glitch {
 
@@ -40,6 +41,8 @@
 
 @mixin CoffeeGlitch {
     .coffee-glitch {
+        @include color-emoji-font();
+        @include displayTextSizeAdjustment($hugeFontSize);
         font-size: $hugeFontSize;
         margin-bottom: $defaultMargin;
         position: relative;

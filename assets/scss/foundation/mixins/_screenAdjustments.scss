@@ -16,3 +16,8 @@
     @include largeDisplayAdjustment($width, $height);
     @include smallDisplayAdjustment($width, $height);
 }
+
+@mixin displayTextSizeAdjustment($fontSize){
+    @include textSmallDisplayAdjustment($fontSize);
+    @include textLargeDisplayAdjustment($fontSize);
+}

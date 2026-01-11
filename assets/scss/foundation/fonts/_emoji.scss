@@ -1,5 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=noto-emoji:500);
-@import url(https://fonts.bunny.net/css?family=noto-color-emoji:400);
+@import 'commons';
 
 @mixin noncolor-emoji-font {
     font-family: 'Noto Emoji', 'Noto Color Emoji', sans-serif;
