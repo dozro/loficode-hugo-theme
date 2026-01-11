@@ -14,11 +14,10 @@
     overflow: hidden;
     display: inline;
     flex-grow: unset;
-    @include displayScreenAdjustment($width, $height);
 
     img {
-        width: 25px;
-        height: 25px;
+        width: $width - 3px;
+        height: $height - 3px;
         border-radius: 50%;
         overflow: hidden;
         display: inline-block;
