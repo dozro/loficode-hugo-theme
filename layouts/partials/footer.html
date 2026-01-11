@@ -5,15 +5,7 @@
         {{ partial "footer/copyright-notice.html" . }}
         {{ partial "footer/footer-nav.html" . }}
         {{ partial "footer/bar.html" . }}
-        {{ if .Site.Params.customization.showPride.rainbow }}
-            {{ partial "bars/rainbow.html" . }}
-        {{ end }}
-        {{ if .Site.Params.customization.showPride.trans }}
-            {{ partial "bars/trans.html" . }}
-        {{ end }}
-        {{ if .Site.Params.customization.showPride.progressPride }}
-            {{ partial "bars/progress-pride.html" . }}
-        {{ end }}
+        {{ partial "bars/bars.html" . }}
         {{ partial "footer/last-modified.html" . }}
     </div>
 </footer>
