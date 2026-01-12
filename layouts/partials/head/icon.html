@@ -1,0 +1,37 @@
+{{ $iconpath := .Site.Params.customization.icon | default .Site.Params.author.image }}
+{{ with resources.Get $iconpath }}
+    {{ $favicon := .Resize "32x32" }}
+    {{ with $favicon | fingerprint "sha256" }}
+        <link rel="icon" type="{{ .MediaType.Type }}" integrity="{{ .Data.Integrity }}" href="{{ .RelPermalink }}" blocking="none" fetchpriority="high" />
+    {{ end }}
+    <!-- apple touch icons -->
+    {{ $appleiconOrigSizeGif := .Process "gif" }}
+    {{ with $appleiconOrigSizeGif | fingerprint "sha256" }}
+        <link rel="apple-touch-icon" integrity="{{ .Data.Integrity }}" href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}" blocking="none" fetchpriority="low" />
+    {{ end }}
+    {{ $appleiconOrigSizePNG := .Process "png" }}
+    {{ with $appleiconOrigSizePNG | fingerprint "sha256" }}
+        <link rel="apple-touch-icon" integrity="{{ .Data.Integrity }}" href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}" blocking="none" fetchpriority="low" />
+    {{ end }}
+    {{ $appleiconx180 := .Resize "180x180 png" }}
+    {{ with $appleiconx180 | fingerprint "sha256" }}
+        <link rel="apple-touch-icon" sizes="180x180" integrity="{{ .Data.Integrity }}" href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}" blocking="none" fetchpriority="low" />
+    {{ end }}
+    {{ $appleiconx167 := .Resize "167x167 png" }}
+    {{ with $appleiconx167 | fingerprint "sha256" }}
+        <link rel="apple-touch-icon" sizes="167x167" integrity="{{ .Data.Integrity }}" href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}" blocking="none" fetchpriority="low" />
+    {{ end }}
+    {{ $appleiconx152 := .Resize "152x152 png" }}
+    {{ with $appleiconx152 | fingerprint "sha256" }}
+        <link rel="apple-touch-icon" sizes="152x152" integrity="{{ .Data.Integrity }}" href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}" blocking="none" fetchpriority="low" />
+    {{ end }}
+    {{ $appleiconx120 := .Resize "120x120 png" }}
+    {{ with $appleiconx120 | fingerprint "sha256" }}
+        <link rel="apple-touch-icon" sizes="120x120" integrity="{{ .Data.Integrity }}" href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}" blocking="none" fetchpriority="low" />
+    {{ end }}
+    <!-- ms tile -->
+    {{ $mstileicon := .Resize "150x150 webp" }}
+    {{ with $mstileicon | fingerprint "sha256" }}
+        <meta name="msapplication-TileImage" content="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" type="{{ .MediaType.Type }}"/>
+    {{ end }}
+{{ end }}

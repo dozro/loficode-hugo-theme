@@ -77,6 +77,18 @@ Difference to the upstream version:
 
 - refactored to [layouts/partials/head/meta/fediverse.html](./layouts/partials/head/meta/fediverse.html)
 
+### Favicon
+
+Added handling relating to favicons and apple touch images
+
+By default the author image is used for this.
+However it can be overwritten by setting this in the config:
+
+```toml
+[params.customization]
+    icon = "path/to/icon"
+```
+
 ### Modularization of styling
 
 Better seperation of concerns in Stylesheets.
