@@ -1,8 +1,8 @@
 <!-- Meta Description -->
 {{ if .Description }}
-<meta name="description" content="{{ .Description }}" />
+<meta name="description" content="{{ .Description | truncate 160 | safeHTML }}" />
 {{ else if .IsHome }}
-<meta name="description" content="{{ .Site.Params.description }}" />
+<meta name="description" content="{{ .Site.Params.description | truncate 160 | safeHTML }}" />
 {{ else }}
-<meta name="description" content="{{ .Summary | truncate 160 }}" />
+<meta name="description" content="{{ .Summary | truncate 160 | safeHTML }}" />
 {{ end }}
