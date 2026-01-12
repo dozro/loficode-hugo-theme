@@ -89,6 +89,21 @@ However it can be overwritten by setting this in the config:
     icon = "path/to/icon"
 ```
 
+### Instantpage
+
+Added [Instantpage](https://instant.page/) or [InstantClick](http://instantclick.io/) (depending on config) for faster page loads.
+They're disabled by default.
+
+To enable:
+
+```toml
+  [params.customization]
+    # To enable Instantclick
+    enableInstantClick = true
+    # To enable Instantpage
+    enableInstantPage = true
+```
+
 ### Modularization of styling
 
 Better seperation of concerns in Stylesheets.
