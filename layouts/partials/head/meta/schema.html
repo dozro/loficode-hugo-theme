@@ -2,7 +2,7 @@
 <!-- Copyright 2025 Rye (itsrye.dev). Licensed under Apache 2.0 -->
 
 <meta itemprop="name" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}">
+<meta itemprop="description" content="{{ if .Description }}{{ .Description | truncate 160 | safeHTML }}{{ else if .IsHome }}{{ .Site.Params.description | truncate 160 | safeHTML }}{{ else }}{{ .Summary | truncate 160 | safeHTML }}{{ end }}">
 
 {{ with .Params.featuredImage }}
 <meta itemprop="image" content="{{ . | absURL }}">

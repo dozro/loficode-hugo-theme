@@ -9,7 +9,7 @@
   />
 <meta
   property="og:description"
-  content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}"
+  content="{{ if .Description }}{{ .Description | truncate 160 | safeHTML }}{{ else if .IsHome }}{{ .Site.Params.description | truncate 160 | safeHTML }}{{ else }}{{ .Summary | truncate 160 | safeHTML }}{{ end }}"
   />
 <meta
   property="og:type"

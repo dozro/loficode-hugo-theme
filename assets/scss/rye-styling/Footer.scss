@@ -4,6 +4,36 @@
 @import 'gradientShift';
 @import 'mixins/card';
 
+@mixin foobar {
+    .footer-bar {
+        justify-self: center;
+        width: fit-content;
+        height: fit-content;
+        display: grid;
+        display: -ms-grid;
+
+        #footer-rss {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        #footer-tags {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        #footer-qr-code {
+            grid-row: 1;
+            grid-column: 3;
+        }
+
+        #footer-citation {
+            grid-row: 1;
+            grid-column: 4;
+        }
+    }
+}
+
 @scope {
     :scope {
         position: absolute;
@@ -18,13 +48,7 @@
             list-style-type: none;
         }
 
-        .footer-bar {
-            justify-self: center;
-            width: fit-content;
-            height: fit-content;
-            display: inline-block;
-
-        }
+        @include foobar();
 
         i {
             vertical-align: middle;

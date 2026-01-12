@@ -1,7 +1,7 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
-@import 'keyframes/float';
+@import '../keyframes/index';
 
 /* Floating Particles */
 .particle {
@@ -9,5 +9,5 @@
     pointer-events: none;
     z-index: 2;
     opacity: 0.6;
-    animation: float linear infinite;
+    @include kf-float();
 }

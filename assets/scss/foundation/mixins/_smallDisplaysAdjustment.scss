@@ -2,15 +2,9 @@
 
 @mixin smallDisplayAdjustment($width, $height){
     width: $width;
-    height: $height;
-    @media (max-width: 768px) {
-        width: $width/1.5;
-        height: $height/1.5;
-    }
-    @media (max-width: 480px) {
-        width: $width/1.75;
-        height: $height/1.75;
-    }
+    @include smallDisplayWidthAdjustment($width);
+    @include smallDisplayHeightAdjustment($height);
+    height: $height
 }
 
 @mixin smallDisplayWidthAdjustment($width){
@@ -20,6 +14,9 @@
     @media (max-width: 480px) {
         width: $width/1.75;
     }
+    @media (max-width: 300) {
+        width: $width/1.88;
+    }
 }
 
 @mixin smallDisplayHeightAdjustment($height){
@@ -28,6 +25,9 @@
     }
     @media (max-height: 480px) {
         height: $height/1.75;
+    }
+    @media (max-height: 480px) {
+        height: $height/1.88;
     }
 }
 

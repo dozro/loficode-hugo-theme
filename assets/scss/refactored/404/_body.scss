@@ -1,14 +1,15 @@
 // refactored to scss by Rye
 // copyright remains with Raising Pixels (original author) and under original license
 
+@import '../../foundation/fonts/sansSerif';
 @import 'matrix';
 @import 'crt';
 @import '../theme-toggle';
 @import 'ErrorContainer';
-@import '../CoffeeGlitch';
+@import 'CoffeeGlitch';
 
 body {
-    font-family: 'Inter', sans-serif;
+    @include inter-font();
     background: var(--bg-primary);
     background-attachment: fixed;
     color: var(--text-primary);

@@ -1,14 +1,8 @@
 // Copyright 2026 Rye
 
 @mixin largeDisplayAdjustment($width, $height){
-    @media (min-width: 1500px) {
-        width: $width*1.5;
-        height: $height*1.5;
-    }
-    @media (min-width: 2000px) {
-        width: $width*1.75;
-        height: $height*1.75;
-    }
+    @include largeDisplayHeightAdjustment($height);
+    @include largeDisplayWidthAdjustment($width);
 }
 
 @mixin largeDisplayHeightAdjustment($height){
@@ -18,6 +12,30 @@
     @media (min-height: 2000px) {
         height: $height*1.75;
     }
+    @media (min-height: 2500px){
+        height: $height*2.0;
+    }
+    @media (min-height: 3000px){
+        height: $height*2.25;
+    }
+}
+
+@mixin largeDisplayWidthAdjustment($width){
+    @media (min-width: 1500px) {
+        width: $width*1.33;
+    }
+    @media(min-width: 1750px){
+        width: $width*1.5;
+    }
+    @media (min-width: 2000px) {
+        width: $width*1.57;
+    }
+    @media (min-width: 2250px) {
+        width: $width*1.66;
+    }
+    @media (min-width: 2500px) {
+        width: $width*1.75;
+    }
 }
 
 @mixin textLargeDisplayAdjustment($fontSize){
@@ -26,6 +44,12 @@
     }
     @media (min-width: 2000px) {
         font-size: $fontSize*1.5;
+    }
+    @media (min-height: 2000px){
+        font-size: $fontSize*1.5;
+    }
+    @media (min-height: 2500px){
+        font-size: $fontSize*1.66;
     }
 }
 

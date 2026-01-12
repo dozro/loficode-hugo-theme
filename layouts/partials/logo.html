@@ -2,12 +2,12 @@
 <a href="{{ "/" | absLangURL }}" class="rye-logo" title="{{ .Site.Params.Author.name }}">
     <picture>
         {{ with resources.GetMatch .Site.Params.Author.image }}
-        {{ $webpimg :=  .Resize "50x50 webp" }}
+        {{ $webpimg :=  .Resize "35x35 webp" }}
         {{ with resources.Copy "images/converted/logo.webp" . }}
         <source srcset="{{ .RelPermalink  }}" type="image/webp" />
         {{ end }}
-        <img src="{{ .RelPermalink }}" alt="Logo" height="50"
-            width="50" />
+        <img src="{{ .RelPermalink }}" alt="Logo" height="35"
+            width="35" />
         {{ end }}
     </picture>
 </a>

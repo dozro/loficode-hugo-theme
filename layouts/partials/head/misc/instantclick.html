@@ -1,0 +1,31 @@
+{{ if not .Site.Params.customization.enableInstantClick }}
+    {{ with resources.GetRemote "https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.1.0/instantclick.min.js" }}
+    {{ with resources.Copy "vendored/js/instantclick.min.js" . }}
+    {{ with . | fingerprint "sha512"}}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{ end }}
+    {{ end}}
+    {{ else }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.1.0/instantclick.min.js" integrity="sha512-K0LA7hRSqNt0GOikeLRmpKEecaOy7uizFEA/b3SMMyGycCy1qRLoezkVbuXQUFVq6pwEjCszMCn3TT4dRRie+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{ end }}
+    <script data-no-instant>
+        document.addEventListener("DOMContentLoaded", function() {
+            InstantClick.on("change", function() {
+                // Re-initialize any JavaScript components here if needed
+                if (window.initializeComponents) {
+                    window.initializeComponents();
+                }
+                InstantClick.init();
+            });
+        });
+    </script>
+{{ end }}
+{{ if not .Site.Params.customization.enableInstantPage }}
+    {{ with resources.GetRemote "https://instant.page/5.2.0" }}
+    {{ with resources.Copy "vendored/js/instantpage.js" . }}
+    {{ with . | fingerprint "sha512"}}
+    <script src="{{ .RelPermalink }}" type="module" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{ end }}
+    {{ end}}
+    {{ end }}
+{{ end }}

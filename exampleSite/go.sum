@@ -1,6 +1,12 @@
 codeberg.org/dozrye/hugo-og-img-generator v0.0.0-20251119163552-acc49ef4055b h1:Q5Zwz6aU/ivxw5QKXiBeJ4pc/Cf7kKWstcfygLe/xHE=
 codeberg.org/dozrye/hugo-og-img-generator v0.0.0-20251119163552-acc49ef4055b/go.mod h1:j8ok0TbyFPsyBi+pukugQt04WAi0oqZABZVfwIKDCZ8=
+codeberg.org/dozrye/hugo-og-img-generator v0.0.0-20260112140305-54f61e5bad0c h1:the1wihkij6xWTVg6mU1d2n6//0bBq5VutQz4T8bNRg=
+codeberg.org/dozrye/hugo-og-img-generator v0.0.0-20260112140305-54f61e5bad0c/go.mod h1:j8ok0TbyFPsyBi+pukugQt04WAi0oqZABZVfwIKDCZ8=
+codeberg.org/dozrye/hugo-og-img-generator v1.0.0 h1:gkojU4tRV6NUBMPxNGvmS6lL68iA0eAO0EENOrP8CWw=
+codeberg.org/dozrye/hugo-og-img-generator v1.0.0/go.mod h1:j8ok0TbyFPsyBi+pukugQt04WAi0oqZABZVfwIKDCZ8=
 github.com/dozro/loficode-hugo-theme v1.4.6 h1:y6du6y09y9LMivleVc7qff017+v9dYJvmBWB7z4NdxA=
 github.com/dozro/loficode-hugo-theme v1.4.6/go.mod h1:DHTYEsNDzv10ynQx4Hgfz8s9WgCz5x450yd9OWxm0II=
 github.com/dozro/loficode-hugo-theme v1.4.7 h1:Mu6HuTy3hKjMWhS/L4Xkmuh+epNT2RpEt8C3h01ETbE=
 github.com/dozro/loficode-hugo-theme v1.4.7/go.mod h1:DHTYEsNDzv10ynQx4Hgfz8s9WgCz5x450yd9OWxm0II=
+github.com/dozro/loficode-hugo-theme v1.4.8 h1:UwD7Lgr9JC728gWz3JQcbQwyW071oXue9SrsInf+pUE=
+github.com/dozro/loficode-hugo-theme v1.4.8/go.mod h1:JORSWc+KhBWl+THGesDSkffrqgASaUoXQqCGHFKEdk8=

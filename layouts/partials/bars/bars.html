@@ -1,0 +1,9 @@
+{{ if .Site.Params.customization.showPride.rainbow }}
+    {{ partial "bars/rainbow.html" . }}
+{{ end }}
+{{ if .Site.Params.customization.showPride.trans }}
+    {{ partial "bars/trans.html" . }}
+{{ end }}
+{{ if .Site.Params.customization.showPride.progressPride }}
+    {{ partial "bars/progress-pride.html" . }}
+{{ end }}

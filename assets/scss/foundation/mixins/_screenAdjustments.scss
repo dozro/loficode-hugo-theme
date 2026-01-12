@@ -1,3 +1,23 @@
 @import 'largeDisplaysAdjustment';
 @import 'smallDisplaysAdjustment';
 @import 'accessibilityAdjustment';
+
+@mixin displayWidthAdjustment($width){
+    @include largeDisplayWidthAdjustment($width);
+    @include smallDisplayWidthAdjustment($width);
+}
+
+@mixin displayHeightAdjustment($height){
+    @include largeDisplayHeightAdjustment($height);
+    @include smallDisplayHeightAdjustment($height);
+}
+
+@mixin displayScreenAdjustment($width, $height){
+    @include largeDisplayAdjustment($width, $height);
+    @include smallDisplayAdjustment($width, $height);
+}
+
+@mixin displayTextSizeAdjustment($fontSize){
+    @include textSmallDisplayAdjustment($fontSize);
+    @include textLargeDisplayAdjustment($fontSize);
+}

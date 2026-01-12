@@ -1,5 +1,6 @@
 // Migrated from the original theme script
-// Copyright remains with the original author
+// Refactored by Rye (itsrye.dev)
+// Copyright remains with original author raisingpixels and remains under MIT License (even if content has been changed)
 
 const themeToggle = document.getElementById('themeToggle');
 const htmlElement = document.documentElement;
