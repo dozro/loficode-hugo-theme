@@ -4,5 +4,5 @@ go 1.25.1
 
 require (
 	codeberg.org/dozrye/hugo-og-img-generator v1.0.0 // indirect
-	github.com/dozro/loficode-hugo-theme v1.5.0 // indirect
+	github.com/dozro/loficode-hugo-theme v1.5.1 // indirect
 )
