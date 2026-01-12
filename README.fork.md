@@ -32,14 +32,16 @@ Code changes see: <https://github.com/raisingpixels/loficode-hugo-theme/compare/
 
 - keyboard navigation in posts
 - Support for a few more social networking links
+- Favicon and Apple Touch Images
 - Generator notice on homepage
 - option to link privacy policy and imprint (displayed on the homepage)
 - generates atom feeds as well as xml feeds
 - It can now be added as a hugo module
+- Pride Flag Bars
+- QR-Code Sharing
+- Citation Widget
 
-### Added configuration options
-
-#### legal information
+### legal information
 
 to add `Alice` as copyright holder and imprint located at `https://example.org/imprint` and privacy policy at `https://example.org/privacy`
 
@@ -69,6 +71,27 @@ to add `Alice` as copyright holder and imprint located at `https://example.org/i
 ```yml
 fediverseIdentifier: "@example2@mastodon.social"
 twitterIdentifier: "@example2"
+```
+
+### Pride Flags Bars
+
+Added Bars representing the following pride Flags:
+
+- Rainbow (option key: `rainbow`)
+- Trans (option key: `trans`)
+- Transfem 
+- Nonbinary (option key: `nonBinary`)
+
+It can be enabled in the config like the following:
+
+```toml
+    [params.customization.showPride]
+      # For the rainbow pride flag
+      rainbow = true
+      # For the trans pride flag
+      trans = true
+      # for the enby pride flag
+      nonBinary = true
 ```
 
 ### Twitter Head Attributes
@@ -115,12 +138,32 @@ Stylesheets may still be bundled with a config option:
     modularCSS = true
 ```
 
+### Citation Widget
+
+Added a small widget which displays data for people wanting to cite your site. It also generates a bibtex entry for your readers.
+
+It can be **disabled** in the config like the following:
+
+```toml
+  [params.customization]
+    # to enable the citation widget either omit this option or set it to false
+    disableCitationWidget = true
+```
+
 ### QR-Code Sharing
 
 ![QR-Share-Modal](images/qr-share-modal.png)
 
 On each pages footer there is now an option to share this page as a qr code.
 Which when clicked opens a small overlay with the qr code displayed.
+
+This can be **disabled** in the config like the following:
+
+```toml
+  [params.customization]
+    # to enable the QR code sharing feature omit this option or set it to false
+    disableQRCodeSharing = true
+```
 
 ### Schema.org
 
