@@ -1,0 +1,7 @@
+<!-- Non-Binary Pride Bar -->
+<div class="rye-flag-bar rye-enby-pride-flag-bar">
+    {{ with resources.Get "images/svg/flags/non-binary.svg" }}
+    {{ $enbyPrideSVG := . | resources.Minify }}
+    <img src="{{ $enbyPrideSVG.RelPermalink }}" alt="Non-Binary Pride flag decorative bar" class="flag-bar-image" loading="lazy">
+    {{ end }}
+</div>

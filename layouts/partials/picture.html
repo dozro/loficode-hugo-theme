@@ -1,0 +1,25 @@
+{{ $alt := .Alt | default "" }}
+{{ $class := .Class | default "" }}
+{{ with resources.Get .Path }}
+    {{ $img := . | resources.Minify }}
+    <picture class="rye-picture {{ $class }}">
+        {{ if not (eq .MediaType.SubType "svg") }}
+            {{ with $img.Fill "300x200" }}
+                <source media="(min-width: 650px)" srcset="{{ .RelPermalink }}" type="{{ .MediaType.Type }}">
+            {{ end }}
+            {{ with $img.Resize "600x webp" }}
+                <source media="(min-width: 650px)" srcset="{{ .RelPermalink }}" type="image/webp">
+            {{ end }}
+            {{ with $img.Process "format=webp" }}
+                <source srcset="{{ .RelPermalink }}" type="image/webp">
+            {{ end }}
+            {{ with $img.Process "format=jpeg" }}
+                <source srcset="{{ .RelPermalink }}" type="image/jpeg">
+            {{ end }}
+            {{ with $img.Process "format=png" }}
+                <source srcset="{{ .RelPermalink }}" type="image/png">
+            {{ end }}
+        {{ end }}
+        <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" type="{{ $img.MediaType.Type }}">
+    </picture>
+{{ end }}

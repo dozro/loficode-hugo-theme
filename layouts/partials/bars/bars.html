@@ -7,3 +7,6 @@
 {{ if .Site.Params.customization.showPride.progressPride }}
     {{ partial "bars/progress-pride.html" . }}
 {{ end }}
+{{ if .Site.Params.customization.showPride.nonBinary }}
+    {{ partial "bars/non-binary.html" . }}
+{{ end }}
