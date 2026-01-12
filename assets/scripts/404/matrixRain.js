@@ -1,4 +1,7 @@
 // Matrix rain effect
+// Refactored by Rye (itsrye.dev)
+// Copyright remains with original author raisingpixels and remains under MIT License (even if content has been changed)
+
 function createMatrixRain() {
     const matrixRain = document.getElementById('matrixRain');
     const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネäハヒフヘホマミムメモヤユヨラリルレロワヲン';

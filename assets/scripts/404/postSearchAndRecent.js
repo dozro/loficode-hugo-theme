@@ -1,3 +1,7 @@
+// Search and Recent Posts for 404 page
+// Refactored by Rye (itsrye.dev)
+// Copyright remains with original author raisingpixels and remains under MIT License (even if content has been changed)
+
 function timeAgo(timestamp, locale = 'en') {
     let value;
     const diff = (new Date().getTime() - timestamp.getTime()) / 1000;

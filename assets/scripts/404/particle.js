@@ -1,4 +1,7 @@
 // Floating particles
+// Refactored by Rye (itsrye.dev)
+// Copyright remains with original author raisingpixels and remains under MIT License (even if content has been changed)
+
 function createParticle() {
     const particle = document.createElement('div');
     particle.className = 'particle';
