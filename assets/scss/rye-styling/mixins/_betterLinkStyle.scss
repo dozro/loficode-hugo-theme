@@ -17,6 +17,7 @@
 
 @import '../../foundation/simpleAnimations';
 @import '../../foundation/colors';
+@import '../../foundation/fonts/emoji';
 
 @mixin betterLinkStyleHighContrastInternal(){
     filter: contrast(5000%);
@@ -36,6 +37,14 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+        &[target="_blank"]{
+            filter: hue-rotate(90deg);
+        }
+
+        &[target="_self"]{
+            filter: hue-rotate(120deg);
+        }
     }
     color: var(--text-primary);
     text-decoration: none;
@@ -62,5 +71,20 @@
     // Visited state
     &:visited {
         color: $lightVisitedLinkColor;
+    }
+
+    // Disabled state
+    &:disabled {
+        // muted color for disabled links
+        color: var(--text-muted);
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+    }
+
+    &[download]::after {
+        content: ' ⬇';
+        @include noncolor-emoji-font;
+        font-size: 0.9em;
     }
 }
