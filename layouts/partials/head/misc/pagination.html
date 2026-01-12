@@ -1,0 +1,8 @@
+{{ if eq .Kind "page" }}
+  {{ with .PrevInSection  }}
+    <link rel="prev" href="{{ .RelPermalink }}" />
+  {{ end }}
+  {{ with .NextInSection }}
+    <link rel="next" href="{{ .RelPermalink }}" />
+  {{ end }}
+{{ end }}
