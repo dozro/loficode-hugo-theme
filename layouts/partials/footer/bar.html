@@ -1,7 +1,11 @@
 <span class="footer-bar">
     <span id="footer-rss">{{ partial "widgets/rss-subscribe.html" . }}</span>
-    <span id="footer-citation">{{ partial "widgets/citation.html" .}} </span>
+    {{ if not .Site.Params.customization.disableCitationWidget }}
+        <span id="footer-citation">{{ partial "widgets/citation.html" .}} </span>
+    {{ end }}
     <span id="footer-tags">{{ partial "widgets/tags.html" .}}</span>
-    <span id="footer-qr-code">{{ partial "widgets/qr-code-share.html" .}}</span>
+    {{ if not .Site.Params.customization.disableQRCodeSharing }}
+        <span id="footer-qr-code">{{ partial "widgets/qr-code-share.html" .}}</span>
+    {{ end }}
     <!--<span>{{ partial "widgets/language-chooser.html" .}}</span>-->
 </span>
