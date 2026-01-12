@@ -1,7 +1,4 @@
 <!-- Rainbow Bar -->
 <div class="rye-flag-bar">
-    {{ with resources.Get "images/svg/flags/rainbow.svg" }}
-    {{ $rainbowSVG := . | resources.Minify }}
-    <img src="{{ $rainbowSVG.RelPermalink }}" alt="Rainbow flag decorative bar" class="flag-bar-image" loading="lazy">
-    {{ end }}
+    {{ partial "picture.html" (dict "Path" "images/svg/flags/rainbow.svg" "Alt" "Rainbow flag decorative bar" "Class" "flag-bar-image") }}
 </div>
